@@ -44,23 +44,36 @@
 /*分割线*/
 #hm {
     height: 5px;
-    width: 1200px;
+    width: 1300px;
     background-color: #4885e8;
     top: 170px;
     left: 90px;
 }
 
-#exp_intro{
+#exp_intro {
     height: 40px;
     width: 5px;
     background-color: #4885e8;
     top: 190px;
 }
 
-#exp_intro_text{
+#exp_intro_text {
     top: 175px;
     left: 130px;
 }
 
 #exp {
+    top: 250px;
+    height: 500px;
+    width: 800px;
+    left: 100px;
+    background-color: #f5f2f2;
+}
+
+#rightSide {
+    left: 1000px;
+    height: 1000px;
+    width: 380px;
+    top: 250px;
+    background-color: #c6d5ff;;
 }
