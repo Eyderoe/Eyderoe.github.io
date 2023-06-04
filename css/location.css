@@ -8,6 +8,15 @@
     src: url('../resource/fonts/Lucida Handwriting.ttf');
 }
 
+@font-face {
+    font-family: font_charlie;
+    src: url('../resource/fonts/方正黑体_GBK.ttf');
+}
+
+@font-face {
+    font-family: font_delta;
+    src: url('../resource/fonts/arial.ttf');
+}
 
 .backGroundPicture {
     background-image: url('../resource/images/roast.jpg');
@@ -50,6 +59,14 @@
     left: 90px;
 }
 
+#rightSide {
+    left: 1000px;
+    height: 700px;
+    width: 380px;
+    top: 250px;
+    background-color: #c6d5ff;;
+}
+
 #exp_intro {
     height: 40px;
     width: 5px;
@@ -58,22 +75,36 @@
 }
 
 #exp_intro_text {
+    color: #4885e8;
     top: 175px;
     left: 130px;
 }
 
 #exp {
     top: 250px;
-    height: 500px;
-    width: 800px;
+    height: 300px;
+    width: 850px;
     left: 100px;
-    background-color: #f5f2f2;
+    /*background-color: #f5f2f2;*/
 }
 
-#rightSide {
-    left: 1000px;
+#friend_intro {
+    height: 40px;
+    width: 5px;
+    background-color: #c52f2b;
+    top: 600px;
+}
+
+#friend_intro_text {
+    color: #c52f2b;
+    top: 588px;
+    left: 130px;
+}
+
+#friend {
+    top: 660px;
     height: 1000px;
-    width: 380px;
-    top: 250px;
-    background-color: #c6d5ff;;
+    width: 850px;
+    left: 100px;
+    background-color: #f5f2f2;
 }
