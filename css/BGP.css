@@ -1,10 +1,15 @@
 html, body {
   margin: 0;
   padding: 0;
+  height: 100%;
+}
+
+body{
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 #parallax-container {
-  overflow: hidden;
   height: 100vh; /* 视差滚动的高度 */
   position: relative;
 }
@@ -12,7 +17,7 @@ html, body {
 #bg {
   background-image: url('../resource/images/magic_girls.png');
   background-size: auto;
-  background-position: center;
+  background-position: inherit;
   width: 100%; 
   height: 200%; /* 背景图像高度调整以改变移动速度 */
   position: absolute;
