@@ -1,0 +1,113 @@
+<!--声明为HTML5-->
+<!DOCTYPE html>
+
+<!--用户需求：包括但不限于个人相片、背景图片、动画、人物简介、兴趣爱好、各个科目的成绩、个人愿望、个人学习经历。-->
+
+<!--标识符？与最后一个</html>对应，标签通常成对出现-->
+<html lang="en">
+
+<!--头部元素-->
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="HTML, Homework">
+    <meta name="description" content="homework">
+    <!--60s刷新一次-->
+    <meta http-equiv="refresh" content="60">
+    <!--页面图标-->
+    <link rel="shortcut icon" href="./images/YouTube.ico">
+    <title>寄网大~作业(eyderoe)</title>
+</head>
+
+<!--主体部分-->
+<body style="background-color: #f5f2f2">
+<!--标题h1到h6，h1最大-->
+<h1 style="font-family: 等线,serif;font-size: 200px">我的第一个标题</h1>
+<!--链接对页面内的索引 CK701定义在下面 target跳转方式-->
+<a href="#CK701" target="_blank">跳转到图片下面</a>
+<!--段落-->
+<p>我的第一个段落。</p>
+<!--链接 网页-->
+<p style="color: hotpink;background-color: aliceblue">
+    <a href="https://www.baidu.com"> 百度一下</a>
+    wrink
+</p>
+<!--图片对齐 图片还可以链接 部分区域链接-->
+<img decoding="async" src="./images/rotation.gif" width="100" height="100" style="vertical-align: middle">
+这是文字漂浮在中央
+<!--换行-->
+<p>
+    啊对对对<br> 啊对<br>啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+</p>
+<!--水平分割线hr-->
+<hr style="height: 10px;">
+<!--格式化文本 字体-->
+<p>
+    <strong>banana=</strong><em>Ba + N</em><sub>2</sub><sup>x + yi</sup>
+</p>
+<!--格式化文本 空格 换行-->
+<pre>
+        This is test
+    aba
+ohio
+</pre>
+<!--格式化文本 地址-->
+<address>
+    ChongQing<br>
+    China
+</address>
+<!--水平分割线hr-->
+<hr style="height: 50px;">
+<!--图片-->
+<img decoding="async" src="./images/cqupt.png" width="500" height="499" alt="cqupt">
+<!--索引标记 对用户不可见-->
+<a id="CK701"></a>
+<!--表格 border属性已经不在被推荐使用-->
+<table border="2">
+    <tbody>
+    <tr>
+        <td>QNH</td>
+        <td>&lt;=979</td>
+        <td>979 - 1031</td>
+        <td>&gt;=1031</td>
+    </tr>
+    <tr>
+        <td>TL</td>
+        <td>3600</td>
+        <td>3600</td>
+        <td>3600</td>
+    </tr>
+    <tr>
+        <td>TA</td>
+        <td>2700</td>
+        <td>3000</td>
+        <td>3300</td>
+    </tr>
+    </tbody>
+    <colgroup>
+        <col>
+        <col>
+        <col>
+        <col>
+    </colgroup>
+</table>
+<!--框架-->
+<br>
+<iframe loading="lazy" src="test.html" width="50%" height="=50%"></iframe>
+<!--脚本-->
+<script>
+    function printf() {
+        document.getElementById("CK611").innerHTML = "Direct to BHS!";
+    }
+</script>
+<p id="CK611">按钮示范</p>
+<button type="button" onclick="printf()">点我</button>
+<!--列表-->
+<h4>编号列表：</h4>
+<ol>
+    <li>Apples</li>
+    <li>Bananas</li>
+    <li>Lemons</li>
+    <li>Oranges</li>
+</ol>
+</body>
+</html>
