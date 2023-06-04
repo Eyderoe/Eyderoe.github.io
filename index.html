@@ -14,12 +14,21 @@
     <!--50min刷新一次-->
     <meta http-equiv="refresh" content="3000">
     <!--页面图标 /favicon.ico获取-->
-    <link rel="shortcut icon" href="./images/pornhub.ico">
+    <link rel="shortcut icon" href="./resource/images/pornhub.ico">
     <title>寄网大~作业(eyderoe)</title>
 </head>
 
+<!--背景图片-->
+<style>
+.bg-image {
+background-image: url('./resource/images/magic_girls.png');
+background-size: contain;
+background-repeat: no-repeat;
+}
+</style>
+
 <!--主体部分-->
-<body style="background-color: #f5f2f2">
+<body style="background-color: #f5f2f2" class="bg-image">
 <!--标题h1到h6，h1最大-->
 <h1 style="font-family: 等线,serif;font-size: 200px">我的第一个标题</h1>
 <!--链接对页面内的索引 CK701定义在下面 target跳转方式-->
@@ -32,7 +41,7 @@
     wrink
 </p>
 <!--图片对齐 图片还可以链接 部分区域链接-->
-<img decoding="async" src="./images/rotation.gif" width="100" height="100" style="vertical-align: middle">
+<img decoding="async" src="./resource/images/rotation.gif" width="100" height="100" style="vertical-align: middle">
 这是文字漂浮在中央
 <!--换行-->
 <p>
@@ -58,7 +67,7 @@ ohio
 <!--水平分割线hr-->
 <hr style="height: 50px;">
 <!--图片-->
-<img decoding="async" src="./images/cqupt.png" width="500" height="499" alt="cqupt">
+<img decoding="async" src="./resource/images/cqupt.png" width="500" height="499" alt="cqupt">
 <!--索引标记 对用户不可见-->
 <a id="CK701"></a>
 <!--表格 border属性已经不在被推荐使用-->
@@ -113,13 +122,21 @@ ohio
 </ol>
 <!--视频-->
 <video width="960" height="540" controls>
-    <source src="./video/Seele.mp4" type="video/mp4">
+    <source src="./resource/video/Seele.mp4" type="video/mp4">
 </video>
 <!--音乐-->
 <br>
 <audio controls>
-    <source src="./music/海怪红色预警.mp3" type="audio/mp3">
+    <source src="./resource/music/海怪红色预警.mp3" type="audio/mp3">
 </audio>
+<!--输入-->
+<form>
+    <label>
+        选择你喜欢的颜色:
+        <input type="color" name="favcolor">
+    </label>
+    <input type="submit">
+</form>
 </body>
 
 </html>
