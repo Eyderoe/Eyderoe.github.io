@@ -4,7 +4,7 @@
 <!--用户需求：包括但不限于个人相片、背景图片、动画、人物简介、兴趣爱好、各个科目的成绩、个人愿望、个人学习经历。-->
 
 <!--标识符？与最后一个</html>对应，标签通常成对出现-->
-<html lang="en">
+<html lang="zh-CN">
 
 <!--头部元素-->
 <head>
@@ -92,11 +92,11 @@ ohio
 </table>
 <!--框架-->
 <br>
-<iframe loading="lazy" src="index.html" width="50%" height="=50%"></iframe>
+<iframe loading="lazy" src="index.html" width="50%" height="50%"></iframe>
 <!--脚本-->
 <script>
     function printf() {
-        document.getElementById("CK611").innerHTML = "Direct to SHC 上标压2400!";
+        document.getElementById("CK611").innerHTML = "Direct to SHC! 上标压2400";
     }
 </script>
 <p id="CK611">按钮示范</p>
@@ -104,10 +104,16 @@ ohio
 <!--列表-->
 <h4>编号列表：</h4>
 <ol>
-    <li>Apples</li>
+    <li>Apples
+        <del> apple</del>
+    </li>
     <li>Bananas</li>
     <li>Lemons</li>
     <li>Oranges</li>
 </ol>
+<!--视频-->
+<video width="960" height="540" controls>
+    <source src="./video/Seele.mp4" type="video/mp4">
+</video>
 </body>
 </html>
