@@ -9,6 +9,7 @@
     <meta http-equiv="refresh" content="3000">
     <link rel="stylesheet" type="text/css" href="../css/seele_only.css">
     <link rel="shortcut icon" href="../resource/images/symbol.webp">
+    <script src="../js/seele_only.js"></script>
     <title>希儿·芙乐艾</title>
 </head>
 
@@ -68,23 +69,35 @@
         </div>
         <div class="music" style="top: 990px">
             <img src="../resource/images/海怪.png" width="256" height="256" alt="海怪红色预警封面">
-            <img src="../resource/images/start.png" class="bottomStyle" style="top: 20px" alt="start">
-            <img src="../resource/images/stop.png" class="bottomStyle" style="top: 100px" alt="stop">
-            <img src="../resource/images/restart.png" class="bottomStyle" style="top: 180px" alt="restart">
+            <img src="../resource/images/stop.png" class="bottomStyle" style="top: 100px" alt="stop"
+                 onclick="stopAudio('海怪红色')">
+            <img src="../resource/images/start.png" class="bottomStyle" style="top: 20px" alt="start"
+                 onclick="playAudio('海怪红色')">
+            <img src="../resource/images/restart.png" class="bottomStyle" style="top: 180px" alt="restart"
+                 onclick="reAudio('海怪红色')">
+            <audio id="海怪红色" src="../resource/music/海怪红色预警.mp3"></audio>
             <h3 style="font-family: font_charlie,serif;color: #c51221"> &nbsp;&nbsp;海怪红色预警 (鹿乃)</h3>
         </div>
         <div class="music" style="top: 1350px">
             <img src="../resource/images/dual_ego.png" width="256" height="256" alt="Dual-Ego封面">
-            <img src="../resource/images/start.png" class="bottomStyle" style="top: 20px" alt="start">
-            <img src="../resource/images/stop.png" class="bottomStyle" style="top: 100px" alt="stop">
-            <img src="../resource/images/restart.png" class="bottomStyle" style="top: 180px" alt="restart">
+            <img src="../resource/images/start.png" class="bottomStyle" style="top: 20px" alt="start"
+                 onclick="playAudio('Dual')">
+            <img src="../resource/images/stop.png" class="bottomStyle" style="top: 100px" alt="stop"
+                 onclick="stopAudio('Dual')">
+            <img src="../resource/images/restart.png" class="bottomStyle" style="top: 180px" alt="restart"
+                 onclick="reAudio('Dual')">
+            <audio id="Dual" src="../resource/music/萨顶顶%20-%20Dual-Ego.mp3"></audio>
             <h3 style="font-family: font_charlie,serif;color: #2176ec"> &nbsp;&nbsp;Dual-Ego (萨顶顶)</h3>
         </div>
         <div class="music" style="top: 1710px">
             <img src="../resource/images/Abyssos.jpg" width="256" height="256" alt="Abyssos封面">
-            <img src="../resource/images/start.png" class="bottomStyle" style="top: 20px" alt="start">
-            <img src="../resource/images/stop.png" class="bottomStyle" style="top: 100px" alt="stop">
-            <img src="../resource/images/restart.png" class="bottomStyle" style="top: 180px" alt="restart">
+            <img src="../resource/images/start.png" class="bottomStyle" style="top: 20px" alt="start"
+                 onclick="playAudio('Abyssos')">
+            <img src="../resource/images/stop.png" class="bottomStyle" style="top: 100px" alt="stop"
+                 onclick="stopAudio('Abyssos')">
+            <img src="../resource/images/restart.png" class="bottomStyle" style="top: 180px" alt="restart"
+                 onclick="reAudio('Abyssos')">
+            <audio id="Abyssos" src="../resource/music/Marblue_黑希原创曲_Abyssos.mp3"></audio>
             <h3 style="font-family: font_charlie,serif;color: #c51221"> &nbsp;&nbsp;AByssos (三无Marblue)</h3>
         </div>
 
