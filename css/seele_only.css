@@ -44,10 +44,18 @@
 .music {
     position: absolute;
     z-index: 1;
-    left: 1000px;
-    width: 380px;
+    left: 1020px;
+    width: 350px;
     height: 320px;
     background-color: #c6d5ff;
+}
+
+.bottomStyle{
+    width:50px;
+    height:50px;
+    position: absolute ;
+    top:0;
+    right: 0;
 }
 
 /*中文姓名那一坨*/
