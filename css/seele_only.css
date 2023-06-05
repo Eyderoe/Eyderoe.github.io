@@ -28,9 +28,10 @@
 /*矩形框*/
 .roundedRectangle {
     width: auto;
+    height: 700px;
     background-color: rgba(255, 255, 255, 0.65);
     border-radius: 20px;
-    padding: 50%;
+    padding: 50%;   /*我也不知道这个参数拿来干嘛 但确实会影响*/
 }
 
 /*广义位置信息*/
