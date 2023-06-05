@@ -63,7 +63,7 @@
     left: 1000px;
     height: 700px;
     width: 380px;
-    top: 250px;
+    top: 240px;
     background-color: #c6d5ff;;
 }
 
@@ -81,30 +81,30 @@
 }
 
 #exp {
-    top: 250px;
+    top: 240px;
     height: 300px;
     width: 850px;
     left: 100px;
-    /*background-color: #f5f2f2;*/
+    /*background-color: #deacac;*/
 }
 
 #friend_intro {
     height: 40px;
     width: 5px;
     background-color: #c52f2b;
-    top: 600px;
+    top: 560px;
 }
 
 #friend_intro_text {
     color: #c52f2b;
-    top: 588px;
+    top: 555px;
     left: 130px;
 }
 
 #friend {
-    top: 660px;
+    top: 630px;
     height: 1000px;
     width: 850px;
     left: 100px;
-    background-color: #f5f2f2;
+    /*background-color: #f5f2f2;*/
 }

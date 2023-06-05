@@ -52,7 +52,7 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.cidr.embedded.config&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.HTML&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -72,6 +72,9 @@
       <workItem from="1685864934809" duration="5881000" />
       <workItem from="1685876462133" duration="3620000" />
       <workItem from="1685880190975" duration="2196000" />
+      <workItem from="1685882522022" duration="7822000" />
+      <workItem from="1685891042491" duration="863000" />
+      <workItem from="1685939737886" duration="1392000" />
     </task>
     <servers />
   </component>
