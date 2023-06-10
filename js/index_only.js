@@ -8,9 +8,10 @@ function showTime() {
     month += 1;
     let day = date.getDate();
 
-    document.getElementById('time').innerHTML = "&nbsp;&nbsp;UTC:&nbsp;" + hours + ":" + minutes + ":" + seconds;
+    document.getElementById('time').innerHTML = "&nbsp;&nbsp;UTC:&nbsp;" + hours + ":" + minutes + ":" + ((seconds < 10) ? "0" : "") + seconds;
     document.getElementById('dating').innerHTML = "&nbsp;&nbsp;" + year + "年" + month + "月" + day + "日";
 }
+
 /*
 * */
 
