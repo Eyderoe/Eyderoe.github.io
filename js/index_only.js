@@ -12,7 +12,11 @@ function showTime() {
     document.getElementById('dating').innerHTML = "&nbsp;&nbsp;" + year + "年" + month + "月" + day + "日";
 }
 
-/*
-* */
+function checkData() {
+    let today = new Date();
+    if (today.getMonth() === 5 && today.getDay() === 11) {
+        document.getElementById("close").style.display = "inline-block";
+    }
+}
 
 setInterval(showTime, 1000)

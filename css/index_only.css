@@ -1,4 +1,9 @@
-@font-face {
-    font-family: font_echo;
-    src: url('../resource/fonts/Sitka.ttc');
+#close{
+    display: none;
+    top: 0;
+    left: 20px;
+    width: 600px;
+    height: 500px;
+    background-color: #5e59ff;
+    z-index: 4;
 }
