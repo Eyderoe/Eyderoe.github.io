@@ -7,7 +7,7 @@
 
 /*矩形框*/
 .roundedRectangle {
-    width: auto;
+    width: 0;   /*这个很奇怪，auto的效果和0一样，不知道手机端看怎么样*/
     height: 700px;
     background-color: rgba(255, 255, 255, 0.65);
     border-radius: 20px;
