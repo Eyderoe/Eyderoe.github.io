@@ -24,9 +24,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -55,7 +55,7 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.HTML&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.customizations&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -101,6 +101,19 @@
       <workItem from="1686452191703" duration="217000" />
       <workItem from="1686473574347" duration="31000" />
       <workItem from="1686491858078" duration="7430000" />
+      <workItem from="1686543775496" duration="2007000" />
+      <workItem from="1686565349923" duration="595000" />
+      <workItem from="1686577282827" duration="7000" />
+      <workItem from="1686666646727" duration="170000" />
+      <workItem from="1686743808227" duration="506000" />
+      <workItem from="1686744483819" duration="308000" />
+      <workItem from="1686744822420" duration="241000" />
+      <workItem from="1686745235111" duration="222000" />
+      <workItem from="1686747869540" duration="259000" />
+      <workItem from="1686750951256" duration="23000" />
+      <workItem from="1686752386000" duration="1227000" />
+      <workItem from="1686754187628" duration="2345000" />
+      <workItem from="1686758052307" duration="146000" />
     </task>
     <servers />
   </component>

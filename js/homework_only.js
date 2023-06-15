@@ -25,3 +25,10 @@ function reAudio(name) {
         currentAudio.currentTime = 0;
     }
 }
+
+function changeColor(){
+    const randomColor = Math.floor(Math.random()*16777215).toString(16)
+    document.querySelector('#rubbish').style.backgroundColor="#"+randomColor;
+}
+
+setInterval(changeColor,1000)
