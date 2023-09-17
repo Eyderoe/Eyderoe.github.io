@@ -12,7 +12,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87e73041-dcda-4d89-b540-1e3269232e32" name="变更" comment="" />
+    <list default="true" id="87e73041-dcda-4d89-b540-1e3269232e32" name="变更" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/full_demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/full_demo.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -114,6 +118,14 @@
       <workItem from="1686752386000" duration="1227000" />
       <workItem from="1686754187628" duration="2345000" />
       <workItem from="1686758052307" duration="146000" />
+      <workItem from="1686793444586" duration="48000" />
+      <workItem from="1687166659177" duration="212000" />
+      <workItem from="1687167165944" duration="168000" />
+      <workItem from="1687239563862" duration="23000" />
+      <workItem from="1687259732741" duration="3000" />
+      <workItem from="1687318803401" duration="32000" />
+      <workItem from="1687340647907" duration="202000" />
+      <workItem from="1694965150797" duration="355000" />
     </task>
     <servers />
   </component>
