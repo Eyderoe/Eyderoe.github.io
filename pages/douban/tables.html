@@ -1,0 +1,2507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>豆瓣电影系统</title>
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/cssfamily=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this page -->
+  <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">豆瓣电影系统<sup>2</sup></div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>首页</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+     <!-- Heading -->
+      <div class="sidebar-heading">
+        数据表
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link" href="time_t.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>时间分析表</span></a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="Rate.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>评分分析表</span></a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="type.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>类型分析表</span></a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="map.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>地图分析表</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        插件
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>页面</span>
+        </a>
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">登录页面:</h6>
+            <a class="collapse-item" href="login.html">登录</a>
+            <a class="collapse-item" href="register.html">注册</a>
+        </div>
+        </div>
+      </li>
+
+
+
+      <!-- Nav Item - Tables -->
+      <li class="nav-item active">
+        <a class="nav-link" href="tables.html">
+          <i class="fas fa-fw fa-table"></i>
+          <span>表格</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+          <!-- Sidebar Toggle (Topbar) -->
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+
+
+          <!-- Topbar Navbar -->
+          <ul class="navbar-nav ml-auto">
+
+            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+            <li class="nav-item dropdown no-arrow d-sm-none">
+              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-search fa-fw"></i>
+              </a>
+              <!-- Dropdown - Messages -->
+              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                <form class="form-inline mr-auto w-100 navbar-search">
+                  <div class="input-group">
+                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                      <button class="btn btn-primary" type="button">
+                        <i class="fas fa-search fa-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </li>
+
+
+
+
+            <div class="topbar-divider d-none d-sm-block"></div>
+
+            <!-- Nav Item - User Information -->
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">仙桃梦幻联动组</span>
+                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+              </a>
+              <!-- Dropdown - User Information -->
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Profile
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Settings
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Activity Log
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
+                </a>
+              </div>
+            </li>
+
+          </ul>
+
+        </nav>
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <h1 class="h3 mb-2 text-gray-800">表格</h1>
+          <p class="mb-4">以下是豆瓣电影Top250具体信息.</p>
+
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">豆瓣电影Top250</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>序号</th>
+                      <th>电影链接</th>
+                      <th>影片中文名</th>
+                      <th>影片外国名</th>
+                      <th>评分</th>
+                      <th>评价数</th>
+                        <th>相关信息</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>序号</th>
+                      <th>电影链接</th>
+                      <th>影片中文名</th>
+                      <th>影片外国名</th>
+                      <th>评分</th>
+                      <th>评价数</th>
+                        <th>相关信息</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+<td><a href="https://movie.douban.com/subject/1292052/">https://movie.douban.com/subject/1292052/</a></td>
+                      <td>肖申克的救赎</td>
+                      <td>The Shawshank Redemption</td>
+                      <td>9.7</td>
+                      <td>2942167</td>
+                      <td>导演: 弗兰克·德拉邦特 Frank Darabont主演: 蒂姆·罗宾斯 Tim Robbins /... 1994/美国/犯罪 剧情</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+<td><a href="https://movie.douban.com/subject/1291546/">https://movie.douban.com/subject/1291546/</a></td>
+                      <td>霸王别姬</td>
+                      <td></td>
+                      <td>9.6</td>
+                      <td>2173601</td>
+                      <td>导演: 陈凯歌 Kaige Chen主演: 张国荣 Leslie Cheung / 张丰毅 Fengyi Zha... 1993/中国大陆 中国香港/剧情 爱情 同性</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+<td><a href="https://movie.douban.com/subject/1292720/">https://movie.douban.com/subject/1292720/</a></td>
+                      <td>阿甘正传</td>
+                       <td>Forrest Gump</td>
+                      <td>9.5</td>
+                      <td>2193050</td>
+                      <td>导演: 罗伯特·泽米吉斯 Robert Zemeckis主演: 汤姆·汉克斯 Tom Hanks / ... 1994/美国/剧情 爱情</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+<td><a href="https://movie.douban.com/subject/1292722/">https://movie.douban.com/subject/1292722/</a></td>
+                      <td>泰坦尼克号</td>
+                      <td>Titanic</td>
+                      <td>9.5</td>
+                      <td>2226706</td>
+                        <td>导演: 詹姆斯·卡梅隆 James Cameron主演: 莱昂纳多·迪卡普里奥 Leonardo... 1997/美国 墨西哥/剧情 爱情 灾难</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+<td><a href="https://movie.douban.com/subject/1295644/">https://movie.douban.com/subject/1295644/</a></td>
+                      <td>这个杀手不太冷</td>
+                      <td>Léon</td>
+                      <td>9.4</td>
+                      <td>2325208</td>
+                        <td>导演: 吕克·贝松 Luc Besson主演: 让·雷诺 Jean Reno / 娜塔莉·波特曼 ... 1994/法国 美国/剧情 动作 犯罪</td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+<td><a href="https://movie.douban.com/subject/1291561/">https://movie.douban.com/subject/1291561/</a></td>
+                      <td>千与千寻</td>
+                      <td>千と千尋の神隠し</td>
+                      <td>9.4</td>
+                      <td>2276706</td>
+                        <td>导演: 宫崎骏 Hayao Miyazaki主演: 柊瑠美 Rumi Hragi / 入野自由 Miy... 2001/日本/剧情 动画 奇幻</td>
+                    </tr>
+                    <tr>
+                      <td>7</td>
+<td><a href="https://movie.douban.com/subject/1292063/">https://movie.douban.com/subject/1292063/</a></td>
+                      <td>美丽人生</td>
+                      <td>La vita è bella</td>
+                      <td>9.5</td>
+                      <td>1345183</td>
+                        <td>导演: 罗伯托·贝尼尼 Roberto Benigni主演: 罗伯托·贝尼尼 Roberto Beni... 1997/意大利/剧情 喜剧 爱情 战争</td>
+                    </tr>
+                    <tr>
+                      <td>8</td>
+<td><a href="https://movie.douban.com/subject/1889243/">https://movie.douban.com/subject/1889243/</a></td>
+                      <td>星际穿越</td>
+                      <td>Interstellar</td>
+                      <td>9.4</td>
+                      <td>1881945</td>
+                        <td>导演: 克里斯托弗·诺兰 Christopher Nolan主演: 马修·麦康纳 Matthew Mc... 2014/美国 英国 加拿大/剧情 科幻 冒险</td>
+                    </tr>
+                    <tr>
+                      <td>9</td>
+<td><a href="https://movie.douban.com/subject/3541415/">https://movie.douban.com/subject/3541415/</a></td>
+                      <td>盗梦空间</td>
+                      <td>Inception</td>
+                      <td>9.4</td>
+                      <td>2097290</td>
+                        <td>导演: 克里斯托弗·诺兰 Christopher Nolan主演: 莱昂纳多·迪卡普里奥 Le... 2010/美国 英国/剧情 科幻 悬疑 冒险</td>
+                    </tr>
+                    <tr>
+                      <td>10</td>
+<td><a href="https://movie.douban.com/subject/1295124/">https://movie.douban.com/subject/1295124/</a></td>
+                      <td>辛德勒的名单</td>
+                      <td>Schindler's List</td>
+                      <td>9.5</td>
+                      <td>1135921</td>
+                        <td>导演: 史蒂文·斯皮尔伯格 Steven Spielberg主演: 连姆·尼森 Liam Neeson... 1993/美国/剧情 历史 战争</td>
+                    </tr>
+                    <tr>
+                      <td>11</td>
+<td><a href="https://movie.douban.com/subject/1292064/">https://movie.douban.com/subject/1292064/</a></td>
+                      <td>楚门的世界</td>
+                      <td>The Truman Show</td>
+                      <td>9.4</td>
+                      <td>1745133</td>
+                        <td>导演: 彼得·威尔 Peter Weir主演: 金·凯瑞 Jim Carrey / 劳拉·琳妮 Lau... 1998/美国/剧情 科幻</td>
+                    </tr>
+                    <tr>
+                      <td>12</td>
+<td><a href="https://movie.douban.com/subject/3011091/">https://movie.douban.com/subject/3011091/</a></td>
+                      <td>忠犬八公的故事</td>
+                      <td>Hachi: A Dog's Tale</td>
+                      <td>9.4</td>
+                      <td>1415582</td>
+                        <td>导演: 莱塞·霍尔斯道姆 Lasse Hallstrm主演: 理查·基尔 Richard Ger... 2009/美国 英国/剧情</td>
+                    </tr>
+                    <tr>
+                      <td>13</td>
+<td><a href="https://movie.douban.com/subject/1292001/">https://movie.douban.com/subject/1292001/</a></td>
+                      <td>海上钢琴师</td>
+                      <td>La leggenda del pianista sull'oceano</td>
+                      <td>9.3</td>
+                      <td>1700647</td>
+                        <td>导演: 朱塞佩·托纳多雷 Giuseppe Tornatore主演: 蒂姆·罗斯 Tim Roth / ... 1998/意大利/剧情 音乐</td>
+                    </tr>
+                    <tr>
+                      <td>14</td>
+<td><a href="https://movie.douban.com/subject/3793023/">https://movie.douban.com/subject/3793023/</a></td>
+                      <td>三傻大闹宝莱坞</td>
+                      <td>3 Idiots</td>
+                      <td>9.2</td>
+                      <td>1883858</td>
+                        <td>导演: 拉库马·希拉尼 Rajkumar Hirani主演: 阿米尔·汗 Aamir Khan / 卡... 2009/印度/剧情 喜剧 爱情 歌舞</td>
+                    </tr>
+                    <tr>
+                      <td>15</td>
+<td><a href="https://movie.douban.com/subject/1291549/">https://movie.douban.com/subject/1291549/</a></td>
+                      <td>放牛班的春天</td>
+                      <td>Les choristes</td>
+                      <td>9.3</td>
+                      <td>1331513</td>
+                        <td>导演: 克里斯托夫·巴拉蒂 Christophe Barratier主演: 让-巴蒂斯特·莫尼... 2004/法国 瑞士 德国/剧情 音乐</td>
+                    </tr>
+                    <tr>
+                      <td>16</td>
+<td><a href="https://movie.douban.com/subject/2131459/">https://movie.douban.com/subject/2131459/</a></td>
+                      <td>机器人总动员</td>
+                      <td>WALL·E</td>
+                      <td>9.3</td>
+                      <td>1335510</td>
+                        <td>导演: 安德鲁·斯坦顿 Andrew Stanton主演: 本·贝尔特 Ben Burtt / 艾丽... 2008/美国/科幻 动画 冒险</td>
+                    </tr>
+                    <tr>
+                      <td>17</td>
+<td><a href="https://movie.douban.com/subject/25662329/">https://movie.douban.com/subject/25662329/</a></td>
+                      <td>疯狂动物城</td>
+                      <td>Zootopia</td>
+                      <td>9.2</td>
+                        <td>1974426</td>
+                      <td>导演: 拜伦·霍华德 Byron Howard / 瑞奇·摩尔 Rich Moore主演: 金妮弗·... 2016/美国/喜剧 动画 冒险</td>
+                    </tr>
+                    <tr>
+                      <td>18</td>
+<td><a href="https://movie.douban.com/subject/1307914/">https://movie.douban.com/subject/1307914/</a></td>
+                      <td>无间道</td>
+                      <td>無間道</td>
+                      <td>9.3</td>
+                      <td>1387560</td>
+                        <td>导演: 刘伟强 / 麦兆辉主演: 刘德华 Andy Lau / 梁朝伟 Tony Leung Chiu W... 2002/中国香港/剧情 犯罪 惊悚</td>
+                    </tr>
+                    <tr>
+                      <td>19</td>
+<td><a href="https://movie.douban.com/subject/1296141/">https://movie.douban.com/subject/1296141/</a></td>
+                      <td>控方证人</td>
+                      <td>Witness for the Prosecution</td>
+                      <td>9.6</td>
+                      <td>577561</td>
+                        <td>导演: 比利·怀尔德 Billy Wilder主演: 泰隆·鲍华 Tyrone Power / 玛琳·... 1957/美国/剧情 犯罪 悬疑</td>
+                    </tr>
+                    <tr>
+                      <td>20</td>
+<td><a href="https://movie.douban.com/subject/1292213/">https://movie.douban.com/subject/1292213/</a></td>
+                      <td>大话西游之大圣娶亲</td>
+                      <td>西遊記大結局之仙履奇緣</td>
+                      <td>9.2</td>
+                      <td>1554694</td>
+                        <td>导演: 刘镇伟 Jeffrey Lau主演: 周星驰 Stephen Chow / 吴孟达 Man Tat Ng... 1995/中国香港 中国大陆/喜剧 爱情 奇幻 古装</td>
+                    </tr>
+                    <tr>
+                      <td>21</td>
+<td><a href="https://movie.douban.com/subject/5912992/">https://movie.douban.com/subject/5912992/</a></td>
+                      <td>熔炉</td>
+                      <td></td>
+                      <td>9.4</td>
+                      <td>944042</td>
+                        <td>导演: 黄东赫 Dong-hyuk Hwang主演: 孔侑 Yoo Gong / 郑有美 Yu-mi Jung /... 2011/韩国/剧情</td>
+                    </tr>
+                    <tr>
+                      <td>22</td>
+<td><a href="https://movie.douban.com/subject/1291841/">https://movie.douban.com/subject/1291841/</a></td>
+                      <td>教父</td>
+                        <td>The Godfather</td>
+                      <td>9.3</td>
+                      <td>983657</td>
+                      <td>导演: 弗朗西斯·福特·科波拉 Francis Ford Coppola主演: 马龙·白兰度 M... 1972/美国/剧情 犯罪</td>
+                    </tr>
+                    <tr>
+                      <td>23</td>
+<td><a href="https://movie.douban.com/subject/6786002/">https://movie.douban.com/subject/6786002/</a></td>
+                      <td>触不可及</td>
+                      <td>Intouchables</td>
+                      <td>9.3</td>
+                      <td>1136990</td>
+                        <td>导演: 奥利维·那卡什 Olivier Nakache / 艾力克·托兰达 Eric Toledano主... 2011/法国/剧情 喜剧</td>
+                    </tr>
+                    <tr>
+                      <td>24</td>
+<td><a href="https://movie.douban.com/subject/1849031/">https://movie.douban.com/subject/1849031/</a></td>
+                      <td>当幸福来敲门</td>
+                      <td>The Pursuit of Happyness</td>
+                      <td>9.2</td>
+                      <td>1541024</td>
+                        <td>导演: 加布里尔·穆奇诺 Gabriele Muccino主演: 威尔·史密斯 Will Smith ... 2006/美国/剧情 传记 家庭</td>
+                    </tr>
+                    <tr>
+                      <td>25</td>
+<td><a href="https://movie.douban.com/subject/1293172/">https://movie.douban.com/subject/1293172/</a></td>
+                      <td>末代皇帝</td>
+                      <td>The Last Emperor</td>
+                      <td>9.3</td>
+                      <td>902684</td>
+                        <td>导演: 贝纳尔多·贝托鲁奇 Bernardo Bertolucci主演: 尊龙 John Lone / 陈... 1987/英国 意大利 中国大陆 法国/剧情 传记 历史</td>
+                    </tr>
+                    <tr>
+                      <td>26</td>
+<td><a href="https://movie.douban.com/subject/20495023/">https://movie.douban.com/subject/20495023/</a></td>
+                      <td>寻梦环游记</td>
+                      <td>Coco</td>
+                      <td>9.1</td>
+                      <td>1714367</td>
+                        <td>导演: 李·昂克里奇 Lee Unkrich / 阿德里安·莫利纳 Adrian Molina主演: ... 2017/美国/喜剧 动画 奇幻 音乐</td>
+                    </tr>
+                    <tr>
+                      <td>27</td>
+<td><a href="https://movie.douban.com/subject/1291560/">https://movie.douban.com/subject/1291560/</a></td>
+                      <td>龙猫</td>
+                      <td>となりのトトロ</td>
+                      <td>9.2</td>
+                      <td>1284311</td>
+                        <td>导演: 宫崎骏 Hayao Miyazaki主演: 日高法子 Noriko Hidaka / 坂本千夏 Ch... 1988/日本/动画 奇幻 冒险</td>
+                    </tr>
+                    <tr>
+                      <td>28</td>
+<td><a href="https://movie.douban.com/subject/3319755/">https://movie.douban.com/subject/3319755/</a></td>
+                      <td>怦然心动</td>
+                      <td>Flipped</td>
+                      <td>9.1</td>
+                      <td>1859680</td>
+                        <td>导演: 罗伯·莱纳 Rob Reiner主演: 玛德琳·卡罗尔 Madeline Carroll / 卡... 2010/美国/剧情 喜剧 爱情</td>
+                    </tr>
+                    <tr>
+                      <td>29</td>
+<td><a href="https://movie.douban.com/subject/1292365/">https://movie.douban.com/subject/1292365/</a></td>
+                      <td>活着</td>
+                      <td></td>
+                      <td>9.3</td>
+                      <td>861048</td>
+                      <td>导演: 张艺谋 Yimou Zhang主演: 葛优 You Ge / 巩俐 Li Gong / 姜武 Wu Jiang 1994/中国大陆 中国香港/剧情 历史 家庭</td>
+                    </tr>
+                    <tr>
+                      <td>30</td>
+<td><a href="https://movie.douban.com/subject/1295038/">https://movie.douban.com/subject/1295038/</a></td>
+                      <td>哈利·波特与魔法石</td>
+                      <td>Harry Potter and the Sorcerer's Stone</td>
+                      <td>9.2</td>
+                      <td>1215464</td>
+                        <td>导演: Chris Columbus主演: Daniel Radcliffe / Emma Watson / Rupert Grint 2001/美国 英国/奇幻 冒险</td>
+                    </tr>
+                    <tr>
+                      <td>31</td>
+<td><a href="https://movie.douban.com/subject/1851857/">https://movie.douban.com/subject/1851857/</a></td>
+                      <td>蝙蝠侠：黑暗骑士</td>
+                      <td>The Dark Knight</td>
+                      <td>9.2</td>
+                      <td>1078288</td>
+                        <td>导演: 克里斯托弗·诺兰 Christopher Nolan主演: 克里斯蒂安·贝尔 Christ... 2008/美国 英国/剧情 动作 科幻 犯罪 惊悚</td>
+                    </tr>
+                    <tr>
+                      <td>32</td>
+<td><a href="https://movie.douban.com/subject/1291552/">https://movie.douban.com/subject/1291552/</a></td>
+                      <td>指环王3：王者无敌</td>
+                      <td>The Lord of the Rings: The Return of the King</td>
+                      <td>9.3</td>
+                      <td>816195</td>
+                        <td>导演: 彼得·杰克逊 Peter Jackson主演: 伊利亚·伍德 Elijah Wood / 西恩... 2003/美国 新西兰/剧情 动作 奇幻 冒险</td>
+                    </tr>
+                    <tr>
+                      <td>33</td>
+<td><a href="https://movie.douban.com/subject/26752088/">https://movie.douban.com/subject/26752088/</a></td>
+                      <td>我不是药神</td>
+                      <td></td>
+                      <td>9</td>
+                      <td>2135566</td>
+                        <td>导演: 文牧野 Muye Wen主演: 徐峥 Zheng Xu / 王传君 Chuanjun Wang / 周... 2018/中国大陆/剧情 喜剧</td>
+                    </tr>
+                    <tr>
+                      <td>34</td>
+<td><a href="https://movie.douban.com/subject/1300267/">https://movie.douban.com/subject/1300267/</a></td>
+                      <td>乱世佳人</td>
+                      <td>Gone with the Wind</td>
+                      <td>9.3</td>
+                      <td>702450</td>
+                        <td>导演: 维克多·弗莱明 Victor Fleming / 乔治·库克 George Cukor主演: 费... 1939/美国/剧情 历史 爱情 战争</td>
+                    </tr>
+                    <tr>
+                      <td>35</td>
+<td><a href="https://movie.douban.com/subject/2129039/">https://movie.douban.com/subject/2129039/</a></td>
+                      <td>飞屋环游记</td>
+                      <td>Up</td>
+                      <td>9.1</td>
+                      <td>1346324</td>
+                        <td>导演: 彼特·道格特 Pete Docter / 鲍勃·彼德森 Bob Peterson主演: 爱德... 2009/美国/剧情 喜剧 动画 冒险</td>
+                    </tr>
+                    <tr>
+                      <td>36</td>
+<td><a href="https://movie.douban.com/subject/21937452/">https://movie.douban.com/subject/21937452/</a></td>
+                      <td>素媛</td>
+                      <td></td>
+                      <td>9.3</td>
+                      <td>697774</td>
+                        <td>导演: 李濬益 Jun-ik Lee主演: 薛景求 Kyung-gu Sol / 严志媛 Ji-won Uhm ... 2013/韩国/剧情</td>
+                    </tr>
+                    <tr>
+                      <td>37</td>
+<td><a href="https://movie.douban.com/subject/1308807/">https://movie.douban.com/subject/1308807/</a></td>
+                      <td>哈尔的移动城堡</td>
+                      <td>ハウルの動く城</td>
+                      <td>9.1</td>
+                      <td>1043732</td>
+                        <td>导演: 宫崎骏 Hayao Miyazaki主演: 倍赏千惠子 Chieko Baish / 木村拓... 2004/日本/动画 奇幻 冒险</td>
+                    </tr>
+                    <tr>
+                      <td>38</td>
+<td><a href="https://movie.douban.com/subject/1293182/">https://movie.douban.com/subject/1293182/</a></td>
+                      <td>十二怒汉</td>
+                      <td>12 Angry Men</td>
+                      <td>9.4</td>
+                      <td>500380</td>
+                        <td>导演: Sidney Lumet主演: 亨利·方达 Henry Fonda / 马丁·鲍尔萨姆 Marti... 1957/美国/剧情</td>
+                    </tr>
+                    <tr>
+                      <td>39</td>
+<td><a href="https://movie.douban.com/subject/30170448/">https://movie.douban.com/subject/30170448/</a></td>
+                      <td>何以为家</td>
+                      <td></td>
+                      <td>9.1</td>
+                      <td>1060162</td>
+                        <td>导演: 娜丁·拉巴基 Nadine Labaki主演: 扎因·拉费阿 Zain al-Rafeea / ... 2018/黎巴嫩 美国 法国 塞浦路斯 卡塔尔 英国/剧情</td>
+                    </tr>
+                    <tr>
+                      <td>40</td>
+<td><a href="https://movie.douban.com/subject/26387939/">https://movie.douban.com/subject/26387939/</a></td>
+                      <td>摔跤吧！爸爸</td>
+                      <td>Dangal</td>
+                      <td>9</td>
+                      <td>1590451</td>
+                        <td>导演: 涅提·蒂瓦里 Nitesh Tiwari主演: 阿米尔·汗 Aamir Khan / 法缇玛... 2016/印度/剧情 传记 运动 家庭</td>
+                    </tr>
+                    <tr>
+                      <td>41</td>
+<td><a href="https://movie.douban.com/subject/3742360/">https://movie.douban.com/subject/3742360/</a></td>
+                      <td>让子弹飞</td>
+                      <td></td>
+                      <td>9</td>
+                      <td>1725033</td>
+                        <td>导演: 姜文 Wen Jiang主演: 姜文 Wen Jiang / 葛优 You Ge / 周润发 Yun-F... 2010/中国大陆 中国香港/剧情 喜剧 动作 西部</td>
+                    </tr>
+                    <tr>
+                      <td>42</td>
+<td><a href="https://movie.douban.com/subject/1305487/">https://movie.douban.com/subject/1305487/</a></td>
+                      <td>猫鼠游戏</td>
+                      <td>Catch Me If You Can</td>
+                      <td>9.1</td>
+                      <td>1047161</td>
+                        <td>导演: 史蒂文·斯皮尔伯格 Steven Spielberg主演: 莱昂纳多·迪卡普里奥 L... 2002/美国 加拿大/传记 犯罪 剧情</td>
+                    </tr>
+                    <tr>
+                      <td>43</td>
+<td><a href="https://movie.douban.com/subject/1291583/">https://movie.douban.com/subject/1291583/</a></td>
+                      <td>天空之城</td>
+                      <td>天空の城ラピュタ</td>
+                      <td>9.2</td>
+                      <td>890379</td>
+                        <td>导演: 宫崎骏 Hayao Miyazaki主演: 田中真弓 Mayumi Tanaka / 横泽启子 Ke... 1986/日本/动画 奇幻 冒险</td>
+                    </tr>
+                    <tr>
+                      <td>44</td>
+<td><a href="https://movie.douban.com/subject/1291858/">https://movie.douban.com/subject/1291858/</a></td>
+                      <td>鬼子来了</td>
+                       <td></td>
+                      <td>9.3</td>
+                      <td>636716</td>
+                      <td>导演: 姜文 Wen Jiang主演: 姜文 Wen Jiang / 香川照之 Teruyuki Kagawa /... 2000/中国大陆/剧情 喜剧</td>
+                    </tr>
+                    <tr>
+                      <td>45</td>
+<td><a href="https://movie.douban.com/subject/1929463/">https://movie.douban.com/subject/1929463/</a></td>
+                      <td>少年派的奇幻漂流</td>
+                      <td>Life of Pi</td>
+                      <td>9.1</td>
+                      <td>1366620</td>
+                        <td>导演: 李安 Ang Lee主演: 苏拉·沙玛 Suraj Sharma / 伊尔凡·可汗 Irrfan... 2012/美国 中国台湾 英国 加拿大/剧情 奇幻 冒险</td>
+                    </tr>
+                    <tr>
+                      <td>46</td>
+<td><a href="https://movie.douban.com/subject/25958717/">https://movie.douban.com/subject/25958717/</a></td>
+                      <td>海蒂和爷爷</td>
+                      <td>Heidi</td>
+                      <td>9.3</td>
+                      <td>633073</td>
+                        <td>导演: 阿兰·葛斯彭纳 Alain Gsponer主演: 阿努克·斯特芬 Anuk Steffen /... 2015/德国 瑞士/剧情 冒险 家庭</td>
+                    </tr>
+                    <tr>
+                      <td>47</td>
+<td><a href="https://movie.douban.com/subject/1296736/">https://movie.douban.com/subject/1296736/</a></td>
+                      <td>钢琴家</td>
+                      <td>The Pianist</td>
+                      <td>9.3</td>
+                      <td>653721</td>
+                        <td>导演: 罗曼·波兰斯基 Roman Polanski主演: 艾德里安·布洛迪 Adrien Brod... 2002/英国 法国 波兰 德国/剧情 传记 战争 音乐</td>
+                    </tr>
+                    <tr>
+                      <td>48</td>
+<td><a href="https://movie.douban.com/subject/1299398/">https://movie.douban.com/subject/1299398/</a></td>
+                      <td>大话西游之月光宝盒</td>
+                      <td>西遊記第壹佰零壹回之月光寶盒</td>
+                      <td>9</td>
+                      <td>1237950</td>
+                        <td>导演: 刘镇伟 Jeffrey Lau主演: 周星驰 Stephen Chow / 吴孟达 Man Tat Ng... 1995/中国香港 中国大陆/喜剧 爱情 奇幻 古装</td>
+                    </tr>
+                    <tr>
+                      <td>49</td>
+<td><a href="https://movie.douban.com/subject/1291572/">https://movie.douban.com/subject/1291572/</a></td>
+                      <td>指环王2：双塔奇兵</td>
+                      <td>The Lord of the Rings: The Two Towers</td>
+                      <td>9.2</td>
+                      <td>765828</td>
+                        <td>导演: 彼得·杰克逊 Peter Jackson主演: 伊利亚·伍德 Elijah Wood / 西恩... 2002/美国 新西兰/剧情 动作 奇幻 冒险</td>
+                    </tr>
+                    <tr>
+                      <td>50</td>
+<td><a href="https://movie.douban.com/subject/1298624/">https://movie.douban.com/subject/1298624/</a></td>
+                      <td>闻香识女人</td>
+                      <td>Scent of a Woman</td>
+                      <td>9.1</td>
+                      <td>902316</td>
+                        <td>导演: 马丁·布莱斯 Martin Brest主演: 阿尔·帕西诺 Al Pacino / 克里斯... 1992/美国/剧情</td>
+                    </tr>
+                    <tr>
+                      <td>51</td>
+<td><a href="https://movie.douban.com/subject/1291548/">https://movie.douban.com/subject/1291548/</a></td>
+                      <td>死亡诗社</td>
+                      <td>Dead Poets Society</td>
+                      <td>9.2</td>
+                      <td>742181</td>
+                        <td>导演: 彼得·威尔 Peter Weir主演: 罗宾·威廉姆斯 Robin Williams / 罗伯... 1989/美国/剧情</td>
+                    </tr>
+                    <tr>
+                      <td>52</td>
+<td><a href="https://movie.douban.com/subject/27060077/">https://movie.douban.com/subject/27060077/</a></td>
+                      <td>绿皮书</td>
+                      <td>Green Book</td>
+                      <td>8.9</td>
+                      <td>1676644</td>
+                        <td>导演: 彼得·法雷里 Peter Farrelly主演: 维果·莫腾森 Viggo Mortensen /... 2018/美国 中国大陆/剧情 喜剧 传记 音乐</td>
+                    </tr>
+                    <tr>
+                      <td>53</td>
+<td><a href="https://movie.douban.com/subject/1293839/">https://movie.douban.com/subject/1293839/</a></td>
+                      <td>罗马假日</td>
+                      <td>Roman Holiday</td>
+                      <td>9.1</td>
+                      <td>962356</td>
+                        <td>导演: 威廉·惠勒 William Wyler主演: 奥黛丽·赫本 Audrey Hepburn / 格... 1953/美国/喜剧 剧情 爱情</td>
+                    </tr>
+                    <tr>
+                      <td>54</td>
+<td><a href="https://movie.douban.com/subject/1418019/">https://movie.douban.com/subject/1418019/</a></td>
+                      <td>大闹天宫</td>
+                      <td></td>
+                      <td>9.4</td>
+                      <td>446411</td>
+                        <td>导演: 万籁鸣 Laiming Wan主演: 邱岳峰 Yuefeng Qiu / 富润生 Runsheng Fu... 1961(中国大陆) / 1964(中国大陆) / 1978(中国大陆)/中国大陆/剧情 动画 奇幻 古装</td>
+                    </tr>
+                    <tr>
+                      <td>55</td>
+<td><a href="https://movie.douban.com/subject/1291828/">https://movie.douban.com/subject/1291828/</a></td>
+                      <td>天堂电影院</td>
+                      <td>Nuovo Cinema Paradiso</td>
+                      <td>9.2</td>
+                      <td>686479</td>
+                        <td>导演: 朱塞佩·托纳多雷 Giuseppe Tornatore主演: 菲利普·努瓦雷 Philipp... 1988/意大利 法国/剧情 爱情</td>
+                    </tr>
+                    <tr>
+                      <td>56</td>
+<td><a href="https://movie.douban.com/subject/1291571/">https://movie.douban.com/subject/1291571/</a></td>
+                      <td>指环王1：护戒使者</td>
+                      <td>The Lord of the Rings: The Fellowship of the Ring</td>
+                      <td>9.1</td>
+                      <td>860594</td>
+                        <td>导演: 彼得·杰克逊 Peter Jackson主演: 伊利亚·伍德 Elijah Wood / 西恩... 2001/新西兰 美国/剧情 动作 奇幻 冒险</td>
+                    </tr>
+                    <tr>
+                      <td>57</td>
+<td><a href="https://movie.douban.com/subject/1291843/">https://movie.douban.com/subject/1291843/</a></td>
+                      <td>黑客帝国</td>
+                      <td>The Matrix</td>
+                      <td>9.1</td>
+                      <td>849965</td>
+                        <td>导演: 安迪·沃卓斯基 Andy Wachowski / 拉娜·沃卓斯基 Lana Wachowski主... 1999/美国/动作 科幻</td>
+                    </tr>
+                  <tr>
+                      <td>58</td>
+<td><a href="https://movie.douban.com/subject/1299131/">https://movie.douban.com/subject/1299131/</a></td>
+                      <td>教父2</td>
+                      <td>The Godfather: Part II</td>
+                      <td>9.3</td>
+                      <td>562432</td>
+                        <td>导演: 弗朗西斯·福特·科波拉 Francis Ford Coppola主演: 阿尔·帕西诺 A... 1974/美国/剧情 犯罪</td>
+                    </tr>
+                   <tr>
+                      <td>59</td>
+<td><a href="https://movie.douban.com/subject/1301753/">https://movie.douban.com/subject/1301753/</a></td>
+                      <td>狮子王</td>
+                      <td>The Lion King</td>
+                      <td>9.1</td>
+                      <td>856843</td>
+                        <td>导演: Roger Allers / 罗伯·明可夫 Rob Minkoff主演: 乔纳森·泰勒·托马... 1994/美国/动画 冒险 歌舞</td>
+                    </tr>
+                  <tr>
+                      <td>60</td>
+<td><a href="https://movie.douban.com/subject/21937445/">https://movie.douban.com/subject/21937445/</a></td>
+                      <td>辩护人</td>
+                      <td></td>
+                      <td>9.2</td>
+                      <td>596151</td>
+                        <td>导演: 杨宇硕 Woo-seok Yang主演: 宋康昊 Kang-ho Song / 金英爱 Yeong-ae... 2013/韩国/剧情</td>
+                    </tr>
+                  <tr>
+                      <td>61</td>
+<td><a href="https://movie.douban.com/subject/1291818/">https://movie.douban.com/subject/1291818/</a></td>
+                      <td>饮食男女</td>
+                      <td>飲食男女</td>
+                      <td>9.2</td>
+                      <td>631560</td>
+                        <td>导演: 李安 Ang Lee主演: 郎雄 Sihung Lung / 杨贵媚 Kuei-Mei Yang / 吴... 1994/中国台湾 美国/剧情 家庭</td>
+                    </tr><tr>
+                      <td>62</td>
+<td><a href="https://movie.douban.com/subject/1292000/">https://movie.douban.com/subject/1292000/</a></td>
+                      <td>搏击俱乐部</td>
+                      <td>Fight Club</td>
+                      <td>9</td>
+                      <td>858626</td>
+                        <td>导演: 大卫·芬奇 David Fincher主演: 爱德华·诺顿 Edward Norton / 布拉... 1999/美国/剧情 动作 悬疑 惊悚</td>
+                    </tr><tr>
+                      <td>63</td>
+<td><a href="https://movie.douban.com/subject/1485260/">https://movie.douban.com/subject/1485260/</a></td>
+                      <td>本杰明·巴顿奇事</td>
+                      <td>The Curious Case of Benjamin Button</td>
+                      <td>9</td>
+                      <td>998134</td>
+                        <td>导演: 大卫·芬奇 David Fincher主演: 凯特·布兰切特 Cate Blanchett / ... 2008/美国/剧情 爱情 奇幻</td>
+                    </tr><tr>
+                      <td>64</td>
+<td><a href="https://movie.douban.com/subject/1306029/">https://movie.douban.com/subject/1306029/</a></td>
+                      <td>美丽心灵</td>
+                      <td>A Beautiful Mind</td>
+                      <td>9.1</td>
+                      <td>779689</td>
+                        <td>导演: 朗·霍华德 Ron Howard主演: 罗素·克劳 Russell Crowe / 艾德·哈... 2001/美国/传记 剧情</td>
+                    </tr><tr>
+                      <td>65</td>
+<td><a href="https://movie.douban.com/subject/3008247/">https://movie.douban.com/subject/3008247/</a></td>
+                      <td>穿条纹睡衣的男孩</td>
+                      <td>The Boy in the Striped Pajamas</td>
+                      <td>9.2</td>
+                      <td>575642</td>
+                        <td>导演: 马克·赫尔曼 Mark Herman主演: 阿萨·巴特菲尔德 Asa Butterfield ... 2008/英国 美国/剧情 战争</td>
+                    </tr>
+                  <tr>
+                      <td>66</td>
+<td><a href="https://movie.douban.com/subject/1900841/">https://movie.douban.com/subject/1900841/</a></td>
+                      <td>窃听风暴</td>
+                      <td>Das Leben der Anderen</td>
+                      <td>9.2</td>
+                      <td>572532</td>
+                        <td>导演: 弗洛里安·亨克尔·冯·多纳斯马尔克 Florian Henckel von Donnersmarck&amp;n... 2006/德国/剧情 悬疑</td>
+                    </tr><tr>
+                      <td>67</td>
+<td><a href="https://movie.douban.com/subject/1292220/">https://movie.douban.com/subject/1292220/</a></td>
+                      <td>情书</td>
+                      <td>Love Letter</td>
+                      <td>8.9</td>
+                      <td>1132919</td>
+                        <td>导演: 岩井俊二 Shunji Iwai主演: 中山美穗 Miho Nakayama / 丰川悦司 Ets... 1995/日本/剧情 爱情</td>
+                    </tr><tr>
+                      <td>68</td>
+<td><a href="https://movie.douban.com/subject/1293350/">https://movie.douban.com/subject/1293350/</a></td>
+                      <td>两杆大烟枪</td>
+                      <td>Lock, Stock and Two Smoking Barrels</td>
+                      <td>9.1</td>
+                      <td>602868</td>
+                        <td>导演: 盖·里奇 Guy Ritchie主演: 杰森·弗莱明 Jason Flemyng / 德克斯特... 1998/英国/剧情 喜剧 犯罪</td>
+                    </tr><tr>
+                      <td>69</td>
+<td><a href="https://movie.douban.com/subject/1292402/">https://movie.douban.com/subject/1292402/</a></td>
+                      <td>西西里的美丽传说</td>
+                      <td>Malèna</td>
+                      <td>8.9</td>
+                      <td>989222</td>
+                        <td>导演: 朱塞佩·托纳多雷 Giuseppe Tornatore主演: 莫妮卡·贝鲁奇 Monica ... 2000/意大利 美国/剧情 战争 情色</td>
+                    </tr><tr>
+                      <td>70</td>
+<td><a href="https://movie.douban.com/subject/26580232/">https://movie.douban.com/subject/26580232/</a></td>
+                      <td>看不见的客人</td>
+                      <td>Contratiempo</td>
+                      <td>8.8</td>
+                      <td>1290248</td>
+                        <td>导演: 奥里奥尔·保罗 Oriol Paulo主演: 马里奥·卡萨斯 Mario Casas / 阿... 2016/西班牙/剧情 犯罪 悬疑 惊悚</td>
+                    </tr>
+                  <tr>
+                      <td>71</td>
+<td><a href="https://movie.douban.com/subject/1294408/">https://movie.douban.com/subject/1294408/</a></td>
+                      <td>音乐之声</td>
+                      <td>The Sound of Music</td>
+                      <td>9.1</td>
+                      <td>611911</td>
+                        <td>导演: 罗伯特·怀斯 Robert Wise主演: 朱莉·安德鲁斯 Julie Andrews / 克... 1965/美国/剧情 传记 爱情 歌舞</td>
+                    </tr><tr>
+                      <td>72</td>
+<td><a href="https://movie.douban.com/subject/1652587/">https://movie.douban.com/subject/1652587/</a></td>
+                      <td>阿凡达</td>
+                      <td>Avatar</td>
+                      <td>8.8</td>
+                      <td>1440399</td>
+                        <td>导演: 詹姆斯·卡梅隆 James Cameron主演: 萨姆·沃辛顿 Sam Worthington ... 2009/美国/动作 科幻 冒险</td>
+                    </tr><tr>
+                      <td>73</td>
+<td><a href="https://movie.douban.com/subject/1292849/">https://movie.douban.com/subject/1292849/</a></td>
+                      <td>拯救大兵瑞恩</td>
+                      <td>Saving Private Ryan</td>
+                      <td>9.1</td>
+                      <td>656552</td>
+                        <td>导演: 史蒂文·斯皮尔伯格 Steven Spielberg主演: 汤姆·汉克斯 Tom Hanks... 1998/美国/剧情 战争</td>
+                    </tr><tr>
+                      <td>74</td>
+<td><a href="https://movie.douban.com/subject/3011235/">https://movie.douban.com/subject/3011235/</a></td>
+                      <td>哈利·波特与死亡圣器(下)</td>
+                      <td>Harry Potter and the Deathly Hallows: Part 2</td>
+                      <td>9</td>
+                      <td>846687</td>
+                        <td>导演: 大卫·叶茨 David Yates主演: 丹尼尔·雷德克里夫 Daniel Radcliffe... 2011/美国 英国/奇幻 冒险</td>
+                    </tr><tr>
+                      <td>75</td>
+<td><a href="https://movie.douban.com/subject/1292224/">https://movie.douban.com/subject/1292224/</a></td>
+                      <td>飞越疯人院</td>
+                      <td>One Flew Over the Cuckoo's Nest</td>
+                      <td>9.1</td>
+                      <td>554007</td>
+                        <td>导演: 米洛斯·福尔曼 Milo Forman主演: 杰克·尼科尔森 Jack Nichols... 1975/美国/剧情</td>
+                    </tr>
+                  <tr>
+                      <td>76</td>
+<td><a href="https://movie.douban.com/subject/1303021/">https://movie.douban.com/subject/1303021/</a></td>
+                      <td>小鞋子/td>
+                      <td>  </td>
+                      <td>9.2</td>
+                      <td>417378</td>
+                        <td>导演: 马基德·马基迪 Majid Majidi主演: 默罕默德·阿米尔·纳吉 Mohamma... 1997/伊朗/剧情 儿童 家庭</td>
+                    </tr><tr>
+                      <td>77</td>
+<td><a href="https://movie.douban.com/subject/1293544/">https://movie.douban.com/subject/1293544/</a></td>
+                      <td>沉默的羔羊</td>
+                      <td>The Silence of the Lambs</td>
+                      <td>8.9</td>
+                      <td>904192</td>
+                        <td>导演: 乔纳森·戴米 Jonathan Demme主演: 朱迪·福斯特 Jodie Foster / 安... 1991/美国/剧情 犯罪 惊悚</td>
+                    </tr><tr>
+                      <td>78</td>
+<td><a href="https://movie.douban.com/subject/11525673/">https://movie.douban.com/subject/11525673/</a></td>
+                      <td>布达佩斯大饭店</td>
+                      <td>The Grand Budapest Hotel</td>
+                      <td>8.9</td>
+                      <td>954913</td>
+                        <td>导演: 韦斯·安德森 Wes Anderson主演: 拉尔夫·费因斯 Ralph Fiennes / ... 2014/美国 德国 英国/剧情 喜剧 冒险</td>
+                    </tr><tr>
+                      <td>79</td>
+<td><a href="https://movie.douban.com/subject/1291543/">https://movie.douban.com/subject/1291543/</a></td>
+                      <td>功夫</td>
+                      <td></td>
+                      <td>8.8</td>
+                      <td>1156219</td>
+                        <td>导演: 周星驰 Stephen Chow主演: 周星驰 Stephen Chow / 元秋 Qiu Yuen / ... 2004/中国大陆 中国香港/动作 喜剧 犯罪 奇幻</td>
+                    </tr><tr>
+                      <td>80</td>
+<td><a href="https://movie.douban.com/subject/2334904//td>">https://movie.douban.com/subject/2334904//td></a></td>
+                      <td>禁闭岛</td>
+                      <td>Shutter Island</td>
+                      <td>8.9</td>
+                      <td>993983</td>
+                        <td>导演: Martin Scorsese主演: 莱昂纳多·迪卡普里奥 Leonardo DiCaprio / ... 2010/美国/剧情 悬疑 惊悚</td>
+                    </tr>
+                  <tr>
+                      <td>81</td>
+<td><a href="https://movie.douban.com/subject/1292343/">https://movie.douban.com/subject/1292343/</a></td>
+                      <td>蝴蝶效应</td>
+                      <td>The Butterfly Effect</td>
+                      <td>8.9</td>
+                      <td>952988</td>
+                        <td>导演: 埃里克·布雷斯 Eric Bress / J·麦基·格鲁伯 J. Mackye Gruber主... 2004/美国 加拿大/剧情 悬疑 科幻 惊悚</td>
+                    </tr><tr>
+                      <td>82</td>
+<td><a href="https://movie.douban.com/subject/1780330/">https://movie.douban.com/subject/1780330/</a></td>
+                      <td>致命魔术</td>
+                      <td>The Prestige</td>
+                      <td>8.9</td>
+                      <td>874156</td>
+                        <td>导演: 克里斯托弗·诺兰 Christopher Nolan主演: 休·杰克曼 Hugh Jackman... 2006/英国 美国/剧情 悬疑 惊悚</td>
+                    </tr><tr>
+                      <td>83</td>
+<td><a href="https://movie.douban.com/subject/1291544/">https://movie.douban.com/subject/1291544/</a></td>
+                      <td>哈利·波特与阿兹卡班的囚徒</td>
+                      <td>Harry Potter and the Prisoner of Azkaban</td>
+                      <td>8.9</td>
+                      <td>746902</td>
+                        <td>导演: Alfonso Cuarón主演: 丹尼尔·雷德克里夫 Daniel Radcliffe / Emma... 2004/英国 美国/奇幻 冒险</td>
+                    </tr><tr>
+                      <td>84</td>
+<td><a href="https://movie.douban.com/subject/1292656/">https://movie.douban.com/subject/1292656/</a></td>
+                      <td>心灵捕手</td>
+                      <td>Good Will Hunting</td>
+                      <td>8.9</td>
+                      <td>726009</td>
+                        <td>导演: 格斯·范·桑特 Gus Van Sant主演: 马特·达蒙 Matt Damon / 罗宾·... 1997/美国/剧情</td>
+                    </tr><tr>
+                      <td>85</td>
+<td><a href="https://movie.douban.com/subject/5322596/">https://movie.douban.com/subject/5322596/</a></td>
+                      <td>超脱</td>
+                      <td>Detachment</td>
+                      <td>9</td>
+                      <td>615615</td>
+                        <td>导演: 托尼·凯耶 Tony Kaye主演: 艾德里安·布洛迪 Adrien Brody / 马西... 2011/美国/剧情</td>
+                    </tr>
+                  <tr>
+                      <td>86</td>
+<td><a href="https://movie.douban.com/subject/3442220/">https://movie.douban.com/subject/3442220/</a></td>
+                      <td>海豚湾</td>
+                      <td>The Cove</td>
+                      <td>9.3</td>
+                      <td>360542</td>
+                        <td>导演: 路易·西霍尤斯 Louie Psihoyos主演: 路易·西霍尤斯 Louie Psihoyo... 2009/美国/纪录片</td>
+                    </tr><tr>
+                      <td>87</td>
+<td><a href="https://movie.douban.com/subject/1291832/">https://movie.douban.com/subject/1291832/</a></td>
+                      <td>低俗小说</td>
+                      <td>Pulp Fiction</td>
+                      <td>8.9</td>
+                      <td>847762</td>
+                        <td>导演: 昆汀·塔伦蒂诺 Quentin Tarantino主演: 约翰·特拉沃尔塔 John Tra... 1994/美国/剧情 喜剧 犯罪</td>
+                    </tr><tr>
+                      <td>88</td>
+<td><a href="https://movie.douban.com/subject/1292679/">https://movie.douban.com/subject/1292679/</a></td>
+                      <td>春光乍泄</td>
+                      <td>春光乍洩</td>
+                      <td>9</td>
+                      <td>641560</td>
+                        <td>导演: 王家卫 Kar Wai Wong主演: 张国荣 Leslie Cheung / 梁朝伟 Tony Leu... 1997/中国香港 日本 韩国/剧情 爱情 同性</td>
+                    </tr><tr>
+                      <td>89</td>
+<td><a href="https://movie.douban.com/subject/1294371/">https://movie.douban.com/subject/1294371/</a></td>
+                      <td>摩登时代</td>
+                      <td>Modern Times</td>
+                      <td>9.3</td>
+                      <td>306635</td>
+                        <td>导演: 查理·卓别林 Charles Chaplin主演: 查理·卓别林 Charles Chaplin ... 1936/美国/剧情 喜剧 爱情</td>
+                    </tr><tr>
+                      <td>90</td>
+<td><a href="https://movie.douban.com/subject/1292262/">https://movie.douban.com/subject/1292262/</a></td>
+                      <td>美国往事</td>
+                      <td>Once Upon a Time in America</td>
+                      <td>9.2</td>
+                      <td>418330</td>
+                        <td>导演: 赛尔乔·莱翁内 Sergio Leone主演: 罗伯特·德尼罗 Robert De Niro ... 1984/美国 意大利/犯罪 剧情</td>
+                    </tr>
+                  <tr>
+                      <td>91</td>
+<td><a href="https://movie.douban.com/subject/1302425/">https://movie.douban.com/subject/1302425/</a></td>
+                      <td>喜剧之王</td>
+                      <td>喜劇之王</td>
+                      <td>8.8</td>
+                      <td>984549</td>
+                        <td>导演: 周星驰 Stephen Chow / 李力持 Lik-Chi Lee主演: 周星驰 Stephen Ch... 1999/中国香港/喜剧 剧情 爱情</td>
+                    </tr><tr>
+                      <td>92</td>
+<td><a href="https://movie.douban.com/subject/1297192/">https://movie.douban.com/subject/1297192/</a></td>
+                      <td>致命ID</td>
+                      <td>Identity</td>
+                      <td>8.9</td>
+                      <td>839370</td>
+                        <td>导演: 詹姆斯·曼高德 James Mangold主演: 约翰·库萨克 John Cusack / 雷... 2003/美国/剧情 悬疑 惊悚</td>
+                    </tr><tr>
+                      <td>93</td>
+<td><a href="https://movie.douban.com/subject/1300299/">https://movie.douban.com/subject/1300299/</a></td>
+                      <td>杀人回忆</td>
+                      <td> </td>
+                      <td>8.9</td>
+                      <td>728375</td>
+                        <td>导演: 奉俊昊 Joon-ho Bong主演: 宋康昊 Kang-ho Song / 金相庆 Sang-kyun... 2003/韩国/剧情 动作 犯罪 悬疑 惊悚</td>
+                    </tr><tr>
+                      <td>94</td>
+<td><a href="https://movie.douban.com/subject/1292223/">https://movie.douban.com/subject/1292223/</a></td>
+                      <td>七宗罪</td>
+                      <td>Se7en</td>
+                      <td>8.8</td>
+                      <td>955036</td>
+                        <td>导演: 大卫·芬奇 David Fincher主演: 摩根·弗里曼 Morgan Freeman / 布... 1995/美国/剧情 犯罪 悬疑 惊悚</td>
+                    </tr><tr>
+                      <td>95</td>
+<td><a href="https://movie.douban.com/subject/1865703/">https://movie.douban.com/subject/1865703/</a></td>
+                      <td>红辣椒</td>
+                      <td>パプリカ</td>
+                      <td>9.1</td>
+                      <td>475727</td>
+                        <td>导演: 今敏 Satoshi Kon主演: 林原惠美 Megumi Hayashibara / 江守彻 Toru... 2006/日本/动画 悬疑 科幻 惊悚</td>
+                    </tr>
+                  <tr>
+                      <td>96</td>
+<td><a href="https://movie.douban.com/subject/1298070/">https://movie.douban.com/subject/1298070/</a></td>
+                      <td>加勒比海盗</td>
+                      <td>Pirates of the Caribbean: The Curse of the Black Pearl</td>
+                      <td>8.8</td>
+                      <td>872005</td>
+                        <td>导演: 戈尔·维宾斯基 Gore Verbinski主演: 约翰尼·德普 Johnny Depp / ... 2003/美国/动作 冒险 奇幻</td>
+                    </tr><tr>
+                      <td>97</td>
+<td><a href="https://movie.douban.com/subject/1296996/">https://movie.douban.com/subject/1296996/</a></td>
+                      <td>哈利·波特与密室</td>
+                      <td>Harry Potter and the Chamber of Secrets</td>
+                      <td>8.9</td>
+                      <td>774162</td>
+                        <td>导演: Chris Columbus主演: 丹尼尔·雷德克里夫 Daniel Radcliffe / 艾玛... 2002/英国 美国/奇幻 冒险</td>
+                    </tr><tr>
+                      <td>98</td>
+<td><a href="https://movie.douban.com/subject/1292434/">https://movie.douban.com/subject/1292434/</a></td>
+                      <td>一一</td>
+                      <td></td>
+                      <td>9.1</td>
+                      <td>403657</td>
+                        <td>导演: 杨德昌 Edward Yang主演: 吴念真 / 李凯莉 Kelly Lee / 金燕玲 Elai... 2000/中国台湾 日本/剧情 爱情 家庭</td>
+                    </tr><tr>
+                      <td>99</td>
+<td><a href="https://movie.douban.com/subject/6985810/">https://movie.douban.com/subject/6985810/</a></td>
+                      <td>狩猎</td>
+                      <td>Jagten</td>
+                      <td>9.1</td>
+                      <td>399539</td>
+                        <td>导演: 托马斯·温特伯格 Thomas Vinterberg主演: 麦斯·米科尔森 Mads Mik... 2012/丹麦 瑞典/剧情</td>
+                    </tr><tr>
+                      <td>100</td>
+<td><a href="https://movie.douban.com/subject/1306249/">https://movie.douban.com/subject/1306249/</a></td>
+                      <td>唐伯虎点秋香</td>
+                      <td>唐伯虎點秋香</td>
+                      <td>8.7</td>
+                      <td>1096843</td>
+                        <td>导演: 李力持 Lik-Chi Lee主演: 周星驰 Stephen Chow / 巩俐 Li Gong / 陈... 1993/中国香港/喜剧 爱情 古装</td>
+                    </tr>
+                  <tr>
+                      <td>101</td>
+<td><a href="https://movie.douban.com/subject/10777687/">https://movie.douban.com/subject/10777687/</a></td>
+                      <td>7号房的礼物</td>
+                      <td>7 </td>
+                      <td>8.9</td>
+                      <td>565422</td>
+                        <td>导演: 李焕庆 Hwan-kyeong Lee主演: 柳承龙 Seung-yong Ryoo / 朴信惠 Shi... 2013/韩国/剧情 喜剧 家庭</td>
+                    </tr><tr>
+                      <td>102</td>
+<td><a href="https://movie.douban.com/subject/1787291/">https://movie.douban.com/subject/1787291/</a></td>
+                      <td>被嫌弃的松子的一生</td>
+                      <td>嫌われ松子の一生</td>
+                      <td>8.9</td>
+                      <td>711766</td>
+                        <td>导演: 中岛哲也 Tetsuya Nakashima主演: 中谷美纪 Miki Nakatani / 瑛太 E... 2006/日本/剧情 歌舞</td>
+                    </tr><tr>
+                      <td>103</td>
+<td><a href="https://movie.douban.com/subject/26799731/">https://movie.douban.com/subject/26799731/</a></td>
+                      <td>请以你的名字呼唤我</td>
+                      <td>Call Me by Your Name</td>
+                      <td>8.8</td>
+                      <td>733760</td>
+                        <td>导演: 卢卡·瓜达尼诺 Luca Guadagnino主演: 艾米·汉莫 Armie Hammer / ... 2017/意大利 法国 巴西 美国/剧情 爱情 同性</td>
+                    </tr><tr>
+                      <td>104</td>
+<td><a href="https://movie.douban.com/subject/3395373/">https://movie.douban.com/subject/3395373/</a></td>
+                      <td>蝙蝠侠：黑暗骑士崛起</td>
+                      <td>The Dark Knight Rises</td>
+                      <td>8.8</td>
+                      <td>734068</td>
+                        <td>导演: 克里斯托弗·诺兰 Christopher Nolan主演: 克里斯蒂安·贝尔 Christ... 2012/美国 英国/剧情 动作 科幻 犯罪 惊悚</td>
+                    </tr><tr>
+                      <td>105</td>
+<td><a href="https://movie.douban.com/subject/1418834/">https://movie.douban.com/subject/1418834/</a></td>
+                      <td>断背山</td>
+                      <td>Brokeback Mountain</td>
+                      <td>8.8</td>
+                      <td>715182</td>
+                        <td>导演: 李安 Ang Lee主演: 希斯·莱杰 Heath Ledger / 杰克·吉伦哈尔 Jake... 2005/美国 加拿大/剧情 爱情 同性 家庭</td>
+                    </tr>
+                  <tr>
+                      <td>106</td>
+<td><a href="https://movie.douban.com/subject/1296339/">https://movie.douban.com/subject/1296339/</a></td>
+                      <td>爱在黎明破晓前</td>
+                      <td>Before Sunrise</td>
+                      <td>8.8</td>
+                      <td>696233</td>
+                        <td>导演: 理查德·林克莱特 Richard Linklater主演: 伊桑·霍克 Ethan Hawke ... 1995/美国 奥地利 瑞士/剧情 爱情</td>
+                    </tr><tr>
+                      <td>107</td>
+<td><a href="https://movie.douban.com/subject/1292370/">https://movie.douban.com/subject/1292370/</a></td>
+                      <td>剪刀手爱德华</td>
+                      <td>Edward Scissorhands</td>
+                      <td>8.7</td>
+                      <td>1045865</td>
+                        <td>导演: 蒂姆·波顿 Tim Burton主演: 约翰尼·德普 Johnny Depp / 薇诺娜·... 1990/美国/剧情 奇幻 爱情</td>
+                    </tr><tr>
+                      <td>108</td>
+<td><a href="https://movie.douban.com/subject/2149806/">https://movie.douban.com/subject/2149806/</a></td>
+                      <td>入殓师</td>
+                      <td>おくりびと</td>
+                      <td>8.9</td>
+                      <td>677027</td>
+                        <td>导演: 泷田洋二郎 Yjir Takita主演: 本木雅弘 Masahiro Motoki / ... 2008/日本/剧情</td>
+                    </tr><tr>
+                      <td>109</td>
+<td><a href="https://movie.douban.com/subject/1297630/">https://movie.douban.com/subject/1297630/</a></td>
+                      <td>第六感</td>
+                      <td>The Sixth Sense</td>
+                      <td>8.9</td>
+                      <td>564724</td>
+                        <td>导演: M·奈特·沙马兰 M. Night Shyamalan主演: 布鲁斯·威利斯 Bruce Wi... 1999/美国/剧情 悬疑 惊悚</td>
+                    </tr><tr>
+                      <td>110</td>
+<td><a href="https://movie.douban.com/subject/1291999/">https://movie.douban.com/subject/1291999/</a></td>
+                      <td>重庆森林</td>
+                      <td>重慶森林</td>
+                      <td>8.8</td>
+                      <td>823813</td>
+                        <td>导演: 王家卫 Kar Wai Wong主演: 林青霞 Brigitte Lin / 金城武 Takeshi K... 1994/中国香港/剧情 爱情</td>
+                    </tr>
+                  <tr>
+                      <td>111</td>
+<td><a href="https://movie.douban.com/subject/1294639/">https://movie.douban.com/subject/1294639/</a></td>
+                      <td>勇敢的心</td>
+                      <td>Braveheart</td>
+                      <td>8.9</td>
+                      <td>564012</td>
+                        <td>导演: 梅尔·吉布森 Mel Gibson主演: 梅尔·吉布森 Mel Gibson / 苏菲·玛... 1995/美国/动作 传记 剧情 历史 战争</td>
+                    </tr><tr>
+                      <td>112</td>
+<td><a href="https://movie.douban.com/subject/11026735/">https://movie.douban.com/subject/11026735/</a></td>
+                      <td>超能陆战队</td>
+                      <td>Big Hero 6</td>
+                      <td>8.7</td>
+                      <td>1030285</td>
+                        <td>导演: 唐·霍尔 Don Hall / 克里斯·威廉姆斯 Chris Williams主演: 斯科特... 2014/美国/喜剧 动作 科幻 动画 冒险</td>
+                    </tr><tr>
+                      <td>113</td>
+<td><a href="https://movie.douban.com/subject/1305164/">https://movie.douban.com/subject/1305164/</a></td>
+                      <td>甜蜜蜜</td>
+                      <td></td>
+                      <td>8.9</td>
+                      <td>566370</td>
+                        <td>导演: 陈可辛 Peter Chan主演: 黎明 Leon Lai / 张曼玉 Maggie Cheung / ... 1996/中国香港/剧情 爱情</td>
+                    </tr><tr>
+                      <td>114</td>
+<td><a href="https://movie.douban.com/subject/1297359/">https://movie.douban.com/subject/1297359/</a></td>
+                      <td>幽灵公主</td>
+                      <td>もののけ姫</td>
+                      <td>8.9</td>
+                      <td>531687</td>
+                        <td>导演: 宫崎骏 Hayao Miyazaki主演: 松田洋治 Yji Matsuda / 石田百合... 1997/日本/动画 奇幻 冒险</td>
+                    </tr><tr>
+                      <td>115</td>
+<td><a href="https://movie.douban.com/subject/1291990/">https://movie.douban.com/subject/1291990/</a></td>
+                      <td>爱在日落黄昏时</td>
+                      <td>Before Sunset</td>
+                      <td>8.9</td>
+                      <td>572054</td>
+                        <td>导演: 理查德·林克莱特 Richard Linklater主演: 伊桑·霍克 Ethan Hawke ... 2004/美国 法国/剧情 爱情</td>
+                    </tr>
+                  <tr>
+                      <td>116</td>
+<td><a href="https://movie.douban.com/subject/1293359/">https://movie.douban.com/subject/1293359/</a></td>
+                      <td>菊次郎的夏天</td>
+                      <td>菊次郎の夏</td>
+                      <td>8.9</td>
+                      <td>604953</td>
+                        <td>导演: 北野武 Takeshi Kitano主演: 北野武 Takeshi Kitano / 关口雄介 Yus... 1999/日本/剧情 喜剧</td>
+                    </tr><tr>
+                      <td>117</td>
+<td><a href="https://movie.douban.com/subject/4202302/">https://movie.douban.com/subject/4202302/</a></td>
+                      <td>借东西的小人阿莉埃蒂</td>
+                      <td>借りぐらしのアリエッティ</td>
+                      <td>8.9</td>
+                      <td>562375</td>
+                        <td>导演: 米林宏昌 Hiromasa Yonebayashi主演: 志田未来 Mirai Shida / 神木... 2010/日本/动画 奇幻 冒险</td>
+                    </tr><tr>
+                      <td>118</td>
+<td><a href="https://movie.douban.com/subject/21318488/">https://movie.douban.com/subject/21318488/</a></td>
+                      <td>消失的爱人</td>
+                      <td>Gone Girl</td>
+                      <td>8.7</td>
+                      <td>969780</td>
+                        <td>导演: 大卫·芬奇 David Fincher主演: 本·阿弗莱克 Ben Affleck / 罗莎蒙... 2014/美国/剧情 犯罪 悬疑 惊悚</td>
+                    </tr><tr>
+                      <td>119</td>
+<td><a href="https://movie.douban.com/subject/27010768/">https://movie.douban.com/subject/27010768/</a></td>
+                      <td>寄生虫</td>
+                      <td></td>
+                      <td>8.8</td>
+                      <td>1390033</td>
+                        <td>导演: 奉俊昊 Joon-ho Bong主演: 宋康昊 Kang-ho Song / 李善均 Seon-gyun... 2019/韩国/剧情</td>
+                    </tr><tr>
+                      <td>120</td>
+<td><a href="https://movie.douban.com/subject/1291875/">https://movie.douban.com/subject/1291875/</a></td>
+                      <td>阳光灿烂的日子</td>
+                      <td></td>
+                      <td>8.8</td>
+                      <td>622783</td>
+                        <td>导演: 姜文 Wen Jiang主演: 夏雨 Yu Xia / 宁静 Jing Ning / 陶虹 Hong Tao 1994/中国大陆 中国香港/剧情 爱情</td>
+                    </tr>
+                  <tr>
+                      <td>121</td>
+<td><a href="https://movie.douban.com/subject/1292215/">https://movie.douban.com/subject/1292215/</a></td>
+                      <td>天使爱美丽</td>
+                      <td>Le fabuleux destin d'Amélie Poulain</td>
+                      <td>8.7</td>
+                      <td>962168</td>
+                        <td>导演: 让-皮埃尔·热内 Jean-Pierre Jeunet主演: 奥黛丽·塔图 Audrey Tau... 2001/法国 德国/剧情 喜剧 爱情</td>
+                    </tr><tr>
+                      <td>122</td>
+<td><a href="https://movie.douban.com/subject/1300992/">https://movie.douban.com/subject/1300992/</a></td>
+                      <td>完美的世界</td>
+                      <td>A Perfect World</td>
+                      <td>9.1</td>
+                      <td>320245</td>
+                        <td>导演: 克林特·伊斯特伍德 Clint Eastwood主演: 凯文·科斯特纳 Kevin Cos... 1993/美国/剧情 犯罪</td>
+                    </tr><tr>
+                      <td>123</td>
+<td><a href="https://movie.douban.com/subject/25814705/">https://movie.douban.com/subject/25814705/</a></td>
+                      <td>小森林 夏秋篇</td>
+                      <td>リトルフォレスト 夏秋</td>
+                      <td>9</td>
+                      <td>431439</td>
+                        <td>导演: 森淳一 Junichi Mori主演: 桥本爱 Ai Hashimoto / 三浦贵大 Takahir... 2014/日本/剧情</td>
+                    </tr><tr>
+                      <td>124</td>
+<td><a href="https://movie.douban.com/subject/1297447/">https://movie.douban.com/subject/1297447/</a></td>
+                      <td>倩女幽魂</td>
+                      <td></td>
+                      <td>8.8</td>
+                      <td>748035</td>
+                        <td>导演: 程小东 Siu-Tung Ching主演: 张国荣 Leslie Cheung / 王祖贤 Joey W... 1987/中国香港/爱情 奇幻 武侠 古装</td>
+                    </tr><tr>
+                      <td>125</td>
+<td><a href="https://movie.douban.com/subject/1292337/">https://movie.douban.com/subject/1292337/</a></td>
+                      <td>无人知晓</td>
+                      <td>誰も知らない</td>
+                      <td>9.1</td>
+                      <td>324294</td>
+                        <td>导演: 是枝裕和 Hirokazu Koreeda主演: 柳乐优弥 Yya Yagira / 北浦爱... 2004/日本/剧情</td>
+                    </tr>
+                  <tr>
+                      <td>126</td>
+<td><a href="https://movie.douban.com/subject/1760622/">https://movie.douban.com/subject/1760622/</a></td>
+                      <td>香水</td>
+                      <td>Perfume: The Story of a Murderer</td>
+                      <td>8.5</td>
+                      <td>550095</td>
+                       <td>导演: 汤姆·提克威 Tom Tykwer主演: 本·卫肖 Ben Whishaw / 艾伦·瑞克... 2006/德国 法国 西班牙 美国 比利时/剧情 犯罪 奇幻</td>
+                    </tr>
+                  <tr>
+                      <td>127</td>
+<td><a href="https://movie.douban.com/subject/10577869/">https://movie.douban.com/subject/10577869/</a></td>
+                      <td>时空恋旅人</td>
+                      <td>About Time</td>
+                      <td>8.8</td>
+                      <td>686862</td>
+                      <td>导演: 理查德·柯蒂斯 Richard Curtis主演: 多姆纳尔·格里森 Domhnall Gl... 2013/英国/喜剧 爱情 奇幻</td>
+                    </tr>
+                    <td>128</td>
+<td><a href="https://movie.douban.com/subject/1297052/">https://movie.douban.com/subject/1297052/</a></td>
+                      <td>侧耳倾听</td>
+                      <td>耳をすませば</td>
+                      <td>8.9</td>
+                      <td>469793</td>
+                      <td>导演: 近藤喜文 Yoshifumi Kondo主演: 本名阳子 Youko Honna / 小林桂树 K... 1995/日本/剧情 爱情 动画</td>
+                   </tr>
+                  <tr>
+                      <td>129</td>
+<td><a href="https://movie.douban.com/subject/1395091/">https://movie.douban.com/subject/1395091/</a></td>
+                      <td>未麻的部屋</td>
+                      <td>Perfect Blue</td>
+                      <td>9.1</td>
+                      <td>344544</td>
+                       <td>导演: 今敏 Satoshi Kon主演: 岩男润子 Junko Iwao / 松本梨香 Rica Matsu... 1997/日本/动画 奇幻 惊悚</td>
+                    </tr>
+                  <tr>
+                      <td>130</td>
+<td><a href="https://movie.douban.com/subject/1292274/">https://movie.douban.com/subject/1292274/</a></td>
+                      <td>幸福终点站</td>
+                      <td>The Terminal</td>
+                      <td>8.8</td>
+                      <td>580069</td>
+                       <td>导演: 史蒂文·斯皮尔伯格 Steven Spielberg主演: 汤姆·汉克斯 Tom Hanks... 2004/美国/喜剧 剧情 爱情</td>
+                    </tr>
+                  <tr>
+                      <td>131</td>
+<td><a href="https://movie.douban.com/subject/2353023/">https://movie.douban.com/subject/2353023/</a></td>
+                      <td>驯龙高手</td>
+                      <td>How to Train Your Dragon</td>
+                      <td>8.8</td>
+                      <td>766753</td>
+                       <td>导演: 迪恩·德布洛斯 Dean DeBlois / 克里斯·桑德斯 Chris Sanders主演:... 2010/美国/动画 奇幻 冒险</td>
+                    </tr>
+                  <tr>
+                      <td>132</td>
+<td><a href="https://movie.douban.com/subject/1309055/">https://movie.douban.com/subject/1309055/</a></td>
+                      <td>哈利·波特与火焰杯</td>
+                      <td>Harry Potter and the Goblet of Fire</td>
+                      <td>8.8</td>
+                      <td>675416</td>
+                       <td>导演: 迈克·内威尔 Mike Newell主演: 丹尼尔·雷德克里夫 Daniel Radclif... 2005/英国 美国/悬疑 奇幻 冒险</td>
+                    </tr>
+                  <tr>
+                      <td>133</td>
+<td><a href="https://movie.douban.com/subject/25814707/">https://movie.douban.com/subject/25814707/</a></td>
+                      <td>小森林 冬春篇</td>
+                      <td>リトルフォレスト 冬春</td>
+                      <td>9.0</td>
+                      <td>384039</td>
+                       <td>导演: 森淳一 Junichi Mori主演: 桥本爱 Ai Hashimoto / 三浦贵大 Takahir... 2015/日本/剧情</td>
+                    </tr>
+                  <tr>
+                      <td>134</td>
+<td><a href="https://movie.douban.com/subject/26628357/">https://movie.douban.com/subject/26628357/</a></td>
+                      <td>一个叫欧维的男人决定去死</td>
+                      <td>En man som heter Ove</td>
+                      <td>8.9</td>
+                      <td>492825</td>
+                       <td>导演: 汉内斯·赫尔姆 Hannes Holm主演: 罗夫·拉斯加德 Rolf Lassgrd... 2015/瑞典/剧情</td>
+                    </tr>
+                  <tr>
+                      <td>135</td>
+<td><a href="https://movie.douban.com/subject/1294240/">https://movie.douban.com/subject/1294240/</a></td>
+                      <td>教父3</td>
+                      <td>The Godfather: Part III</td>
+                      <td>9.0</td>
+                      <td>380930</td>
+                       <td>导演: 弗朗西斯·福特·科波拉 Francis Ford Coppola主演: 阿尔·帕西诺 A... 1990/美国/剧情 犯罪</td>
+                    </tr>
+                  <tr>
+                      <td>136</td>
+<td><a href="https://movie.douban.com/subject/1291579/">https://movie.douban.com/subject/1291579/</a></td>
+                      <td>怪兽电力公司</td>
+                      <td>Monsters, Inc.</td>
+                      <td>8.8</td>
+                      <td>684387</td>
+                       <td>导演: 彼特·道格特 Pete Docter / 大卫·斯沃曼 David Silverman主演: 约... 2001/美国/儿童 喜剧 动画 奇幻 冒险</td>
+                    </tr>
+                  <tr>
+                      <td>137</td>
+<td><a href="https://movie.douban.com/subject/1418200/">https://movie.douban.com/subject/1418200/</a></td>
+                      <td>傲慢与偏见</td>
+                      <td>Pride &amp; Prejudice</td>
+                      <td>8.7</td>
+                      <td>814793</td>
+                       <td>导演: 乔·怀特 Joe Wright主演: 凯拉·奈特莉 Keira Knightley / 马修·... 2005/法国 英国 美国/剧情 爱情</td>
+                    </tr>
+                  <tr>
+                      <td>138</td>
+<td><a href="https://movie.douban.com/subject/1858711/">https://movie.douban.com/subject/1858711/</a></td>
+                      <td>玩具总动员3</td>
+                      <td>Toy Story 3</td>
+                      <td>8.9</td>
+                      <td>526740</td>
+                       <td>导演: 李·昂克里奇 Lee Unkrich主演: 汤姆·汉克斯 Tom Hanks / 蒂姆·艾... 2010/美国/喜剧 动画 奇幻 冒险</td>
+                    </tr>
+                  <tr>
+                      <td>139</td>
+<td><a href="https://movie.douban.com/subject/5989818/">https://movie.douban.com/subject/5989818/</a></td>
+                      <td>萤火之森</td>
+                      <td>蛍火の杜へ</td>
+                      <td>8.9</td>
+                      <td>548293</td>
+                      <td>导演: 大森贵弘 Takahiro Omori主演: 佐仓绫音 Ayane Sakura / 内山昂辉 K... 2011/日本/剧情 爱情 动画 奇幻</td>
+                    </tr>
+                  <tr>
+                      <td>140</td>
+<td><a href="https://movie.douban.com/subject/10437779/">https://movie.douban.com/subject/10437779/</a></td>
+                      <td>新世界</td>
+                      <td></td>
+                      <td>8.9</td>
+                      <td>446661</td>
+                       <td>导演: 朴勋政 Hoon-jung Park主演: 李政宰 Jung-Jae Lee / 崔岷植 Min-sik... 2013/韩国/剧情 犯罪</td>
+                    </tr>
+                  <tr>
+                      <td>141</td>
+<td><a href="https://movie.douban.com/subject/25986180/">https://movie.douban.com/subject/25986180/</a></td>
+                      <td>釜山行</td>
+                      <td></td>
+                      <td>8.6</td>
+                      <td>1216561</td>
+                       <td>导演: 延尚昊 Sang-ho Yeon主演: 孔侑 Yoo Gong / 郑有美 Yu-mi Jung / 马... 2016/韩国/动作 惊悚 灾难</td>
+                    </tr>
+                  <tr>
+                      <td>142</td>
+<td><a href="https://movie.douban.com/subject/6307447/">https://movie.douban.com/subject/6307447/</a></td>
+                      <td>被解救的姜戈</td>
+                      <td>Django Unchained</td>
+                      <td>8.8</td>
+                      <td>618245</td>
+                       <td>导演: 昆汀·塔伦蒂诺 Quentin Tarantino主演: 杰米·福克斯 Jamie Foxx /... 2012/美国/剧情 动作 西部 冒险</td>
+                    </tr>
+                  <tr>
+                      <td>143</td>
+<td><a href="https://movie.douban.com/subject/3287562/">https://movie.douban.com/subject/3287562/</a></td>
+                      <td>神偷奶爸</td>
+                      <td>Despicable Me</td>
+                      <td>8.7</td>
+                      <td>959486</td>
+                       <td>导演: 皮艾尔·柯芬 Pierre Coffin / 克里斯·雷纳德 Chris Renaud主演: ... 2010/美国 法国/喜剧 动画 冒险</td>
+                    </tr>
+                  <tr>
+                      <td>144</td>
+<td><a href="https://movie.douban.com/subject/1461403/">https://movie.douban.com/subject/1461403/</a></td>
+                      <td>茶馆</td>
+                      <td></td>
+                      <td>9.6</td>
+                      <td>153252</td>
+                       <td>导演: 谢添 Tian Xie主演: 于是之 Shizhi Yu / 郑榕 Rong Zhen / 蓝天野 T... 1982(中国大陆)/中国大陆/剧情 历史</td>
+                    </tr>
+                  <tr>
+                      <td>145</td>
+<td><a href="https://movie.douban.com/subject/4268598/">https://movie.douban.com/subject/4268598/</a></td>
+                      <td>告白</td>
+                      <td></td>
+                      <td>8.8</td>
+                      <td>679360</td>
+                       <td>导演: 中岛哲也 Tetsuya Nakashima主演: 松隆子 Takako Matsu / 冈田将生 ... 2010/日本/剧情 悬疑</td>
+                    </tr>
+                  <tr>
+                      <td>146</td>
+<td><a href="https://movie.douban.com/subject/3072124/">https://movie.douban.com/subject/3072124/</a></td>
+                      <td>玛丽和马克思</td>
+                      <td>Mary and Max</td>
+                      <td>9.0</td>
+                      <td>425394</td>
+                       <td>导演: 亚当·艾略特 Adam Elliot主演: 托妮·科莱特 Toni Collette / 菲利... 2009/澳大利亚 美国/剧情 喜剧 动画</td>
+                    </tr>
+                  <tr>
+                      <td>147</td>
+<td><a href="https://movie.douban.com/subject/1307315/">https://movie.douban.com/subject/1307315/</a></td>
+                      <td>哪吒闹海</td>
+                      <td></td>
+                      <td>9.2</td>
+                      <td>264208</td>
+                       <td>导演: 王树忱 Shuchen Wang / 严定宪 Dingxian Yan主演: 梁正晖 Zhenghui ... 1979/中国大陆/冒险 动画 奇幻</td>
+                    </tr>
+                  <tr>
+                      <td>148</td>
+<td><a href="https://movie.douban.com/subject/1291545/">https://movie.douban.com/subject/1291545/</a></td>
+                      <td>大鱼</td>
+                      <td>Big Fish</td>
+                      <td>8.8</td>
+                      <td>575053</td>
+                       <td>导演: 蒂姆·波顿 Tim Burton主演: 伊万·麦克格雷格 Ewan McGregor / 阿... 2003/美国/剧情 家庭 奇幻 冒险</td>
+                    </tr>
+                  <tr>
+                      <td>149</td>
+<td><a href="https://movie.douban.com/subject/1297518/">https://movie.douban.com/subject/1297518/</a></td>
+                      <td>九品芝麻官</td>
+                      <td></td>
+                      <td>8.7</td>
+                      <td>693332</td>
+                       <td>导演: 王晶 Jing Wong主演: 周星驰 Stephen Chow / 吴孟达 Man Tat Ng / ... 1994/中国香港 中国大陆/剧情 喜剧 古装</td>
+                    </tr>
+                  <tr>
+                      <td>150</td>
+<td><a href="https://movie.douban.com/subject/1828115/">https://movie.douban.com/subject/1828115/</a></td>
+                      <td>色，戒</td>
+                      <td></td>
+                      <td>8.7</td>
+                      <td>826387</td>
+                       <td>导演: 李安 Ang Lee主演: 梁朝伟 Tony Leung Chiu Wai / 汤唯 Wei Tang / ... 2007/中国台湾 中国大陆 美国 中国香港/剧情 爱情 情色</td>
+                    </tr>
+                  <tr>
+                      <td>151</td>
+<td><a href="https://movie.douban.com/subject/1303037/">https://movie.douban.com/subject/1303037/</a></td>
+                      <td>喜宴</td>
+                      <td>囍宴</td>
+                      <td>9.0</td>
+                      <td>370164</td>
+                       <td>导演: 李安 Ang Lee主演: 赵文瑄 Winston Chao / 归亚蕾 Ya-lei Kuei / 郎... 1993/中国台湾 美国/剧情 喜剧 爱情 同性 家庭</td>
+                    </tr>
+                  <tr>
+                      <td>152</td>
+<td><a href="https://movie.douban.com/subject/10463953/">https://movie.douban.com/subject/10463953/</a></td>
+                      <td>模仿游戏</td>
+                      <td>The Imitation Game</td>
+                      <td>8.8</td>
+                      <td>656938</td>
+                       <td>导演: 莫滕·泰杜姆 Morten Tyldum主演: 本尼迪克特·康伯巴奇 Benedict C... 2014/英国 美国/剧情 传记 战争 同性</td>
+                    </tr>
+                  <tr>
+                      <td>153</td>
+<td><a href="https://movie.douban.com/subject/4920389/">https://movie.douban.com/subject/4920389/</a></td>
+                      <td>头号玩家</td>
+                      <td>Ready Player One</td>
+                      <td>8.7</td>
+                      <td>1385788</td>
+                       <td>导演: 史蒂文·斯皮尔伯格 Steven Spielberg主演: 泰伊·谢里丹 Tye Sheri... 2018/美国/动作 科幻 冒险</td>
+                    </tr>
+                  <tr>
+                      <td>154</td>
+<td><a href="https://movie.douban.com/subject/1316510/">https://movie.douban.com/subject/1316510/</a></td>
+                      <td>射雕英雄传之东成西就</td>
+                      <td>射鵰英雄傳之東成西就</td>
+                      <td>8.7</td>
+                      <td>646584</td>
+                       <td>导演: 刘镇伟 Jeffrey Lau主演: 梁朝伟 Tony Leung Chiu Wai / 林青霞 Bri... 1993/中国香港/喜剧 奇幻 武侠 古装</td>
+                    </tr>
+                  <tr>
+                      <td>155</td>
+<td><a href="https://movie.douban.com/subject/1291557/">https://movie.douban.com/subject/1291557/</a></td>
+                      <td>花样年华</td>
+                      <td>花樣年華</td>
+                      <td>8.8</td>
+                      <td>619024</td>
+                       <td>导演: 王家卫 Kar Wai Wong主演: 梁朝伟 Tony Leung Chiu Wai / 张曼玉 Ma... 2000/中国香港/剧情 爱情</td>
+                    </tr>
+                  <tr>
+                      <td>156</td>
+<td><a href="https://movie.douban.com/subject/1306861/">https://movie.douban.com/subject/1306861/</a></td>
+                      <td>我是山姆</td>
+                      <td>I Am Sam</td>
+                      <td>9.0</td>
+                      <td>342952</td>
+                       <td>导演: 杰茜·尼尔森 Jessie Nelson主演: Sean Penn / Dakota Fanning / Mi... 2001/美国/剧情 家庭</td>
+                    </tr>
+                  <tr>
+                      <td>157</td>
+<td><a href="https://movie.douban.com/subject/4917726/">https://movie.douban.com/subject/4917726/</a></td>
+                      <td>阳光姐妹淘</td>
+                      <td></td>
+                      <td>8.8</td>
+                      <td>595793</td>
+                       <td>导演: 姜炯哲 Hyeong-Cheol Kang主演: 沈恩京 Eun-kyung Shim / 闵孝琳 Hy... 2011/韩国/剧情 喜剧</td>
+                    </tr>
+                  <tr>
+                      <td>158</td>
+<td><a href="https://movie.douban.com/subject/10533913/">https://movie.douban.com/subject/10533913/</a></td>
+                      <td>头脑特工队</td>
+                      <td>Inside Out</td>
+                      <td>8.8</td>
+                      <td>625949</td>
+                       <td>导演: 彼特·道格特 Pete Docter / 罗纳尔多·德尔·卡门 Ronaldo Del Carmen&amp;nb... 2015/美国/喜剧 动画 冒险</td>
+                    </tr>
+                  <tr>
+                      <td>159</td>
+<td><a href="https://movie.douban.com/subject/26325320/">https://movie.douban.com/subject/26325320/</a></td>
+                      <td>血战钢锯岭</td>
+                      <td>Hacksaw Ridge</td>
+                      <td>8.7</td>
+                      <td>791891</td>
+                       <td>导演: 梅尔·吉布森 Mel Gibson主演: 安德鲁·加菲尔德 Andrew Garfield /... 2016/澳大利亚 美国/剧情 传记 历史 战争</td>
+                    </tr>
+                  <tr>
+                      <td>160</td>
+<td><a href="https://movie.douban.com/subject/1295399/">https://movie.douban.com/subject/1295399/</a></td>
+                      <td>七武士</td>
+                      <td>七人の侍</td>
+                      <td>9.3</td>
+                      <td>201715</td>
+                       <td>导演: 黑泽明 Akira Kurosawa主演: 三船敏郎 Toshir Mifune / 志村乔 ... 1954/日本/动作 冒险 剧情</td>
+                    </tr>
+                  <tr>
+                      <td>161</td>
+<td><a href="https://movie.douban.com/subject/21360417/">https://movie.douban.com/subject/21360417/</a></td>
+                      <td>恐怖直播</td>
+                      <td>  </td>
+                      <td>8.7</td>
+                      <td>661085</td>
+                       <td>导演: 金秉祐 Byeong-woo Kim主演: 河正宇 Jung-woo Ha / 李璟荣 Kyeong-y... 2013/韩国/剧情 犯罪 悬疑</td>
+                    </tr>
+                  <tr>
+                      <td>162</td>
+<td><a href="https://movie.douban.com/subject/1293181/">https://movie.douban.com/subject/1293181/</a></td>
+                      <td>惊魂记</td>
+                      <td>Psycho</td>
+                      <td>9.0</td>
+                      <td>301999</td>
+                       <td>导演: 阿尔弗雷德·希区柯克 Alfred Hitchcock主演: 安东尼·博金斯 Antho... 1960/美国/悬疑 惊悚 恐怖</td>
+                    </tr>
+                  <tr>
+                      <td>163</td>
+<td><a href="https://movie.douban.com/subject/1302467/">https://movie.douban.com/subject/1302467/</a></td>
+                      <td>黑客帝国3：矩阵革命</td>
+                      <td>The Matrix Revolutions</td>
+                      <td>8.8</td>
+                      <td>452895</td>
+                       <td>导演: 拉娜·沃卓斯基 Lana Wachowski / 莉莉·沃卓斯基 Lilly Wachowski... 2003/美国/动作 科幻</td>
+                    </tr>
+                  <tr>
+                      <td>164</td>
+<td><a href="https://movie.douban.com/subject/26683290/">https://movie.douban.com/subject/26683290/</a></td>
+                      <td>你的名字</td>
+                      <td>君の名は</td>
+                      <td>8.5</td>
+                      <td>1428424</td>
+                       <td>导演: 新海诚 Makoto Shinkai主演: 神木隆之介 Rynosuke Kamiki / 上... 2016/日本/剧情 爱情 动画</td>
+                    </tr>
+                  <tr>
+                      <td>165</td>
+<td><a href="https://movie.douban.com/subject/1417598/">https://movie.douban.com/subject/1417598/</a></td>
+                      <td>电锯惊魂</td>
+                      <td>Saw</td>
+                      <td>8.7</td>
+                      <td>543485</td>
+                       <td>导演: 詹姆斯·温 James Wan主演: 雷·沃纳尔 Leigh Whannell / 加利·艾... 2004/美国/悬疑 惊悚 恐怖</td>
+                    </tr>
+                  <tr>
+                      <td>166</td>
+<td><a href="https://movie.douban.com/subject/26611804/">https://movie.douban.com/subject/26611804/</a></td>
+                      <td>三块广告牌</td>
+                      <td>Three Billboards Outside Ebbing, Missouri</td>
+                      <td>8.7</td>
+                      <td>830543</td>
+                       <td>导演: 马丁·麦克唐纳 Martin McDonagh主演: 弗兰西斯·麦克多蒙德 France... 2017/英国 美国/剧情 犯罪</td>
+                    </tr>
+                  <tr>
+                      <td>167</td>
+<td><a href="https://movie.douban.com/subject/1793929/">https://movie.douban.com/subject/1793929/</a></td>
+                      <td>达拉斯买家俱乐部</td>
+                      <td>Dallas Buyers Club</td>
+                      <td>8.8</td>
+                      <td>458677</td>
+                       <td>导演: 让-马克·瓦雷 Jean-Marc Vallée主演: 马修·麦康纳 Matthew McCon... 2013/美国/剧情 传记 同性</td>
+                    </tr>
+                  <tr>
+                      <td>168</td>
+<td><a href="https://movie.douban.com/subject/1907966/">https://movie.douban.com/subject/1907966/</a></td>
+                      <td>疯狂原始人</td>
+                      <td>The Croods</td>
+                      <td>8.7</td>
+                      <td>849170</td>
+                       <td>导演: 科克·德·米科 Kirk De Micco / 克里斯·桑德斯 Chris Sanders主演... 2013/美国/喜剧 动画 冒险</td>
+                    </tr>
+                  <tr>
+                      <td>169</td>
+<td><a href="https://movie.douban.com/subject/25917973/">https://movie.douban.com/subject/25917973/</a></td>
+                      <td>心迷宫</td>
+                      <td></td>
+                      <td>8.7</td>
+                      <td>531165</td>
+                       <td>导演: 忻钰坤 Yukun Xin主演: 霍卫民 Weimin Huo / 王笑天 Xiaotian Wang ... 2014/中国大陆/剧情 犯罪 悬疑</td>
+                    </tr>
+                  <tr>
+                      <td>170</td>
+<td><a href="https://movie.douban.com/subject/1578507/">https://movie.douban.com/subject/1578507/</a></td>
+                      <td>谍影重重3</td>
+                      <td>The Bourne Ultimatum</td>
+                      <td>8.8</td>
+                      <td>424547</td>
+                       <td>导演: 保罗·格林格拉斯 Paul Greengrass主演: 马特·达蒙 Matt Damon / ... 2007/美国 德国 法国 英国/动作 悬疑 惊悚</td>
+                    </tr>
+                  <tr>
+                      <td>171</td>
+<td><a href="https://movie.douban.com/subject/1292208/">https://movie.douban.com/subject/1292208/</a></td>
+                      <td>上帝之城</td>
+                      <td>Cidade de Deus</td>
+                      <td>9.0</td>
+                      <td>304804</td>
+                       <td>导演: 费尔南多·梅里尔斯 Fernando Meirelles / 卡迪亚·兰德 Kátia Lund&amp;nbsp... 2002/巴西 法国/犯罪 剧情</td>
+                    </tr>
+                  <tr>
+                      <td>172</td>
+<td><a href="https://movie.douban.com/subject/1297574/">https://movie.douban.com/subject/1297574/</a></td>
+                      <td>英雄本色</td>
+                      <td></td>
+                      <td>8.6</td>
+                      <td>549377</td>
+                       <td>导演: 吴宇森 John Woo主演: 周润发 Yun-Fat Chow / 狄龙 Lung Ti / 张国... 1986/中国香港/剧情 动作 犯罪</td>
+                    </tr>
+                  <tr>
+                      <td>173</td>
+<td><a href="https://movie.douban.com/subject/1291585/">https://movie.douban.com/subject/1291585/</a></td>
+                      <td>风之谷</td>
+                      <td>風の谷のナウシカ</td>
+                      <td>8.9</td>
+                      <td>358680</td>
+                       <td>导演: 宫崎骏 Hayao Miyazaki主演: 岛本须美 Sumi Shimamoto / 松田洋治 Y... 1984/日本/动画 奇幻 冒险</td>
+                    </tr>
+                  <tr>
+                      <td>174</td>
+<td><a href="https://movie.douban.com/subject/1295409/">https://movie.douban.com/subject/1295409/</a></td>
+                      <td>纵横四海</td>
+                      <td>緃横四海</td>
+                      <td>8.8</td>
+                      <td>431934</td>
+                       <td>导演: 吴宇森 John Woo主演: 周润发 Yun-Fat Chow / 张国荣 Leslie Cheung... 1991/中国香港/剧情 喜剧 动作 犯罪</td>
+                    </tr>
+                  <tr>
+                      <td>175</td>
+<td><a href="https://movie.douban.com/subject/1291822/">https://movie.douban.com/subject/1291822/</a></td>
+                      <td>卢旺达饭店</td>
+                      <td>Hotel Rwanda</td>
+                      <td>8.9</td>
+                      <td>334681</td>
+                       <td>导演: 特瑞·乔治 Terry George主演: 唐·钱德尔 Don Cheadle / 苏菲·奥... 2004/英国 南非 意大利 美国/剧情 传记 历史 战争</td>
+                    </tr>
+                  <tr>
+                      <td>176</td>
+<td><a href="https://movie.douban.com/subject/25895901/">https://movie.douban.com/subject/25895901/</a></td>
+                      <td>海街日记</td>
+                      <td>海街diary</td>
+                      <td>8.8</td>
+                      <td>456178</td>
+                       <td>导演: 是枝裕和 Hirokazu Koreeda主演: 绫濑遥 Haruka Ayase / 长泽雅美 M... 2015/日本/剧情 家庭</td>
+                    </tr>
+                  <tr>
+                      <td>177</td>
+<td><a href="https://movie.douban.com/subject/10808442/">https://movie.douban.com/subject/10808442/</a></td>
+                      <td>爱在午夜降临前</td>
+                      <td>Before Midnight</td>
+                      <td>8.9</td>
+                      <td>410585</td>
+                       <td>导演: 理查德·林克莱特 Richard Linklater主演: 伊桑·霍克 Ethan Hawke ... 2013/美国 希腊/剧情 爱情</td>
+                    </tr>
+                  <tr>
+                      <td>178</td>
+<td><a href="https://movie.douban.com/subject/1300374/">https://movie.douban.com/subject/1300374/</a></td>
+                      <td>绿里奇迹</td>
+                      <td>The Green Mile</td>
+                      <td>8.9</td>
+                      <td>336077</td>
+                       <td>导演: 弗兰克·德拉邦特 Frank Darabont主演: 汤姆·汉克斯 Tom Hanks / ... 1999/美国/犯罪 剧情 奇幻 悬疑</td>
+                    </tr>
+                  <tr>
+                      <td>179</td>
+<td><a href="https://movie.douban.com/subject/1304447/">https://movie.douban.com/subject/1304447/</a></td>
+                      <td>记忆碎片</td>
+                      <td>Memento</td>
+                      <td>8.7</td>
+                      <td>612302</td>
+                       <td>导演: 克里斯托弗·诺兰 Christopher Nolan主演: 盖·皮尔斯 Guy Pearce /... 2000/美国/犯罪 剧情 悬疑 惊悚</td>
+                    </tr>
+                  <tr>
+                      <td>180</td>
+<td><a href="https://movie.douban.com/subject/27119724/">https://movie.douban.com/subject/27119724/</a></td>
+                      <td>小丑</td>
+                      <td>Joker</td>
+                      <td>8.7</td>
+                      <td>1020951</td>
+                       <td>导演: 托德·菲利普斯 Todd Phillips主演: 杰昆·菲尼克斯 Joaquin Phoeni... 2019/美国 加拿大/剧情 犯罪 惊悚>/td>
+                    </tr>
+                  <tr>
+                      <td>181</td>
+<td><a href="https://movie.douban.com/subject/1862151/">https://movie.douban.com/subject/1862151/</a></td>
+                      <td>疯狂的石头</td>
+                      <td></td>
+                      <td>8.6</td>
+                      <td>834600</td>
+                       <td>导演: 宁浩 Hao Ning主演: 郭涛 Tao Guo / 刘桦 Hua Liu / 连晋 Teddy Lin 2006/中国大陆 中国香港/喜剧 犯罪</td>
+                    </tr>
+                  <tr>
+                      <td>182</td>
+<td><a href="https://movie.douban.com/subject/1307856/">https://movie.douban.com/subject/1307856/</a></td>
+                      <td>背靠背，脸对脸</td>
+                      <td></td>
+                      <td>9.5</td>
+                      <td>138407</td>
+                       <td>导演: 黄建新 Jianxin Huang / 杨亚洲 Yazhou Yang主演: 牛振华 Zhenhua N... 1994/中国大陆 中国香港/剧情</td>
+                    </tr>
+                  <tr>
+                      <td>183</td>
+<td><a href="https://movie.douban.com/subject/1293460/">https://movie.douban.com/subject/1293460/</a></td>
+                      <td>雨中曲</td>
+                      <td>Singin' in the Rain</td>
+                      <td>9.1</td>
+                      <td>230484</td>
+                       <td>导演: 斯坦利·多南 Stanley Donen / 吉恩·凯利 Gene Kelly主演: 吉恩·... 1952/美国/喜剧 歌舞 爱情</td>
+                    </tr>
+                  <tr>
+                      <td>184</td>
+<td><a href="https://movie.douban.com/subject/3792799/">https://movie.douban.com/subject/3792799/</a></td>
+                      <td>岁月神偷</td>
+                      <td>歲月神偷</td>
+                      <td>8.7</td>
+                      <td>579108</td>
+                       <td>导演: 罗启锐 Alex Law主演: 吴君如 Sandra Ng / 任达华 Simon Yam / 钟绍... 2010/中国香港 中国大陆/剧情 家庭</td>
+                    </tr>
+                  <tr>
+                      <td>185</td>
+<td><a href="https://movie.douban.com/subject/1292226/">https://movie.douban.com/subject/1292226/</a></td>
+                      <td>2001太空漫游</td>
+                      <td>2001: A Space Odyssey</td>
+                      <td>8.9</td>
+                      <td>337199</td>
+                       <td>导演: 斯坦利·库布里克 Stanley Kubrick主演: 凯尔·杜拉 Keir Dullea / ... 1968/英国 美国/科幻 惊悚 冒险</td>
+                    </tr>
+                  <tr>
+                      <td>186</td>
+<td><a href="https://movie.douban.com/subject/24733428/">https://movie.douban.com/subject/24733428/</a></td>
+                      <td>心灵奇旅</td>
+                      <td>Soul</td>
+                      <td>8.7</td>
+                      <td>998459</td>
+                       <td>导演: 彼特·道格特 Pete Docter / 凯普·鲍尔斯 Kemp Powers主演: 杰米·... 2020/美国/动画 奇幻 音乐</td>
+                    </tr>
+                  <tr>
+                      <td>187</td>
+<td><a href="https://movie.douban.com/subject/1959195/">https://movie.douban.com/subject/1959195/</a></td>
+                      <td>忠犬八公物语</td>
+                      <td>ハチ公物語</td>
+                      <td>9.2</td>
+                      <td>198639</td>
+                       <td>导演: 神山征二郎 Seijir Kyama主演: 仲代达矢 Tatsuya Nakadai /... 1987/日本/剧情>/td>
+                    </tr>
+                  <tr>
+                      <td>188</td>
+<td><a href="https://movie.douban.com/subject/24750126/">https://movie.douban.com/subject/24750126/</a></td>
+                      <td>荒蛮故事</td>
+                      <td>Relatos salvajes</td>
+                      <td>8.8</td>
+                      <td>449730</td>
+                       <td>导演: 达米安·斯兹弗隆 Damián Szifron主演: 达里奥·葛兰帝内提 Darío... 2014/阿根廷 西班牙/剧情 喜剧 犯罪</td>
+                    </tr>
+                  <tr>
+                      <td>189</td>
+<td><a href="https://movie.douban.com/subject/1307106/">https://movie.douban.com/subject/1307106/</a></td>
+                      <td>无间道2</td>
+                      <td>無間道II</td>
+                      <td>8.7</td>
+                      <td>488202</td>
+                       <td>导演: 刘伟强 / 麦兆辉主演: 陈冠希 Edison Chen / 余文乐 Shawn Yue / 曾... 2003/中国香港/剧情 犯罪 惊悚</td>
+                    </tr>
+                  <tr>
+                      <td>190</td>
+<td><a href="https://movie.douban.com/subject/27622447/">https://movie.douban.com/subject/27622447/</a></td>
+                      <td>小偷家族</td>
+                      <td>万引き家族</td>
+                      <td>8.7</td>
+                      <td>820982</td>
+                       <td>导演: 是枝裕和 Hirokazu Koreeda主演: 中川雅也 Lily Franky / 安藤樱 Sa... 2018/日本/剧情 犯罪 家庭</td>
+                    </tr>
+                  <tr>
+                      <td>191</td>
+<td><a href="https://movie.douban.com/subject/6534248/">https://movie.douban.com/subject/6534248/</a></td>
+                      <td>无敌破坏王</td>
+                      <td>Wreck-It Ralph</td>
+                      <td>8.7</td>
+                      <td>548389</td>
+                       <td>导演: 瑞奇·莫尔 Rich Moore主演: 约翰·C·赖利 John C. Reilly / 萨拉... 2012/美国/喜剧 动画 奇幻 冒险</td>
+                    </tr>
+                  <tr>
+                      <td>192</td>
+<td><a href="https://movie.douban.com/subject/25773932/">https://movie.douban.com/subject/25773932/</a></td>
+                      <td>爆裂鼓手</td>
+                      <td>Whiplash</td>
+                      <td>8.7</td>
+                      <td>596948</td>
+                       <td>导演: 达米恩·查泽雷 Damien Chazelle主演: 迈尔斯·特勒 Miles Teller /... 2014/美国/剧情 音乐</td>
+                    </tr>
+                  <tr>
+                      <td>193</td>
+<td><a href="https://movie.douban.com/subject/1291578/">https://movie.douban.com/subject/1291578/</a></td>
+                      <td>冰川时代</td>
+                      <td>Ice Age</td>
+                      <td>8.6</td>
+                      <td>624013</td>
+                       <td>导演: 卡洛斯·沙尔丹哈 Carlos Saldanha / 克里斯·韦奇 Chris Wedge主演... 2002/美国/喜剧 动画 冒险</td>
+                    </tr>
+                  <tr>
+                      <td>194</td>
+<td><a href="https://movie.douban.com/subject/3011051/">https://movie.douban.com/subject/3011051/</a></td>
+                      <td>恐怖游轮</td>
+                      <td>Triangle</td>
+                      <td>8.5</td>
+                      <td>878278</td>
+                       <td>导演: 克里斯托弗·史密斯 Christopher Smith主演: 梅利莎·乔治 Melissa ... 2009/英国 澳大利亚/剧情 悬疑 惊悚</td>
+                    </tr>
+                  <tr>
+                      <td>195</td>
+<td><a href="https://movie.douban.com/subject/2209573/">https://movie.douban.com/subject/2209573/</a></td>
+                      <td>贫民窟的百万富翁</td>
+                      <td>Slumdog Millionaire</td>
+                      <td>8.6</td>
+                      <td>753239</td>
+                       <td>导演: 丹尼·鲍尔 Danny Boyle / 洛芙琳·坦丹 Loveleen Tandan主演: 戴夫... 2008/英国/剧情 爱情</td>
+                    </tr>
+                  <tr>
+                      <td>196</td>
+<td><a href="https://movie.douban.com/subject/1292329/">https://movie.douban.com/subject/1292329/</a></td>
+                      <td>牯岭街少年杀人事件</td>
+                      <td>牯嶺街少年殺人事件</td>
+                      <td>8.9</td>
+                      <td>307197</td>
+                       <td>导演: 杨德昌 Edward Yang主演: 张震 Chen Chang / 杨静怡 Lisa Yang / 张... 1991/中国台湾/剧情 犯罪</td>
+                    </tr>
+                  <tr>
+                      <td>197</td>
+<td><a href="https://movie.douban.com/subject/1292328/">https://movie.douban.com/subject/1292328/</a></td>
+                      <td>东邪西毒</td>
+                      <td>東邪西毒</td>
+                      <td>8.6</td>
+                      <td>583499</td>
+                       <td>导演: 王家卫 Kar Wai Wong主演: 张国荣 Leslie Cheung / 林青霞 Brigitte... 1994/中国香港 中国台湾/剧情 动作 爱情 武侠 古装</td>
+                    </tr>
+                  <tr>
+                      <td>198</td>
+<td><a href="https://movie.douban.com/subject/1307811/">https://movie.douban.com/subject/1307811/</a></td>
+                      <td>魔女宅急便</td>
+                      <td>魔女の宅急便</td>
+                      <td>8.7</td>
+                      <td>466596</td>
+                       <td>导演: 宫崎骏 Hayao Miyazaki主演: 高山南 Minami Takayama / 佐久间玲 Re... 1989/日本/动画 奇幻 冒险</td>
+                    </tr>
+                  <tr>
+                      <td>199</td>
+<td><a href="https://movie.douban.com/subject/1867345/">https://movie.douban.com/subject/1867345/</a></td>
+                      <td>遗愿清单</td>
+                      <td>The Bucket List</td>
+                      <td>8.7</td>
+                      <td>470399</td>
+                       <td>导演: 罗伯·莱纳 Rob Reiner主演: 杰克·尼科尔森 Jack Nicholson / 摩根... 2007/美国/冒险 喜剧 剧情</td>
+                    </tr>
+                  <tr>
+                      <td>200</td>
+<td><a href="https://movie.douban.com/subject/1310177/">https://movie.douban.com/subject/1310177/</a></td>
+                      <td>东京教父</td>
+                      <td>東京ゴッドファーザーズ</td>
+                      <td>9.0</td>
+                      <td>236221</td>
+                       <td>导演: 今敏 Satoshi Kon主演: 江守彻 Toru Emori / 梅垣义明 Yoshiaki Ume... 2003/日本/剧情 喜剧 动画</td>
+                    </tr>
+                  <tr>
+                      <td>201</td>
+<td><a href="https://movie.douban.com/subject/27059130/">https://movie.douban.com/subject/27059130/</a></td>
+                      <td>大佛普拉斯</td>
+                      <td></td>
+                      <td>8.7</td>
+                      <td>468470</td>
+                       <td>导演: 黄信尧 Hsin-yao Huang主演: 庄益增 Yizeng Zhuang / 陈竹昇 Chu-sh... 2017/中国台湾/剧情 喜剧</td>
+                    </tr>
+                  <tr>
+                      <td>202</td>
+<td><a href="https://movie.douban.com/subject/4848115/">https://movie.douban.com/subject/4848115/</a></td>
+                      <td>你看起来好像很好吃</td>
+                      <td>おまえうまそうだな</td>
+                      <td>8.9</td>
+                      <td>337734</td>
+                       <td>导演: 藤森雅也 Masaya Fujimori主演: 山口胜平 Kappei Yamaguchi / 爱河... 2010/日本/剧情 动画 儿童</td>
+                    </tr>
+                  <tr>
+                      <td>203</td>
+<td><a href="https://movie.douban.com/subject/1292401/">https://movie.douban.com/subject/1292401/</a></td>
+                      <td>真爱至上</td>
+                      <td>Love Actually</td>
+                      <td>8.6</td>
+                      <td>738840</td>
+                       <td>导演: 理查德·柯蒂斯 Richard Curtis主演: 休·格兰特 Hugh Grant / 连姆... 2003/英国 美国 法国/喜剧 剧情 爱情</td>
+                    </tr>
+                  <tr>
+                      <td>204</td>
+<td><a href="https://movie.douban.com/subject/1978709/">https://movie.douban.com/subject/1978709/</a></td>
+                      <td>黑天鹅</td>
+                      <td>Black Swan</td>
+                      <td>8.6</td>
+                      <td>787634</td>
+                       <td>导演: 达伦·阿罗诺夫斯基 Darren Aronofsky主演: 娜塔莉·波特曼 Natalie... 2010/美国/剧情 惊悚</td>
+                    </tr>
+                  <tr>
+                      <td>205</td>
+<td><a href="https://movie.douban.com/subject/1308857/">https://movie.douban.com/subject/1308857/</a></td>
+                      <td>可可西里</td>
+                      <td></td>
+                      <td>8.9</td>
+                      <td>307963</td>
+                       <td>导演: 陆川 Chuan Lu主演: 多布杰 Duobujie / 张磊 Lei Zhang / 亓亮 Qi L... 2004/中国大陆 中国香港/剧情 犯罪</td>
+                    </tr>
+                  <tr>
+                      <td>206</td>
+<td><a href="https://movie.douban.com/subject/1293908/">https://movie.douban.com/subject/1293908/</a></td>
+                      <td>城市之光</td>
+                      <td>City Lights</td>
+                      <td>9.3</td>
+                      <td>149685</td>
+                       <td>导演: Charles Chaplin主演: 查理·卓别林 Charles Chaplin / 弗吉尼亚·... 1931/美国/喜剧 剧情 爱情</td>
+                    </tr>
+                  <tr>
+                      <td>207</td>
+<td><a href="https://movie.douban.com/subject/3075287/">https://movie.douban.com/subject/3075287/</a></td>
+                      <td>源代码</td>
+                      <td>Source Code</td>
+                      <td>8.5</td>
+                      <td>845286</td>
+                       <td>导演: 邓肯·琼斯 Duncan Jones主演: 杰克·吉伦哈尔 Jake Gyllenhaal / ... 2011/美国 加拿大/科幻 悬疑 惊悚</td>
+                    </tr>
+                  <tr>
+                      <td>208</td>
+<td><a href="https://movie.douban.com/subject/25980443/">https://movie.douban.com/subject/25980443/</a></td>
+                      <td>海边的曼彻斯特</td>
+                      <td>Manchester by the Sea</td>
+                      <td>8.6</td>
+                      <td>553713</td>
+                       <td>导演: 肯尼斯·罗纳根 Kenneth Lonergan主演: 卡西·阿弗莱克 Casey Affle... 2016/美国/剧情 家庭</td>
+                    </tr>
+                  <tr>
+                      <td>209</td>
+<td><a href="https://movie.douban.com/subject/1291870/">https://movie.douban.com/subject/1291870/</a></td>
+                      <td>雨人</td>
+                      <td>Rain Man</td>
+                      <td>8.7</td>
+                      <td>408853</td>
+                       <td>导演: 巴瑞·莱文森 Barry Levinson主演: 达斯汀·霍夫曼 Dustin Hoffman ... 1988/美国/剧情</td>
+                    </tr>
+                  <tr>
+                      <td>210</td>
+<td><a href="https://movie.douban.com/subject/5300054/">https://movie.douban.com/subject/5300054/</a></td>
+                      <td>波西米亚狂想曲</td>
+                      <td>Bohemian Rhapsody</td>
+                      <td>8.6</td>
+                      <td>614755</td>
+                       <td>导演: 布莱恩·辛格 Bryan Singer主演: 拉米·马雷克 Rami Malek / 本·哈... 2018/英国 美国/剧情 传记 同性 音乐</td>
+                    </tr>
+                  <tr>
+                      <td>211</td>
+<td><a href="https://movie.douban.com/subject/4739952/">https://movie.douban.com/subject/4739952/</a></td>
+                      <td>初恋这件小事</td>
+                      <td>...</td>
+                      <td>8.5</td>
+                      <td>988362</td>
+                       <td>导演: 普特鹏·普罗萨卡·那·萨克那卡林 Puttipong Promsaka Na Sakolnakorn / 华森·波克彭... 2010/泰国/剧情 喜剧 爱情</td>
+                    </tr>
+                  <tr>
+                      <td>212</td>
+<td><a href="https://movie.douban.com/subject/1309163/">https://movie.douban.com/subject/1309163/</a></td>
+                      <td>恋恋笔记本</td>
+                      <td>The Notebook</td>
+                      <td>8.5</td>
+                      <td>680313</td>
+                       <td>导演: 尼克·卡索维茨 Nick Cassavetes主演: 瑞恩·高斯林 Ryan Gosling /... 2004/美国/剧情 爱情</td>
+                    </tr>
+                  <tr>
+                      <td>213</td>
+<td><a href="https://movie.douban.com/subject/1302827/">https://movie.douban.com/subject/1302827/</a></td>
+                      <td>人工智能</td>
+                      <td>A.I. Artificial Intelligence</td>
+                      <td>8.7</td>
+                      <td>453178</td>
+                       <td>导演: 史蒂文·斯皮尔伯格 Steven Spielberg主演: 海利·乔·奥斯蒙 Haley... 2001/美国 英国/剧情 科幻</td>
+                    </tr>
+                  <tr>
+                      <td>214</td>
+<td><a href="https://movie.douban.com/subject/1303394/">https://movie.douban.com/subject/1303394/</a></td>
+                      <td>青蛇</td>
+                      <td></td>
+                      <td>8.6</td>
+                      <td>534684</td>
+                       <td>导演: 徐克 Hark Tsui主演: 张曼玉 Maggie Cheung / 王祖贤 Joey Wang / ... 1993/中国香港 中国大陆/剧情 爱情 奇幻 古装</td>
+                    </tr>
+                  <tr>
+                      <td>215</td>
+<td><a href="https://movie.douban.com/subject/1296909/">https://movie.douban.com/subject/1296909/</a></td>
+                      <td>虎口脱险</td>
+                      <td>La grande vadrouille</td>
+                      <td>8.9</td>
+                      <td>261487</td>
+                       <td>导演: 杰拉尔·乌里 Gérard Oury主演: 路易·德·菲耐斯 Louis de Funès... 1966/法国 英国/喜剧 战争</td>
+                    </tr>
+                  <tr>
+                      <td>216</td>
+<td><a href="https://movie.douban.com/subject/1291992/">https://movie.douban.com/subject/1291992/</a></td>
+                      <td>末路狂花</td>
+                      <td>Thelma &amp; Louise</td>
+                      <td>8.9</td>
+                      <td>264526</td>
+                       <td>导演: 雷德利·斯科特 Ridley Scott主演: 吉娜·戴维斯 Geena Davis / 苏... 1991/美国 英国 法国/犯罪 剧情 惊悚</td>
+                    </tr>
+                  <tr>
+                      <td>217</td>
+<td><a href="https://movie.douban.com/subject/1291844/">https://movie.douban.com/subject/1291844/</a></td>
+                      <td>终结者2：审判日</td>
+                      <td>Terminator 2: Judgment Day</td>
+                      <td>8.8</td>
+                      <td>346359</td>
+                       <td>导演: 詹姆斯·卡梅隆 James Cameron主演: 阿诺·施瓦辛格 Arnold Schwarz... 1991/美国 法国/动作 科幻</td>
+                    </tr>
+                  <tr>
+                      <td>218</td>
+<td><a href="https://movie.douban.com/subject/3592854/">https://movie.douban.com/subject/3592854/</a></td>
+                      <td>疯狂的麦克斯4：狂暴之路</td>
+                      <td>Mad Max: Fury Road</td>
+                      <td>8.7</td>
+                      <td>538110</td>
+                       <td>导演: 乔治·米勒 George Miller主演: 汤姆·哈迪 Tom Hardy / 查理兹·塞... 2015/澳大利亚 美国/动作 科幻 冒险</td>
+                    </tr>
+                  <tr>
+                      <td>219</td>
+<td><a href="https://movie.douban.com/subject/1291879/">https://movie.douban.com/subject/1291879/</a></td>
+                      <td>罗生门</td>
+                      <td>羅生門</td>
+                      <td>8.8</td>
+                      <td>319675</td>
+                       <td>导演: 黑泽明 Akira Kurosawa主演: 三船敏郎 Toshir Mifune / 京町子 ... 1950/日本/剧情 犯罪 悬疑</td>
+                    </tr>
+                  <tr>
+                      <td>220</td>
+<td><a href="https://movie.douban.com/subject/1292287/">https://movie.douban.com/subject/1292287/</a></td>
+                      <td>新龙门客栈</td>
+                      <td>新龍門客棧</td>
+                      <td>8.7</td>
+                      <td>451237</td>
+                       <td>导演: 李惠民 Raymond Lee主演: 张曼玉 Maggie Cheung / 林青霞 Brigitte ... 1992/中国香港 中国大陆/动作 爱情 武侠 古装</td>
+                    </tr>
+                  <tr>
+                      <td>221</td>
+<td><a href="https://movie.douban.com/subject/1438652/">https://movie.douban.com/subject/1438652/</a></td>
+                      <td>无耻混蛋</td>
+                      <td>Inglourious Basterds</td>
+                      <td>8.7</td>
+                      <td>486487</td>
+                       <td>导演: 昆汀·塔伦蒂诺 Quentin Tarantino主演: 布拉德·皮特 Brad Pitt / ... 2009/德国 美国/剧情 犯罪</td>
+                    </tr>
+                  <tr>
+                      <td>222</td>
+<td><a href="https://movie.douban.com/subject/1300117/">https://movie.douban.com/subject/1300117/</a></td>
+                      <td>千钧一发</td>
+                      <td>Gattaca</td>
+                      <td>8.8</td>
+                      <td>305012</td>
+                       <td>导演: 安德鲁·尼科尔 Andrew Niccol主演: 伊桑·霍克 Ethan Hawke / 乌玛... 1997/美国/剧情 科幻 惊悚</td>
+                    </tr>
+                  <tr>
+                      <td>223</td>
+<td><a href="https://movie.douban.com/subject/1959877/">https://movie.douban.com/subject/1959877/</a></td>
+                      <td>崖上的波妞</td>
+                      <td>崖の上のポニョ</td>
+                      <td>8.6</td>
+                      <td>506388</td>
+                       <td>导演: 宫崎骏 Hayao Miyazaki主演: 奈良柚莉爱 Yuria Nara / 土井洋辉 Hir... 2008/日本/动画 奇幻 冒险</td>
+                    </tr>
+                  <tr>
+                      <td>224</td>
+<td><a href="https://movie.douban.com/subject/1293318/">https://movie.douban.com/subject/1293318/</a></td>
+                      <td>萤火虫之墓</td>
+                      <td>火垂るの墓</td>
+                      <td>8.7</td>
+                      <td>408514</td>
+                       <td>导演: 高畑勋 Isao Takahata主演: 辰己努 / 白石绫乃 / 志乃原良子 1988/日本/动画 剧情 战争</td>
+                    </tr>
+                  <tr>
+                      <td>225</td>
+<td><a href="https://movie.douban.com/subject/1297880/">https://movie.douban.com/subject/1297880/</a></td>
+                      <td>芙蓉镇</td>
+                      <td></td>
+                      <td>9.3</td>
+                      <td>144455</td>
+                       <td>导演: 谢晋 Jin Xie主演: 刘晓庆 Xiaoqing Liu / 姜文 Wen Jiang / 郑在石... 1987/中国大陆/剧情 爱情</td>
+                    </tr>
+                  <tr>
+                      <td>226</td>
+<td><a href="https://movie.douban.com/subject/34874432/">https://movie.douban.com/subject/34874432/</a></td>
+                      <td>花束般的恋爱</td>
+                      <td>花束みたいな恋をした</td>
+                      <td>8.6</td>
+                      <td>642108</td>
+                       <td>导演: 土井裕泰 Nobuhiro Doi主演: 菅田将晖 Masaki Suda / 有村架纯 Kasu... 2021/日本/剧情 爱情</td>
+                    </tr>
+                  <tr>
+                      <td>227</td>
+<td><a href="https://movie.douban.com/subject/25807345/">https://movie.douban.com/subject/25807345/</a></td>
+                      <td>彗星来的那一夜</td>
+                      <td>Coherence</td>
+                      <td>8.6</td>
+                      <td>591508</td>
+                       <td>导演: 詹姆斯·沃德·布柯特 James Ward Byrkit主演: 艾米丽·芭尔多尼 Em... 2013/美国 英国/科幻 悬疑 惊悚</td>
+                    </tr>
+                  <tr>
+                      <td>228</td>
+<td><a href="https://movie.douban.com/subject/26787574/">https://movie.douban.com/subject/26787574/</a></td>
+                      <td>奇迹男孩</td>
+                      <td>Wonder</td>
+                      <td>8.6</td>
+                      <td>557157</td>
+                       <td>导演: 斯蒂芬·卓博斯基 Stephen Chbosky主演: 雅各布·特伦布莱 Jacob Tr... 2017/美国 中国香港/剧情 儿童 家庭</td>
+                    </tr>
+                  <tr>
+                      <td>229</td>
+<td><a href="https://movie.douban.com/subject/25934014/">https://movie.douban.com/subject/25934014/</a></td>
+                      <td>爱乐之城</td>
+                      <td>La La Land</td>
+                      <td>8.4</td>
+                      <td>913966</td>
+                       <td>导演: 达米恩·查泽雷 Damien Chazelle主演: 瑞恩·高斯林 Ryan Gosling /... 2016/美国/剧情 爱情 歌舞</td>
+                    </tr>
+                  <tr>
+                      <td>230</td>
+<td><a href="https://movie.douban.com/subject/1304141/">https://movie.douban.com/subject/1304141/</a></td>
+                      <td>黑客帝国2：重装上阵</td>
+                      <td>The Matrix Reloaded</td>
+                      <td>8.7</td>
+                      <td>411814</td>
+                       <td>导演: 拉娜·沃卓斯基 Lana Wachowski / 莉莉·沃卓斯基 Lilly Wachowski... 2003/美国/动作 科幻</td>
+                    </tr>
+                  <tr>
+                      <td>231</td>
+<td><a href="https://movie.douban.com/subject/26430107/">https://movie.douban.com/subject/26430107/</a></td>
+                      <td>二十二</td>
+                      <td></td>
+                      <td>8.7</td>
+                      <td>294414</td>
+                       <td>导演: 郭柯 Ke Guo主演:  2015/中国大陆/纪录片</td>
+                    </tr>
+                  <tr>
+                      <td>232</td>
+<td><a href="https://movie.douban.com/subject/2051007/">https://movie.douban.com/subject/2051007/</a></td>
+                      <td>哈利·波特与死亡圣器(上)</td>
+                      <td>Harry Potter and the Deathly Hallows: Part 1</td>
+                      <td>8.5</td>
+                      <td>588108</td>
+                       <td>导演: 大卫·叶茨 David Yates主演: 丹尼尔·雷德克里夫 Daniel Radcliffe... 2010/英国 美国/奇幻 冒险</td>
+                    </tr>
+                  <tr>
+                      <td>233</td>
+<td><a href="https://movie.douban.com/subject/1428175/">https://movie.douban.com/subject/1428175/</a></td>
+                      <td>血钻</td>
+                      <td>Blood Diamond</td>
+                      <td>8.7</td>
+                      <td>385230</td>
+                       <td>导演: 爱德华·兹威克 Edward Zwick主演: 莱昂纳多·迪卡普里奥 Leonardo ... 2006/美国 德国 英国/剧情 惊悚 冒险</td>
+                    </tr>
+                  <tr>
+                      <td>234</td>
+<td><a href="https://movie.douban.com/subject/1419936/">https://movie.douban.com/subject/1419936/</a></td>
+                      <td>战争之王</td>
+                      <td>Lord of War</td>
+                      <td>8.7</td>
+                      <td>374133</td>
+                       <td>导演: 安德鲁·尼科尔 Andrew Niccol主演: 尼古拉斯·凯奇 Nicolas Cage /... 2005/美国 德国/剧情 犯罪</td>
+                    </tr>
+                  <tr>
+                      <td>235</td>
+<td><a href="https://movie.douban.com/subject/2222996/">https://movie.douban.com/subject/2222996/</a></td>
+                      <td>步履不停</td>
+                      <td>歩いても 歩いても</td>
+                      <td>8.8</td>
+                      <td>283610</td>
+                       <td>导演: 是枝裕和 Hirokazu Koreeda主演: 阿部宽 Hiroshi Abe / 夏川结衣 Yu... 2008/日本/剧情 家庭</td>
+                    </tr>
+                  <tr>
+                      <td>236</td>
+<td><a href="https://movie.douban.com/subject/25864085/">https://movie.douban.com/subject/25864085/</a></td>
+                      <td>火星救援</td>
+                      <td>The Martian</td>
+                      <td>8.5</td>
+                      <td>740784</td>
+                       <td>导演: 雷德利·斯科特 Ridley Scott主演: 马特·达蒙 Matt Damon / 杰西卡... 2015/英国 美国 匈牙利 约旦/剧情 科幻 冒险</td>
+                    </tr>
+                  <tr>
+                      <td>237</td>
+<td><a href="https://movie.douban.com/subject/25724855/">https://movie.douban.com/subject/25724855/</a></td>
+                      <td>房间</td>
+                      <td>Room</td>
+                      <td>8.8</td>
+                      <td>371561</td>
+                       <td>导演: 伦尼·阿伯拉罕森 Lenny Abrahamson主演: 布丽·拉尔森 Brie Larson... 2015/爱尔兰 加拿大 英国 美国/剧情 家庭</td>
+                    </tr>
+                  <tr>
+                      <td>238</td>
+<td><a href="https://movie.douban.com/subject/1293964/">https://movie.douban.com/subject/1293964/</a></td>
+                      <td>魂断蓝桥</td>
+                      <td>Waterloo Bridge</td>
+                      <td>8.8</td>
+                      <td>282611</td>
+                       <td>导演: 茂文·勒鲁瓦 Mervyn LeRoy主演: 费雯·丽 Vivien Leigh / 罗伯特·... 1940/美国/剧情 爱情 战争</td>
+                    </tr>
+                  <tr>
+                      <td>239</td>
+<td><a href="https://movie.douban.com/subject/1307394/">https://movie.douban.com/subject/1307394/</a></td>
+                      <td>千年女优</td>
+                      <td>千年女優</td>
+                      <td>8.8</td>
+                      <td>273509</td>
+                       <td>导演: 今敏 Satoshi Kon主演: 庄司美代子 Miyoko Shji / 小山茉美 Mam... 2001/日本/动画 剧情 爱情</td>
+                    </tr>
+                  <tr>
+                      <td>240</td>
+<td><a href="https://movie.douban.com/subject/1308767/">https://movie.douban.com/subject/1308767/</a></td>
+                      <td>谍影重重2</td>
+                      <td>The Bourne Supremacy</td>
+                      <td>8.7</td>
+                      <td>358232</td>
+                       <td>导演: 保罗·格林格拉斯 Paul Greengrass主演: 马特·达蒙 Matt Damon / ... 2004/美国 德国/动作 悬疑 惊悚</td>
+                    </tr>
+                  <tr>
+                      <td>241</td>
+<td><a href="https://movie.douban.com/subject/2133323/">https://movie.douban.com/subject/2133323/</a></td>
+                      <td>白日梦想家</td>
+                      <td>The Secret Life of Walter Mitty</td>
+                      <td>8.6</td>
+                      <td>496248</td>
+                       <td>导演: 本·斯蒂勒 Ben Stiller主演: 本·斯蒂勒 Ben Stiller / 克里斯汀·... 2013/美国 英国/剧情 喜剧 冒险</td>
+                    </tr>
+                  <tr>
+                      <td>242</td>
+<td><a href="https://movie.douban.com/subject/1457217/">https://movie.douban.com/subject/1457217/</a></td>
+                      <td>哈利·波特与凤凰社</td>
+                      <td>Harry Potter and the Order of the Phoenix</td>
+                      <td>8.5</td>
+                      <td>582393</td>
+                       <td>导演: 大卫·叶茨 David Yates主演: 丹尼尔·雷德克里夫 Daniel Radcliffe... 2007/英国 美国/奇幻 冒险</td>
+                    </tr>
+                  <tr>
+                      <td>243</td>
+<td><a href="https://movie.douban.com/subject/3552028/">https://movie.douban.com/subject/3552028/</a></td>
+                      <td>弱点</td>
+                      <td>The Blind Side</td>
+                      <td>8.7</td>
+                      <td>314909</td>
+                       <td>导演: 约翰·李·汉考克 John Lee Hancock主演: 桑德拉·布洛克 Sandra Bu... 2009/美国/剧情 家庭 传记 运动</td>
+                    </tr>
+                  <tr>
+                      <td>244</td>
+<td><a href="https://movie.douban.com/subject/26374197/">https://movie.douban.com/subject/26374197/</a></td>
+                      <td>蜘蛛侠：平行宇宙</td>
+                      <td>Spider-Man: Into the Spider-Verse</td>
+                      <td>8.6</td>
+                      <td>677177</td>
+                       <td>导演: 鲍勃·佩尔西凯蒂 Bob Persichetti / 彼得·拉姆齐 Peter Ramsey主... 2018/美国/动作 科幻 动画 冒险</td>
+                    </tr>
+                  <tr>
+                      <td>245</td>
+<td><a href="https://movie.douban.com/subject/1304102/">https://movie.douban.com/subject/1304102/</a></td>
+                      <td>谍影重重</td>
+                      <td>The Bourne Identit</td>
+                      <td>8.6</td>
+                      <td>434274</td>
+                       <td>导演: 道格·里曼 Doug Liman主演: 马特·达蒙 Matt Damon / 弗兰卡·波坦... 2002/美国 德国 捷克/动作 悬疑 惊悚</td>
+                    </tr>
+                  <tr>
+                      <td>246</td>
+<td><a href="https://movie.douban.com/subject/1305690/">https://movie.douban.com/subject/1305690/</a></td>
+                      <td>阿飞正传</td>
+                      <td>阿飛正傳</td>
+                      <td>8.5</td>
+                      <td>517752</td>
+                       <td>导演: 王家卫 Kar Wai Wong主演: 张国荣 Leslie Cheung / 张曼玉 Maggie C... 1990/中国香港/犯罪 剧情 爱情</td>
+                    </tr>
+                  <tr>
+                      <td>247</td>
+<td><a href="https://movie.douban.com/subject/2213597/">https://movie.douban.com/subject/2213597/</a></td>
+                      <td>朗读者</td>
+                      <td>The Reade</td>
+                      <td>8.6</td>
+                      <td>457887</td>
+                       <td>导演: 史蒂芬·戴德利 Stephen Daldry主演: 凯特·温丝莱特 Kate Winslet ... 2008/美国 德国/剧情 爱情</td>
+                    </tr>
+                  <tr>
+                      <td>248</td>
+<td><a href="https://movie.douban.com/subject/1295865/">https://movie.douban.com/subject/1295865/</a></td>
+                      <td>燃情岁月</td>
+                      <td>Legends of the Fall</td>
+                      <td>8.7</td>
+                      <td>290709</td>
+                       <td>导演: 爱德华·兹威克 Edward Zwick主演: 布拉德·皮特 Brad Pitt / 安东... 1994/美国/剧情 爱情 战争 西部</td>
+                    </tr>
+                  <tr>
+                      <td>249</td>
+<td><a href="https://movie.douban.com/subject/6874403/">https://movie.douban.com/subject/6874403/</a></td>
+                      <td>再次出发之纽约遇见你</td>
+                      <td>Begin Again</td>
+                      <td>8.6</td>
+                      <td>432542</td>
+                       <td>导演: 约翰·卡尼 John Carney主演: 凯拉·奈特莉 Keira Knightley / 马克... 2013/美国/喜剧 爱情 音乐</td>
+                    </tr>
+                  <tr>
+                      <td>250</td>
+<td><a href="https://movie.douban.com/subject/1422283/">https://movie.douban.com/subject/1422283/</a></td>
+                      <td>高山下的花环</td>
+                      <td></td>
+                      <td>9.5</td>
+                      <td>90143</td>
+                       <td>导演: 谢晋 Jin Xie主演: 吕晓禾 Xiaohe Lü / 唐国强 Guoqiang Tang / 何... 1984(中国大陆) / 1985/中国大陆/剧情 战争</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>豆瓣电影数据可视化分析@<a target="_blank" href="http://sc.chinaz.com/moban/">Flask+Mysql+Echarts</a></span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="login.html">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="js/demo/datatables-demo.js"></script>
+
+</body>
+
+</html>
