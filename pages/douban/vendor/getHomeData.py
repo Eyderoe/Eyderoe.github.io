@@ -1,2 +1,0 @@
-import moban4402.utils
-typelist
