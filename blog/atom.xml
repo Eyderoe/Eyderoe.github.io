@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="atom.xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://Eyderoe.github.io/blog</id>
+    <title>Eyderoe Blog</title>
+    <updated>2025-03-20T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://Eyderoe.github.io/blog"/>
+    <subtitle>Eyderoe Blog</subtitle>
+    <icon>https://Eyderoe.github.io/index/vor.png</icon>
+    <entry>
+        <title type="html"><![CDATA[建站 !]]></title>
+        <id>https://Eyderoe.github.io/blog/20250320first-blog</id>
+        <link href="https://Eyderoe.github.io/blog/20250320first-blog"/>
+        <updated>2025-03-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[建站叻]]></summary>
+        <content type="html"><![CDATA[<p>建站叻</p>
+<p>找资料时无意了解到了 docusaurus，清爽，很好用。以后大部分资料都会丢在这里，csdn 也会顺便发一些文章赚数据。有空会慢慢把之前写的东西拿过来</p>]]></content>
+        <author>
+            <name>Eyderoe</name>
+            <uri>https://github.com/Eyderoe</uri>
+        </author>
+        <category label="Docusaurus" term="Docusaurus"/>
+    </entry>
+</feed>

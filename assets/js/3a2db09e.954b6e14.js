@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkeyderoe_blog=self.webpackChunkeyderoe_blog||[]).push([[121],{8070:e=>{e.exports=JSON.parse('{"tags":[{"label":"Docusaurus","permalink":"/blog/tags/docusaurus","description":"Docusaurus tag description","count":1}]}')}}]);

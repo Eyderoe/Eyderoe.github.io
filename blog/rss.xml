@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="rss.xsl"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Eyderoe Blog</title>
+        <link>https://Eyderoe.github.io/blog</link>
+        <description>Eyderoe Blog</description>
+        <lastBuildDate>Thu, 20 Mar 2025 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>zh-Hans</language>
+        <item>
+            <title><![CDATA[建站 !]]></title>
+            <link>https://Eyderoe.github.io/blog/20250320first-blog</link>
+            <guid>https://Eyderoe.github.io/blog/20250320first-blog</guid>
+            <pubDate>Thu, 20 Mar 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[建站叻]]></description>
+            <content:encoded><![CDATA[<p>建站叻</p>
+<p>找资料时无意了解到了 docusaurus，清爽，很好用。以后大部分资料都会丢在这里，csdn 也会顺便发一些文章赚数据。有空会慢慢把之前写的东西拿过来</p>]]></content:encoded>
+            <category>Docusaurus</category>
+        </item>
+    </channel>
+</rss>
