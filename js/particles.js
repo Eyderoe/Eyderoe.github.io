@@ -1,6 +1,4 @@
-
 !function () {
-
     function getAttributeValue(element, attributeName, defaultValue) {
         return element.getAttribute(attributeName) || defaultValue;
     }
@@ -20,7 +18,7 @@
             opacity: getAttributeValue(currentScript, "opacity", .5),
 
             color: getAttributeValue(currentScript, "color", "52, 211, 153"),
-            particleCount: getAttributeValue(currentScript, "count", 100)
+            particleCount: getAttributeValue(currentScript, "count", 120)
         };
     }
 
@@ -47,10 +45,10 @@
                     dy = particleA.y - particleB.y;
                     distance = dx * dx + dy * dy;
                     if (distance < particleB.maxDistance) {
-                        if (particleB === mouseParticle && distance >= particleB.maxDistance / 2) {
-                            particleA.x -= .03 * dx;
-                            particleA.y -= .03 * dy;
-                        }
+                        // if (particleB === mouseParticle && distance >= particleB.maxDistance / 2) { // 鼠标拖拽代码
+                        //     particleA.x -= .01 * dx;
+                        //     particleA.y -= .01 * dy;
+                        // }
                         alpha = (particleB.maxDistance - distance) / particleB.maxDistance;
                         context.beginPath();
                         context.lineWidth = alpha / 2;
@@ -67,14 +65,14 @@
     }
 
     var canvasWidth, canvasHeight, allParticles, canvas = document.createElement("canvas"),
-        scriptConfig = getScriptConfig(), canvasId = "c_n" + scriptConfig.scriptCount, context = canvas.getContext("2d"),
+        scriptConfig = getScriptConfig(), context = canvas.getContext("2d"),
         requestAnimationFrame = window.requestAnimationFrame ||
             function (callback) {
                 window.setTimeout(callback, 1000 / 45);
             },
         random = Math.random, mouseParticle = {x: null, y: null, maxDistance: 20000};
 
-    canvas.id = canvasId;
+    canvas.id = "c_n" + scriptConfig.scriptCount;
     canvas.style.cssText = "position:fixed;top:0;left:0;z-index:" + scriptConfig.zIndex + ";opacity:" + scriptConfig.opacity;
     getElementsByTagName("body")[0].appendChild(canvas);
     updateCanvasSize();
