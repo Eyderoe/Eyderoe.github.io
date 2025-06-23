@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-模拟飞行/燃油政策" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.7.0">
+<title data-rh="true">燃油政策 | Eyderoe</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://Eyderoe.github.io/docs/模拟飞行/燃油政策"><meta data-rh="true" property="og:locale" content="zh_Hans"><meta data-rh="true" name="docusaurus_locale" content="zh-Hans"><meta data-rh="true" name="docsearch:language" content="zh-Hans"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="燃油政策 | Eyderoe"><meta data-rh="true" name="description" content="模拟飞行中的基本燃油计算，不包含延程运行和二次放行"><meta data-rh="true" property="og:description" content="模拟飞行中的基本燃油计算，不包含延程运行和二次放行"><link data-rh="true" rel="icon" href="/index/vor.png"><link data-rh="true" rel="canonical" href="https://Eyderoe.github.io/docs/模拟飞行/燃油政策"><link data-rh="true" rel="alternate" href="https://Eyderoe.github.io/docs/模拟飞行/燃油政策" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://Eyderoe.github.io/docs/模拟飞行/燃油政策" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Eyderoe RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Eyderoe Atom Feed">
+
+
+
+
+<script src="/js/particles.js" async defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.ba43b2ce.css">
+<script src="/assets/js/runtime~main.a852a8ee.js" defer="defer"></script>
+<script src="/assets/js/main.ec9e3b4a.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/index/symbol.webp"><div role="region" aria-label="跳到主要内容"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">跳到主要内容</a></div><nav aria-label="主导航" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/index/symbol.webp" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/index/symbol.webp" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">首页</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/说明">文档</a><a class="navbar__item navbar__link" href="/blog">说说</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/Eyderoe" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="切换浅色/暗黑模式（当前为浅色模式）" aria-label="切换浅色/暗黑模式（当前为浅色模式）" aria-live="polite" aria-pressed="false"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="文档侧边栏" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/说明">说明</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/docusaurus">Docusaurus</a><button aria-label="展开侧边栏分类 &#x27;Docusaurus&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/c">C++</a><button aria-label="展开侧边栏分类 &#x27;C++&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/stm32--clion">STM32 × CLion</a><button aria-label="展开侧边栏分类 &#x27;STM32 × CLion&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/qt">QT</a><button aria-label="展开侧边栏分类 &#x27;QT&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/室内定位">室内定位</a><button aria-label="展开侧边栏分类 &#x27;室内定位&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/python">Python</a><button aria-label="展开侧边栏分类 &#x27;Python&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/docs/category/模拟飞行">模拟飞行</a><button aria-label="折叠侧边栏分类 &#x27;模拟飞行&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/模拟飞行/航图样式比较 1">航图样式比较 1</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/模拟飞行/航图样式比较 2">航图样式比较 2</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/模拟飞行/燃油政策">燃油政策</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/模拟飞行/有趣的RNP程序">有趣的 RNP 程序</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/模拟飞行/动手创建程序">创建简易的 RNP 程序</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/模拟飞行/自制RNP程序">自制的 RNP 程序</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/模拟飞行/盘旋进近">盘旋进近</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/模拟飞行/传统导航">传统导航</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/模拟飞行/424航段">ARINC424 航段类型</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/模拟飞行/飞行程序">飞行程序设计</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/杂记">杂记</a><button aria-label="展开侧边栏分类 &#x27;杂记&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="页面路径"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="主页面" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/docs/category/模拟飞行"><span itemprop="name">模拟飞行</span></a><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">燃油政策</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">本页总览</button></div><div class="theme-doc-markdown markdown"><header><h1>燃油政策</h1></header>
+<p>模拟飞行中的基本燃油计算，不包含延程运行和二次放行</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="基本燃油组成">基本燃油组成<a href="#基本燃油组成" class="hash-link" aria-label="基本燃油组成的直接链接" title="基本燃油组成的直接链接">​</a></h2>
+<p>参考：CAAR-121.657条 燃油量要求</p>
+<ol>
+<li>滑行燃油(Taxi)：考虑到起飞机场的当地条件和辅助动力装置的燃油消耗，起飞前预计消耗的燃油量</li>
+<li>航程燃油(Trip)：从起飞机场飞到目的地机场着陆所需的燃油量</li>
+<li>不可预期燃油(Cont)：为补偿不可预见因素所需的燃油量。<!-- -->
+<ul>
+<li>占计划航程燃油10％的所需燃油</li>
+<li>不得低于以等待速度在目的地机场上空1,500英尺高度上在标准条件下飞行15分钟所需的燃油量</li>
+</ul>
+</li>
+<li>备降燃油(Altn)<!-- -->
+<ul>
+<li>在目的地机场复飞</li>
+<li>爬升到预定的巡航高度</li>
+<li>沿预定航路飞行</li>
+<li>下降到开始预期进近的一个点</li>
+<li>在放行单列出的目的地的最远备降机场进近并着陆</li>
+</ul>
+</li>
+<li>最后储备燃油(Final Res)：使用到达目的地备降机场，或者不需要目的地备降机场时，到达目的地机场的预计着陆重量计算得出的燃油量；对于涡轮发动机飞机，以等待速度在机场上空450米(1,500英尺)高度上在标准条件下飞行30分钟所需的油量</li>
+<li>酌情携带的燃油(Extra)：合格证持有人决定携带的附加燃油</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="特殊情况燃油">特殊情况燃油<a href="#特殊情况燃油" class="hash-link" aria-label="特殊情况燃油的直接链接" title="特殊情况燃油的直接链接">​</a></h2>
+<p>参考：CAAR-121.659条 特定情况燃油要求</p>
+<ul>
+<li>目的地备降场<!-- -->
+<ul>
+<li>不需要有目的地备降机场时，所需油量能够使飞机在目的地机场上空450米(1,500英尺)高度上在标准条件下飞行15分钟</li>
+<li>孤立机场(无可用备降机场的特定目的地机场)时，能够以正常燃油消耗率在目的地机场上空飞行2小时的所需油量，包括最后储备燃油</li>
+</ul>
+</li>
+<li>航路发动机失效或释压：在需要更多燃油的情况下，允许飞机在必要时下降并飞行到某一备降机场<!-- -->
+<ul>
+<li>以等待速度在该机场上空450米(1,500英尺)高度上在标准条件下飞行15分钟</li>
+<li>在该机场进近并着陆</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="实际运行">实际运行<a href="#实际运行" class="hash-link" aria-label="实际运行的直接链接" title="实际运行的直接链接">​</a></h2>
+<p>参考国航：公司燃油政策解读、燃油管理、燃油管理工作指南、机组燃油管理</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="公司规定">公司规定<a href="#公司规定" class="hash-link" aria-label="公司规定的直接链接" title="公司规定的直接链接">​</a></h3>
+<ul>
+<li>不可预期燃油(Cont)：实际上按照5%的标准来掌握</li>
+<li>酌情携带的燃油(Extra)<!-- -->
+<ul>
+<li>Altn：备降额外油，弥补进离场误差 (10分钟)</li>
+<li>Dest：航线额外油：CPT机组额外油、DSP签派额外油、FOD落地剩油保护、MAN政策强制油(补充的滑行油、1小时 APU、航线机型政策额外油)</li>
+</ul>
+</li>
+</ul>
+<p>DSP签派额外油：</p>
+<ol>
+<li>起飞机场 (雷雨、低能见、冰) 至多增加 0.5h 滑行油量</li>
+<li>目的机场：<!-- -->
+<ul>
+<li>冰、低能见、阵风：至多增加 0.5h 等待油</li>
+<li>雷雨：总部或分公司 1-2h，其他 0.5-1h 等待油</li>
+</ul>
+</li>
+<li>航路 (气旋、火山灰、积雨云)：5%额外油或 1h 巡航油</li>
+</ol>
+<p>FOD落地剩油保护：在无特殊情况和流控下，落地剩余油量满足目的地标准等待100分钟</p>
+<p>MAN补充的滑行油：根据机场的不同，补充 10 - 20 分钟</p>
+<p>起飞所需燃油(Reqd)：航程燃油 + 等待油量 + 不可预期燃油 + 备降燃油 + 最后储备燃油</p>
+<p>航线储备燃油：不可预期燃油 + 备降燃油 + 最后储备燃油</p>
+<p>总燃油：起飞所需燃油 + 酌情携带的燃油 + 滑行燃油</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="燃油消耗顺序">燃油消耗顺序<a href="#燃油消耗顺序" class="hash-link" aria-label="燃油消耗顺序的直接链接" title="燃油消耗顺序的直接链接">​</a></h3>
+<ol>
+<li>滑行燃油</li>
+<li>航程燃油</li>
+<li>MAN政策强制油</li>
+<li>不可预期燃油</li>
+<li>CPT机组额外油、DSP签派额外油、FOD落地剩油保护</li>
+<li>备降燃油、备降额外油</li>
+<li>最后储备燃油</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="实际飞行">实际飞行<a href="#实际飞行" class="hash-link" aria-label="实际飞行的直接链接" title="实际飞行的直接链接">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="地面滑行">地面滑行<a href="#地面滑行" class="hash-link" aria-label="地面滑行的直接链接" title="地面滑行的直接链接">​</a></h4>
+<p>起动发动机 - 上跑道</p>
+<ul>
+<li>滑行油(Taxi)：可全部消耗</li>
+<li>航线额外油(Extra Dest)：可全部消耗，但全部消耗时可能需要更改备降场或滑回</li>
+<li>备降额外油(Extra Altn)：原则上不可消耗</li>
+<li>起飞所需燃油(Reqd)：最低以该油量起飞，此时重点监控燃油且在目的地机场仅能复飞一次</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="空中飞行">空中飞行<a href="#空中飞行" class="hash-link" aria-label="空中飞行的直接链接" title="空中飞行的直接链接">​</a></h4>
+<p>离地 - 安全着陆</p>
+<ul>
+<li>航程燃油(Trip)：仅消耗时为理想状态</li>
+<li>航线额外油(Extra Dest)：消耗为正常情况</li>
+<li>备降额外油(Extra Altn)：消耗完时航线额外油，并开始消耗时需注意</li>
+<li>不可预期燃油(Cont)：消耗表明进入使用备份燃油的状况，成本指数为0，申请直飞和最佳高度，可能更改备降场。当被消耗完时，着陆油量：<!-- -->
+<ul>
+<li>可能低于备降油量和最后储备油量之和：评估</li>
+<li>仅满足备降燃油和机场上空等待 30 分钟时：谨慎考虑</li>
+</ul>
+</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="其他情况">其他情况<a href="#其他情况" class="hash-link" aria-label="其他情况的直接链接" title="其他情况的直接链接">​</a></h4>
+<ul>
+<li>未备降情况下等待：等待以最低10分钟记</li>
+<li>进近着陆时：<!-- -->
+<ul>
+<li>燃油为不可预期燃油 + 备降燃油 + 最后储备燃油：正常进近着陆</li>
+<li>燃油为备降燃油 + 最后储备燃油：正常进近着陆，但复飞后必须备降</li>
+</ul>
+</li>
+<li>特定机场着陆时任何变化会导致少于最后储备燃油：最低油量状态</li>
+<li>最近合适机场着陆时少于最后储备燃油：燃油紧急状态</li>
+</ul></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="文件选项卡"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/模拟飞行/航图样式比较 2"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">航图样式比较 2</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/模拟飞行/有趣的RNP程序"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">有趣的 RNP 程序</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#基本燃油组成" class="table-of-contents__link toc-highlight">基本燃油组成</a></li><li><a href="#特殊情况燃油" class="table-of-contents__link toc-highlight">特殊情况燃油</a></li><li><a href="#实际运行" class="table-of-contents__link toc-highlight">实际运行</a><ul><li><a href="#公司规定" class="table-of-contents__link toc-highlight">公司规定</a></li><li><a href="#燃油消耗顺序" class="table-of-contents__link toc-highlight">燃油消耗顺序</a></li><li><a href="#实际飞行" class="table-of-contents__link toc-highlight">实际飞行</a></li></ul></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>

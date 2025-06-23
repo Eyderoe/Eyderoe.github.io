@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="rss.xsl"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Eyderoe Blog</title>
+        <link>https://Eyderoe.github.io/blog</link>
+        <description>Eyderoe Blog</description>
+        <lastBuildDate>Mon, 23 Jun 2025 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>zh-Hans</language>
+        <item>
+            <title><![CDATA[清理仓库]]></title>
+            <link>https://Eyderoe.github.io/blog/20250623clean</link>
+            <guid>https://Eyderoe.github.io/blog/20250623clean</guid>
+            <pubDate>Mon, 23 Jun 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[仅保留最近一次提交记录]]></description>
+            <content:encoded><![CDATA[<p>仅保留最近一次提交记录</p>
+]]></content:encoded>
+            <category>Checkpoint</category>
+        </item>
+        <item>
+            <title><![CDATA[航空考古行动]]></title>
+            <link>https://Eyderoe.github.io/blog/20250615naip2004</link>
+            <guid>https://Eyderoe.github.io/blog/20250615naip2004</guid>
+            <pubDate>Sun, 15 Jun 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[海鲜市场收了套04年的航线手册，怀念只用地基导航台就能到处跑的日子]]></description>
+            <content:encoded><![CDATA[<p>海鲜市场收了套04年的航线手册，怀念只用地基导航台就能到处跑的日子</p>
+<!-- -->
+<p>唯一的遗憾就是没有机场细则和高低空航路图，慢慢把文档电子化。每天一个机场，只需要两年不到就能完成，计划分两步走</p>
+<ol>
+<li>文档电子化，最麻烦的一集，文档数量多</li>
+<li>文档数据化，将文档转为数据，也麻烦，有些并未给出坐标。但考虑到部分导航台留存至今，稍微好些</li>
+</ol>]]></content:encoded>
+            <category>Aviation</category>
+        </item>
+        <item>
+            <title><![CDATA[拟录取]]></title>
+            <link>https://Eyderoe.github.io/blog/20250401yuanshenqidong</link>
+            <guid>https://Eyderoe.github.io/blog/20250401yuanshenqidong</guid>
+            <pubDate>Tue, 01 Apr 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[拟录取 && (! 愚人节笑话)]]></description>
+            <content:encoded><![CDATA[<p>拟录取 &amp;&amp; (! 愚人节笑话)</p>
+<p>鼠鼠终于也有书读了。虽然一般般, 但也挺好</p>
+<!-- -->
+<ul>
+<li>朧月伴孤身</li>
+<li>忽闻鼠鼠拟录取</li>
+<li>还得是邮专</li>
+</ul>]]></content:encoded>
+            <category>Checkpoint</category>
+        </item>
+        <item>
+            <title><![CDATA[建站]]></title>
+            <link>https://Eyderoe.github.io/blog/20250320first-blog</link>
+            <guid>https://Eyderoe.github.io/blog/20250320first-blog</guid>
+            <pubDate>Thu, 20 Mar 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[建站叻 ！]]></description>
+            <content:encoded><![CDATA[<p>建站叻 ！</p>
+<p>找资料时无意了解到了 docusaurus，清爽，很好用。以后大部分资料都会丢在这里，csdn 也会顺便发一些文章赚数据。有空会慢慢把之前写的东西拿过来</p>
+]]></content:encoded>
+            <category>Docusaurus</category>
+        </item>
+    </channel>
+</rss>
