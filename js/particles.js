@@ -7,6 +7,11 @@
         return document.getElementsByTagName(tagName);
     }
 
+    function getThemeGreen() {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        return isDark ? "52, 211, 153" : "255, 68, 77";
+    }
+
     function getScriptConfig() {
         var scripts = getElementsByTagName("script"),
             scriptCount = scripts.length,
@@ -16,9 +21,8 @@
             scriptCount: scriptCount,
             zIndex: getAttributeValue(currentScript, "zIndex", -1),
             opacity: getAttributeValue(currentScript, "opacity", .5),
-
-            color: getAttributeValue(currentScript, "color", "52, 211, 153"),
-            particleCount: getAttributeValue(currentScript, "count", 120)
+            color: getThemeGreen(),
+            particleCount: getAttributeValue(currentScript, "count", 80)
         };
     }
 
@@ -29,6 +33,7 @@
 
     function drawParticles() {
         context.clearRect(0, 0, canvasWidth, canvasHeight);
+        const currentColor = getThemeGreen();
 
         var particleA, particleB, distance, dx, dy, maxDistance, alpha;
         particles.forEach(function (particleA, index) {
@@ -52,7 +57,7 @@
                         alpha = (particleB.maxDistance - distance) / particleB.maxDistance;
                         context.beginPath();
                         context.lineWidth = alpha / 2;
-                        context.strokeStyle = "rgba(" + scriptConfig.color + "," + (alpha + .2) + ")";
+                        context.strokeStyle = "rgba(" + currentColor + "," + (alpha + .2) + ")";
                         context.moveTo(particleA.x, particleA.y);
                         context.lineTo(particleB.x, particleB.y);
                         context.stroke();

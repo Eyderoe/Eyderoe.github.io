@@ -91,6 +91,9 @@
     <option name="/Default/CodeStyle/CodeFormatting/CppFormatting/SPACE_BEFORE_REF_IN_DATA_MEMBER/@EntryValue" value="true" type="bool" />
     <option name="/Default/CodeStyle/CodeFormatting/CppFormatting/SPACE_AFTER_REF_IN_DATA_MEMBER/@EntryValue" value="false" type="bool" />
     <option name="/Default/CodeStyle/CodeFormatting/CppFormatting/ALLOW_COMMENT_AFTER_LBRACE/@EntryValue" value="true" type="bool" />
+    <option name="/Default/CodeStyle/CodeFormatting/CppFormatting/BLANK_LINES_AROUND_NAMESPACE/@EntryValue" value="0" type="long" />
+    <option name="/Default/CodeStyle/CodeFormatting/CppFormatting/PLACE_ELSE_ON_NEW_LINE/@EntryValue" value="false" type="bool" />
+    <option name="/Default/CodeStyle/CodeFormatting/CppFormatting/PLACE_CATCH_ON_NEW_LINE/@EntryValue" value="false" type="bool" />
   </RiderCodeStyleSettings>
   <files>
     <extensions>
