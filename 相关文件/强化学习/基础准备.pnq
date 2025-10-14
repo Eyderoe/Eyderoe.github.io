@@ -1,0 +1,516 @@
+---
+sidebar_position: 1
+---
+
+# 基础准备
+
+第 1 阶段总目标：理解所需概率、线代和微积分核心知识，能用 NumPy + Matplotlib 写实验，能写出简单状态转移的代码
+
+## 概率论基础
+
+预计时间：2 day
+
+### 理论
+
+随机变量：不是一个传统变量而是函数。它将样本空间（一个随机试验所有可能结果的集合）中的每一个可能结果映射到一个实数上
+
+- 抛一枚硬币两次，定义随机变量 X =“正面朝上的次数”。那么 X 的可能取值为 {0, 1, 2}
+- 测量某零件的长度，定义随机变量 Y =“测量得到的长度值”。Y的可能取值是某个区间内的任意实数（如10.1cm, 10.11cm等）
+
+概率分布 $P(A)$：随机变量所有可能取值及其对应概率的规律
+
+- 离散型概率分布
+  - 概率质量函数 PMF：直接给出了随机变量取某个特定值的概率。$P(X=x_k)=p_k$
+  - 累计分布函数 CDF：随机变量X小于等于某一特定值x的概率。$F(X)=\Sigma P(X=x_k) ,x_k<=x$ 
+- 常见离散分布
+  - 二项分布：n次独立重复伯努利试验中成功次数的分布
+  - 泊松分布：单位时间或空间内稀有事件发生次数的分布
+  - 几何分布：取得第一次成功所需要的试验次数
+- 连续型概率分布
+  - 概率密度函数 PDF：本身不是概率，但其函数曲线下的面积代表概率。非负可积函数 $f(x)$ 在区间 $[a,b]$ 取值概率为 $\int_{a}^{b} f(x) \, \mathrm{d}x$
+  - 累计分布函数 CDF：与离散相比，计算方式变为积分。$F(x)=\int_{-\infty}^{x} f(t) \, \mathrm{d}t$ 
+- 常见连续分布
+  - 正态分布：最重要的连续分布，曲线呈钟形，关于均值对称
+  - 均匀分布：概率密度处处相等
+  - 指数分布：独立随机事件发生的时间间隔
+
+条件概率：在已知某一事件 $(B)$ 发生的情况下，另一事件 $(A)$ 发生的概率。记作 $P(A|B)$
+
+期望 $E[X]$：概率分布中随机变量取值的加权平均，权重为对应的概率。它描述了随机变量的平均水平或中心位置
+
+方差 $Var(X)$：用来衡量随机变量取值与其期望值的偏离程度。方差越大，数据越分散；方差越小，数据越集中在平均值附近
+
+既然有条件概率，同样的，也有条件期望和期望方差
+
+- 条件期望：在已知另一个随机变量 $Y$ 取某个特定值 $y$ 的条件下，随机变量 $X$ 的期望值。记作 $E[X | Y=y]$
+- 全期望公式：一个变量的无条件期望可以通过其条件期望的期望来求得。有 $E[X]=E[E[X∣Y]]$
+- 条件方差：在已知 $Y$ 的信息下，$X$ 的不确定性。记作 $Var(X | Y=y)$
+- 全方差公式：揭示条件期望和条件方差如何共同决定总体方差的关键公式，也称为方差分解公式。有 $Var(X)=E[Var(X∣Y)]+Var(E[X∣Y])$。总波动 = 平均组内波动 + 组间波动
+
+独立性：两个或多个事件发生与否互不影响的关系。如果事件 A 的发生不影响事件 B 发生的概率，反之亦然，则称事件 A 和事件 B 是相互独立的
+
+贝叶斯公式：如何根据新的证据（已经发生的事件）来更新我们对某个假设发生的概率的信念。它是条件概率的直接应用。基础形式 $P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}$，全概率展开为 $P(B_i|A) = \frac{P(A|B_i) \cdot P(B_i)}{\sum_{j=1}^{n} P(A|B_j) P(B_j)}$
+
+- 条件概率是贝叶斯公式的基石。在已知某一事件 $(B)$ 发生的情况下，另一事件 $(A)$ 发生的概率。记作 $P(A|B)$
+- 全概率公式是推导贝叶斯公式的关键一步。事件 $B_1, B_2, ..., B_n$ 构成一个完备事件组，对任意事件 $A$，有 $P(A)=\Sigma_{i=1}^{n} P(A|B_i)·P(B_i)$。事件 $A$ 的总概率等于它在所有可能场景 $B_i$ 下发生的概率的加权平均
+- 贝叶斯公式的核心思想：由果溯因。在已知某个结果已经发生的情况下，逆向推断出导致这个结果的各种可能原因的概率有多大
+  - $P(B_i)$：先验概率。这是在得到新证据 A 之前，我们对假设 $B_i$ 发生的概率的初始信念
+  - $P(A | B_i)$：似然度。这是在假设 $B_i$ 为真的条件下，观察到证据 A 的可能性
+  - $P(A)$：证据概率或边际似然度。这是观察到证据 A 的总概率，通常用全概率公式计算
+  - $P(B_i | A)$：后验概率。这是在观察到证据 A 之后，我们对假设 $B_i$ 发生的概率的更新后的信念
+
+### 实践
+
+题目1：掷骰子概率估计
+
+```python
+import random
+
+results = [random.randint(1, 6) for _ in range(10000)]
+for i in range(1, 7):
+    print("骰面: {}, 概率: {:.4f}".format(i, results.count(i) / len(results)))
+```
+
+题目2：条件概率模拟。事件A：掷骰子结果为偶数（2,4,6），事件B：掷骰子结果大于3（4,5,6），计算 $P(A)$, $P(B)$, $P(A|B)$, $P(B|A)$
+
+```python
+import random
+
+results = [random.randint(1, 6) for _ in range(10000)]
+pA = len([i for i in results if i % 2 == 0]) / len(results)
+pB = len([i for i in results if i > 3]) / len(results)
+p_a_b = len([i for i in results if (i % 2 == 0) and (i > 3)]) / len(results)
+pAB = p_a_b / pB
+pBA = p_a_b / pA
+print("模拟值")
+print("P(A)={:.4f}, P(B)={:.4f}".format(pA, pB))
+print("P(A|B)={:.4f}, P(B|A)={:.4f}".format(pAB, pBA))
+print("理论值")
+print("P(A)={:.4f}, P(B)={:.4f}".format(1 / 2, 1 / 2))
+print("P(A|B)={:.4f}, P(B|A)={:.4f}".format((1 / 3) / (1 / 2), (1 / 3) / (1 / 2)))
+```
+
+题目4：独立性验证。事件C：掷骰子结果为奇数（1,3,5），事件D：掷骰子结果大于4（5,6），计算 $P(C)$, $P(D)$, $P(C \cap D)$
+
+```python
+import random
+
+results = [random.randint(1, 6) for _ in range(10000)]
+pC = len([i for i in results if i % 2 == 1]) / len(results)
+pD = len([i for i in results if i > 4]) / len(results)
+p_c_d = len([i for i in results if (i % 2 == 1) and (i > 4)]) / len(results)
+print("P(C)={:.4f}, P(D)={:.4f}".format(pC, pD))
+print("P(C&D)={:.4f}, P(C)*P(D&D)={:.4f})".format(p_c_d, pC * pD))
+```
+
+题目5：贝叶斯公式应用。公平骰子（每个面概率1/6），不公平骰子（概率分布：P(1)=0.1, P(2)=0.1, P(3)=0.1, P(4)=0.2, P(5)=0.2, P(6)=0.3）。随机选择一个骰子（等概率），掷一次得到结果为4。估计：a) 选择公平骰子的概率P(公平|结果为4)，b) 选择不公平骰子的概率P(不公平|结果为4)。对比贝叶斯公式的理论计算结果
+
+```python
+import random
+
+
+def fair() -> int:
+    return random.randint(1, 6)
+
+
+def unfair() -> int:
+    basic = [1, 1, 1, 2, 2, 3]
+    choice = random.randint(1, 10)
+    sum_num = 0
+    for loc in range(len(basic)):
+        sum_num += basic[loc]
+        if choice <= sum_num:
+            return loc + 1
+    return 1
+
+
+results = []
+results.extend(['f' for _ in range(10000) if fair() == 4])
+results.extend(['u' for _ in range(10000) if unfair() == 4])
+print("公平骰子概率: {:.4f}".format(results.count('f') / len(results)))
+print("非公平骰子概率: {:.4f}".format(results.count('u') / len(results)))
+```
+
+**定义事件**
+
+$T$ 公平骰子，$F$ 非公平骰子，$R$ 骰子结果为 4。目标是求在 $R$ 的条件下，骰子是 $T$ 的概率，即 $P(T|R)$
+
+**已知条件**
+
+骰子先验概率：$P(T)=0.5,P(F)=0.5$
+
+似然度：$P(R|T)=0.16,P(R|F)=0.2$
+
+**应用贝叶斯**
+
+$P(T|R) = \frac{P(R|T) \cdot P(T)}{P(R)}$，其中只有 $P(R)$ 未知
+
+$P(R)=P(RT)+P(RF)$
+
+用条件概率改写，$P(RT)=P(R|T) \cdot P(T),P(RF)=P(R|F) \cdot P(F)$ 
+
+## 马尔可夫过程
+
+预计时间：1 day
+
+### 理论
+
+马尔可夫概念的核心是马尔可夫性质
+
+- 马尔可夫性质：未来只取决于现在，与过去无关
+- 马尔可夫过程：具备马尔可夫性质的随机过程
+- 马尔可夫链：马尔可夫过程中最基本的一种，间和状态都是离散的。由状态空间和转移概率矩阵组成，
+
+转移矩阵：一个矩阵，描述了从一个状态转移到另一个状态的概率
+
+### 实践
+
+题目1：用 NumPy 实现一个 3 状态马尔可夫链，模拟 1000 次状态转移。并画出状态访问频率分布
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+def transform(array: np.ndarray) -> int:
+    """随机下一个状态"""
+    p = np.random.rand()
+    sum_float = 0
+    for loc in range(len(array)):
+        sum_float += array[loc]
+        if p < sum_float:
+            return loc
+    return len(array) - 1
+
+
+# 随机生成一个 3x3 概率转移矩阵
+matrix = np.random.rand(3, 3)
+matrix = matrix / matrix.sum(axis=1, keepdims=True)
+# 对应转移次数 从0起始随机转移1000次
+matrixCount = np.zeros((3, 3))
+state = 0
+for _ in range(1000):
+    nextState = transform(matrix[state])
+    matrixCount[state][nextState] += 1
+    state = nextState
+matrixCount = matrixCount / matrixCount.sum(axis=1, keepdims=True)
+# 画图 数字为理论概率 颜色为实际概率
+plt.rcParams['font.sans-serif'] = ['SimHei']
+plt.rcParams['axes.unicode_minus'] = False
+im = plt.matshow(matrixCount, cmap='Oranges', fignum=1)
+plt.colorbar(im, label='转移概率')
+plt.xlabel('目标状态')
+plt.ylabel('起始状态')
+plt.title('状态转移矩阵')
+for i in range(matrix.shape[0]):
+    for j in range(matrix.shape[1]):
+        plt.text(j, i, f'{matrix[i, j]:.2f}', ha='center', va='center', fontsize=12)
+plt.show()
+```
+
+## 线性代数回顾
+
+预计时间：2 day
+
+### 理论
+
+向量：同时具有大小和方向的量。状态值函数 $V(s)$ 可以看作一个向量，其中每个元素代表一个状态 s 的价值。例如，一个有3个状态的环境，其值函数可以表示为 $V=[V(s1),V(s2),V(s3)]$
+
+- 值函数 $V$ 是状态空间中的一个向量，在每个状态上的分量为该状态价值 $V(s)$
+- 状态价值：从当前状态出发，按照某种策略一直行动下去，所能获得的期望累积回报。不是单步的即时奖励，而是考虑未来所有步骤奖励的总和
+
+矩阵乘法：矩阵可以看成一种线性变换（旋转、缩放、剪切），那么矩阵乘法可以看成线性变换的复合
+
+- 假设环境中有三个状态 $(s1, s2, s3)$，用向量 $π_t=[p(s1),p(s2),p(s3)]$ 表示 $t$ 时刻可能的状态对应概率，则下一时刻各状态概率可以用 $π_{t+1}=Pπ_t$ 表示
+
+特征值和特征向量：特征向量在经过矩阵所表示的线性变换后，方向不变，长度被缩放了特征值倍
+
+稳态分布：当系统达到这个分布后，分布保持不变，即 $Pπ*=π*$。对比特征值定义 $Av=λv$，可以惊奇的发现稳态分布 $π*$ 就是状态转移矩阵 $P$ 对应特征值 $λ=1$ 的特征向量
+
+- 数学上可以证明，对于一个随机矩阵，必定能找到唯一稳态分布
+
+### 实践
+
+题目1：特征值与特征向量的计算与验证。给定矩阵 $A = [[2, 1], [1, 2]]$，计算特征值和特征向量
+
+```python
+import numpy as np
+
+matrix = np.array([[2, 1], [1, 2]])
+values, vectors = np.linalg.eig(matrix)
+results = zip(values, vectors.T)
+for value, vector in results:
+    result1 = matrix @ vector
+    result2 = value * vector
+    print("特征值: {}, 特征向量: {}".format(value, vector))
+    print("矩阵积:", result1)
+    print("数乘:", result2)
+```
+
+题目2：求解马尔可夫链的稳态分布。考虑一个描述天气的3状态马尔可夫链，状态空间为 \{晴天，阴天，雨天}，求解稳态分布
+
+```python
+import numpy as np
+
+matrix = np.array([[0.8, 0.15, 0.05], [0.4, 0.5, 0.1], [0.1, 0.3, 0.6]])
+values, vectors = np.linalg.eig(matrix)
+results = zip(values, vectors.T)
+for value, vector in results:
+    if not np.isclose(value, 1):
+        continue
+    print("特征值: {}, 特征向量: {}".format(value, vector))
+    vector = vector / vector.sum()
+    print("稳态分布:", vector)
+    print("矩阵积:", matrix @ vector)
+```
+
+**但该代码存在部分问题**，数值计算出的特征向量可能包含小虚部。稳态分布可能有多个解，对于一般马尔可夫链，稳态分布如果转移矩阵不可约、非周期，则唯一存在；如果矩阵有多个特征值等于1，则需要考虑链的结构，否则会输出多个候选向量
+
+## 微积分复习
+
+预计时间：2 day
+
+### 理论
+
+偏导数：对于多变量函数 $f(x_1,x_2,…,x_n)$，偏导数是固定其他变量，只对一个变量求导
+
+梯度：所有偏导数组成的向量，记作 $\nabla f$，梯度指向函数在该点增长最快的方向，大小表示增长率
+
+梯度下降：优化算法，用于寻找函数的最小值。梯度下降是用于最小化，所以如果是最大化问题，就变成梯度上升。梯度下降通常只能找到局部最小值，对于非凸函数，不保证找到全局最小值
+
+1. 随机选取一个起点 $x_0$
+2. 计算该点的梯度 $\nabla f(x_0)$
+3. 梯度指向函数上升最快的方向，下降为反方向走一小步。$x_{t+1}=x_t-α \nabla f(x_t)$
+4. 直到梯度接近 0、迭代次数达到、函数值变化不大，此时收敛
+
+### 实践
+
+题目1：梯度下降。写一个简单函数$J(x,y)=x^2+3x+y^2-5y+7$，手算和用 NumPy 求梯度，并实现梯度下降求最小值
+
+理论：$\nabla J(x,y)=(\frac{\partial J}{\partial x},\frac{\partial J}{\partial y})=(2x+3,2y-5)$
+
+```python
+import random
+from typing import Callable, Tuple
+
+# 函数 j = x ** 2 + 3 * x + y ** 2 - 5 * y + 7
+x, y = random.randint(-10, 10), random.randint(-10, 10)  # 随机起始位置
+learningRate = 0.1  # 学习率
+epoch = 1000  # 最大轮次
+tolerance = 0.01  # 最小差值
+f_value: Callable[[float, float], float] = lambda m, n: m ** 2 + 3 * m + n ** 2 - 5 * n + 7  # 函数值
+f_gradient: Callable[[float, float], Tuple[float, float]] = lambda m, n: (m * 2 + 3, n * 2 - 5)  # 梯度
+# 梯度下降
+lastLocation = f_value(x, y)
+for _ in range(epoch):
+    gradientX, gradientY = f_gradient(x, y)
+    x = x - gradientX * learningRate
+    y = y - gradientY * learningRate
+    nowLocation = f_value(x, y)
+    # 达到最小差值
+    if abs(nowLocation - lastLocation) < tolerance:
+        break
+    if (gradientX ** 2 + gradientY ** 2) ** 0.5 < tolerance:
+        break
+print("收敛于:({:.2f}, {:.2f}) 函数值:{:.2f}".format(x, y, f_value(x, y)))
+```
+
+## NumPy 基础
+
+预计时间：2 day
+
+### 实践
+
+数组基本
+
+```python
+array: np.ndarray = np.arange(0, 10, 2)  # 通过步长创建
+array = np.linspace(0, 10, 100)  # 通过间隔创建
+array = np.array([[1, 2, 3], [4, 5, 6]])  # 直接指定
+array.shape  # 形状 (2, 3) 2行3列
+array.ndim  # 维度 2
+array.dtype  # 数据类型 int32 自动推导
+```
+
+数组操作
+
+```python
+array = np.array([[1, 2, 3], [4, 5, 6]])
+array[:, 1:3]  # 切片 所有行,第1-2列
+filter = array > 5  # 布尔筛选
+array[filter]
+array = array.reshape(3, 2)  # 改变形状
+np.vstack((array, array))  # 垂直拼接
+np.vsplit(array, 2)  # 沿列方向分成2份
+```
+
+广播：能自动扩展数组以匹配形状
+
+```python
+array = np.array([[1, 2, 3], [4, 5, 6]])
+arrayA = array + 10
+arrayB = array.reshape(1, 6)
+arrayC = array.reshape(6, 1)
+arrayD = arrayB * arrayC
+```
+
+随机数
+
+```python
+array = np.ndarray()
+np.random.randint(0, 10, size=(2, 3))  # 矩阵随机生成数
+np.random.uniform(low=0.0, high=1.0, size=5)  # 生成特定分布随机数
+np.random.shuffle(array)  # 乱序
+sample = np.random.choice(array)  # 抽样
+```
+
+## Matplotlib 可视化
+
+预计时间：2 day
+
+### 实践
+
+题目1：动态更新曲线。模拟 reward 曲线
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 开启交互模式
+plt.ion()
+# 绘图
+fig, ax = plt.subplots(figsize=(10, 6))
+ax.set_title('Reward Curve - Dynamic Update')
+ax.set_xlabel('Episode')
+ax.set_ylabel('Reward')
+# 初始化数据
+episodes = []
+rewards = []
+line, = ax.plot(episodes, rewards, 'b-', alpha=0.7)
+for episode in range(100):
+    reward = np.random.normal(10, 3)
+    # 更新数据
+    episodes.append(episode)
+    rewards.append(reward)
+    line.set_xdata(episodes)
+    line.set_ydata(rewards)
+    # 调整坐标轴范围
+    ax.set_xlim(0, max(episodes) + 1)
+    ax.set_ylim(min(rewards) - 1, max(rewards) + 1)
+    # 刷新图像
+    plt.pause(0.1)
+plt.ioff()
+plt.show()
+```
+
+题目2：直方图。画出骰子实验的概率分布直方图
+
+```python
+results = [random.randint(1, 6) for _ in range(10000)]
+xValue = range(1, 7)
+yValue = [results.count(i) for i in xValue]
+plt.bar(xValue, yValue)
+plt.xticks(xValue)
+plt.ylim(0, 1.3 * max(yValue))
+for idx, value in enumerate(yValue):  # 显示数值
+    plt.text(xValue[idx], value + 10, str(value), ha='center', va='bottom', fontweight='bold')
+plt.show()
+```
+
+题目3：折线图。模拟一个随机游走过程并画折线图
+
+```python
+# 计算
+step = 50
+x, y = random.randint(1, 10), random.randint(1, 10)
+xList, yList = [x], [y]
+for _ in range(step):
+    direct = random.randint(-4, 3)
+    vertical = 0
+    if abs(direct) >= 3:
+        vertical += 1
+    elif abs(direct) <= 1:
+        vertical -= 1
+    y += vertical
+    horizon = 0
+    if (direct < 0) and (direct != -4):
+        horizon += 1
+    elif direct > 0:
+        horizon -= 1
+    x += horizon
+    xList.append(x)
+    yList.append(y)
+# 绘图
+fig, ax = plt.subplots()
+ax.plot(x, y)
+ax.plot(xList, yList, linewidth=1, color='green', marker='+')
+ax.scatter(xList[0], yList[0], color='blue', s=50, label='start')
+ax.scatter(xList[-1], yList[-1], color='red', s=50, label='end')
+ax.set_aspect('equal')
+plt.legend()
+plt.show()
+```
+
+## 环境交互
+
+预计时间：2 day
+
+### 理论
+
+智能体与环境交互遵循一个核心循环。将每次交互的经验（即状态、动作、奖励、新状态）存储下来，并利用这些经验来更新其策略，目标是最大化长期累积回报
+
+- 观察：从环境获取当前状态 $S_t$
+- 动作：根据策略 $\pi$ 选择动作 $A_t$，（此 $\pi$ 非概率论 $\pi$）
+- 反馈：环境返回即时奖励 $R_{t+1}$、下一个状态 $S_{t+1}$
+
+智能体在环境中的轨迹可能有限长，也可能无限长。如果轨迹无限长，回报也会发散到无穷。此时引入折扣因子 $\gamma \in [0,1)$ 和折扣回报 $G_t = \sum_{k=0}^{\infty} \gamma^k R_{t+k+1}$，折扣因子可以调整智能体对近期或远期奖励重视程度
+
+### 实践
+
+题目1：写一个 1D 环境，智能体在 $[0, 10]$ 的直线上随机走动，用 for 循环实现状态转移，并打印轨迹
+
+GPT 给出的一个比较标准的代码，状态由环境统一管理，智能体只是选择动作，不能直接决定下一状态
+
+```python
+class Environment:
+    def __init__(self, min_state=0, max_state=10):
+        self.min_state = min_state
+        self.max_state = max_state
+        self.state = None
+
+    def reset(self, init_state=None):
+        self.state = init_state if init_state is not None else (self.max_state // 2)
+        return self.state
+
+    def step(self, agent_action):
+        next_state_ = self.state + agent_action
+        next_state_ = max(self.min_state, min(self.max_state, next_state_))
+        reward_ = 1 if next_state_ == self.max_state else 0
+        done_ = next_state_ == self.max_state
+        self.state = next_state_
+        return next_state_, reward_, done_
+
+
+class Agent:
+    def __init__(self, actions=(-1, 1)):
+        self.actions = actions
+
+    def choose_action(self, agent_state):
+        return random.choice(self.actions)
+
+
+env = Environment()
+agent = Agent()
+state = env.reset()
+trajectory = [state]
+for step in range(30):
+    action = agent.choose_action(state)
+    next_state, reward, done = env.step(action)
+    print(f"Step {step}: state={state}, action={action}, next_state={next_state}, reward={reward}")
+    trajectory.append(next_state)
+    state = next_state
+    if done:
+        print("到达终点，结束！")
+        break
+print("\n轨迹：", trajectory)
+```

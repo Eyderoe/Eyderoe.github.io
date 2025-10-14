@@ -2,11 +2,28 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Eyderoe.github.io/blog</id>
     <title>Eyderoe Blog</title>
-    <updated>2025-06-23T00:00:00.000Z</updated>
+    <updated>2025-09-21T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Eyderoe.github.io/blog"/>
     <subtitle>Eyderoe Blog</subtitle>
     <icon>https://Eyderoe.github.io/index/vor.png</icon>
+    <entry>
+        <title type="html"><![CDATA[研究生圣经]]></title>
+        <id>https://Eyderoe.github.io/blog/20250921bible</id>
+        <link href="https://Eyderoe.github.io/blog/20250921bible"/>
+        <updated>2025-09-21T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[绷不住了，一边焦虑一边玩。一想到要发专利、小论文、大论文就头痛。想了下，一直学了很多学的很杂，但深度不够，大多都是浅尝则止，担心毕不了业]]></summary>
+        <content type="html"><![CDATA[<p>绷不住了，一边焦虑一边玩。一想到要发专利、小论文、大论文就头痛。想了下，一直学了很多学的很杂，但深度不够，大多都是浅尝则止，担心毕不了业</p>
+<!-- -->
+<p>没事就 PUA 一下，开始吟咏</p>
+<p>其实，我对你是有一些失望的。当初把你招进来，是基于你本科时的水平的。我是希望进来后，你能够拼一把快速成长起来的。我们这个组，不是把事情做好就可以的。你需要有体系化思考的能力。你做的事情，他的价值点在哪里？你是否作出了壁垒形成了核心竞争力？你做的事情，和其他人的差异化在哪里？你的事情，是否沉淀了一套可复用资料和方法论？为什么是你来做，其他人不能做吗？你需要有自己的判断力， 而不是我说什么你就做什么。我不需要中规中矩的答卷，它是有一些差异化在里面的。后续，把你的思考沉淀到组会里，我希望看到你的思考，而不仅仅是进度。另外，提醒一下，你的产出在我们组是有些单薄的。如果再这样下去，我不能保证你按时毕业</p>
+<p>阿门</p>]]></content>
+        <author>
+            <name>Eyderoe</name>
+            <uri>https://github.com/Eyderoe</uri>
+        </author>
+        <category label="Study" term="Study"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[清理仓库]]></title>
         <id>https://Eyderoe.github.io/blog/20250623clean</id>
