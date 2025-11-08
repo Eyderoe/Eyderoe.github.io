@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-网络/wifi协议" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.7.0">
+<title data-rh="true">WiFi 协议栈 | Eyderoe</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://Eyderoe.github.io/docs/网络/wifi协议"><meta data-rh="true" property="og:locale" content="zh_Hans"><meta data-rh="true" name="docusaurus_locale" content="zh-Hans"><meta data-rh="true" name="docsearch:language" content="zh-Hans"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="WiFi 协议栈 | Eyderoe"><meta data-rh="true" name="description" content="WiFi 知识合集，想到哪写到哪"><meta data-rh="true" property="og:description" content="WiFi 知识合集，想到哪写到哪"><link data-rh="true" rel="icon" href="/index/vor.png"><link data-rh="true" rel="canonical" href="https://Eyderoe.github.io/docs/网络/wifi协议"><link data-rh="true" rel="alternate" href="https://Eyderoe.github.io/docs/网络/wifi协议" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://Eyderoe.github.io/docs/网络/wifi协议" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Eyderoe RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Eyderoe Atom Feed">
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous">
+<script src="/js/particles.js" async defer="defer"></script><link rel="stylesheet" href="/assets/css/styles.3d47a63b.css">
+<script src="/assets/js/runtime~main.d658f696.js" defer="defer"></script>
+<script src="/assets/js/main.6a243818.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/index/symbol.webp"><link rel="preload" as="image" href="/assets/images/数据报-02098304af65f9332a51133ca7904080.png"><link rel="preload" as="image" href="/assets/images/24g-fbb015fdbfdcb1163c25da8318af1a45.jpg"><link rel="preload" as="image" href="/assets/images/qam-9131c7bc186369159867848153bf3ca4.jpg"><div role="region" aria-label="跳到主要内容"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">跳到主要内容</a></div><nav aria-label="主导航" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/index/symbol.webp" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/index/symbol.webp" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">首页</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/说明">文档</a><a class="navbar__item navbar__link" href="/blog">说说</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/Eyderoe" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="切换浅色/暗黑模式（当前为浅色模式）" aria-label="切换浅色/暗黑模式（当前为浅色模式）" aria-live="polite" aria-pressed="false"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="文档侧边栏" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/说明">说明</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/docusaurus">Docusaurus</a><button aria-label="展开侧边栏分类 &#x27;Docusaurus&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/c">C++</a><button aria-label="展开侧边栏分类 &#x27;C++&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/python">Python</a><button aria-label="展开侧边栏分类 &#x27;Python&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/java">Java</a><button aria-label="展开侧边栏分类 &#x27;Java&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/kotlin">Kotlin</a><button aria-label="展开侧边栏分类 &#x27;Kotlin&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/leetcode">LeetCode</a><button aria-label="展开侧边栏分类 &#x27;LeetCode&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/机器学习">机器学习</a><button aria-label="展开侧边栏分类 &#x27;机器学习&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/stm32">STM32</a><button aria-label="展开侧边栏分类 &#x27;STM32&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/docs/category/网络控制">网络控制</a><button aria-label="折叠侧边栏分类 &#x27;网络控制&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/网络/ns3配置">ns3 配置</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/网络/ns3程序设计">ns3 程序设计</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/网络/计算机网络">计算机网络</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/网络/wifi协议">WiFi 协议栈</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/飞行程序设计">飞行程序设计</a><button aria-label="展开侧边栏分类 &#x27;飞行程序设计&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/模拟飞行">模拟飞行</a><button aria-label="展开侧边栏分类 &#x27;模拟飞行&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/杂记">杂记</a><button aria-label="展开侧边栏分类 &#x27;杂记&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="页面路径"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="主页面" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/docs/category/网络控制"><span itemprop="name">网络控制</span></a><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">WiFi 协议栈</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">本页总览</button></div><div class="theme-doc-markdown markdown"><header><h1>WiFi 协议栈</h1></header>
+<p>WiFi 知识合集，想到哪写到哪</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="名称">名称<a href="#名称" class="hash-link" aria-label="名称的直接链接" title="名称的直接链接">​</a></h2>
+<p>方便快速查阅</p>
+<table><thead><tr><th>商用名</th><th>标准名</th><th>频段</th><th>缩写</th></tr></thead><tbody><tr><td>WiFi 4</td><td>802.11n</td><td>2.4G, 5G</td><td>HT (High Throughput)</td></tr><tr><td>WiFi 5</td><td>802.11ac</td><td>5G</td><td>VHT (Very High Throughput)</td></tr><tr><td>WiFi 6</td><td>802.11ax</td><td>2.4G, 5G, 6G(6E)</td><td>HE (High Efficiency)</td></tr><tr><td>WiFi 7</td><td>802.11be</td><td>2.4G, 5G, 6G</td><td>EHT (Extremely High Throughput)</td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="标准演进">标准演进<a href="#标准演进" class="hash-link" aria-label="标准演进的直接链接" title="标准演进的直接链接">​</a></h2>
+<p>由 IEEE 维护的无线局域网标准，每一段时间就会发布一个独立修正案，每几年就会合并修正案到一个新标准中。比如 11ac 就是 WiFi5 物理和链路层对应的修正案，11e 则是 QoS 的修正案。制定标准时，会预先留出章节号（论为什么章节号会跳），内容成熟后就会塞到对应章节里</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="80211">802.11<a href="#80211" class="hash-link" aria-label="802.11的直接链接" title="802.11的直接链接">​</a></h3>
+<p>1997 年，推出的第一个标准</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="80211-a">802.11 a<a href="#80211-a" class="hash-link" aria-label="802.11 a的直接链接" title="802.11 a的直接链接">​</a></h3>
+<p>1999 年推出的标准</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="80211-b">802.11 b<a href="#80211-b" class="hash-link" aria-label="802.11 b的直接链接" title="802.11 b的直接链接">​</a></h3>
+<p>1999 年和 11a 一同推出的标准，但由任务组 b 发表</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="80211-g">802.11 g<a href="#80211-g" class="hash-link" aria-label="802.11 g的直接链接" title="802.11 g的直接链接">​</a></h3>
+<p>2003 年推出的标准</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="80211-n-wifi-4">802.11 n (WiFi 4)<a href="#80211-n-wifi-4" class="hash-link" aria-label="802.11 n (WiFi 4)的直接链接" title="802.11 n (WiFi 4)的直接链接">​</a></h3>
+<p>2009 年推出的标准，从这一代开始引入了商用名 WiFi 4，而不只是标准名</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="主要特性">主要特性<a href="#主要特性" class="hash-link" aria-label="主要特性的直接链接" title="主要特性的直接链接">​</a></h4>
+<ul>
+<li>引入了 MIMO 多天线技术</li>
+<li>支持 2.4GHz 和 5GHz 双频</li>
+<li>最高速率 600 Mbps</li>
+<li>信道聚合</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="80211-ac-wifi-5">802.11 ac (WiFi 5)<a href="#80211-ac-wifi-5" class="hash-link" aria-label="802.11 ac (WiFi 5)的直接链接" title="802.11 ac (WiFi 5)的直接链接">​</a></h3>
+<p>2013年推出的标准</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="主要特性-1">主要特性<a href="#主要特性-1" class="hash-link" aria-label="主要特性的直接链接" title="主要特性的直接链接">​</a></h4>
+<ul>
+<li>工作于 5GHz</li>
+<li>引入仅下行 MU-MIMO 多用户通信</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="80211-ax-wifi-6">802.11 ax (WiFi 6)<a href="#80211-ax-wifi-6" class="hash-link" aria-label="802.11 ax (WiFi 6)的直接链接" title="802.11 ax (WiFi 6)的直接链接">​</a></h3>
+<p>2019 年推出了 <strong>WiFi 6</strong></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="主要特性-2">主要特性<a href="#主要特性-2" class="hash-link" aria-label="主要特性的直接链接" title="主要特性的直接链接">​</a></h4>
+<ul>
+<li>支持 2.4GHz 和 5GHz 双频</li>
+<li>引入 OFDMA 多用户正交频分多址</li>
+<li>加入 TWT 目标唤醒时间</li>
+<li>改进 MU-MIMO 双向多用户传输</li>
+</ul>
+<p>2020 年推出了 <strong>WiFi 6E</strong></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="主要特性-3">主要特性<a href="#主要特性-3" class="hash-link" aria-label="主要特性的直接链接" title="主要特性的直接链接">​</a></h4>
+<ul>
+<li>新增 6GHz</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="80211-be-wifi-7">802.11 be (WiFi 7)<a href="#80211-be-wifi-7" class="hash-link" aria-label="802.11 be (WiFi 7)的直接链接" title="802.11 be (WiFi 7)的直接链接">​</a></h3>
+<p>2024 年推出了 WiFi 7</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="主要特性-4">主要特性<a href="#主要特性-4" class="hash-link" aria-label="主要特性的直接链接" title="主要特性的直接链接">​</a></h4>
+<ul>
+<li>信道穿刺</li>
+<li>多链路操作 MLO</li>
+<li>多资源单元拼接</li>
+<li>最高速率 46 Gbps</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="帧">帧<a href="#帧" class="hash-link" aria-label="帧的直接链接" title="帧的直接链接">​</a></h2>
+<p>WiFi 业务三大帧：数据、管理、控制</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="数据帧">数据帧<a href="#数据帧" class="hash-link" aria-label="数据帧的直接链接" title="数据帧的直接链接">​</a></h3>
+<p>负责携带用户的实际数据</p>
+<img src="/assets/images/数据报-02098304af65f9332a51133ca7904080.png" style="width:70%;height:auto">
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="ppdu">PPDU<a href="#ppdu" class="hash-link" aria-label="PPDU的直接链接" title="PPDU的直接链接">​</a></h4>
+<p>物理层协议数据单元</p>
+<table><thead><tr><th>标准</th><th>文件索引</th></tr></thead><tbody><tr><td>802.11b</td><td>18.2.2 PPDU format</td></tr><tr><td>802.11n</td><td>20.3.2 PPDU format</td></tr><tr><td>802.11ac</td><td>22.1.4 PPDU formats</td></tr><tr><td>802.11ax</td><td>28.1.4 PPDU formats</td></tr><tr><td>802.11be</td><td>36.1.4 PPDU formats</td></tr></tbody></table>
+<p>PPDU 是实质上在物理空间中传输的报文，为解决兼容问题，PPDU 前导码呈一种草莓塔形式，每次升级都会向前导码拉一大坨以保证向后兼容。下面是 WiFi4 的图，WiFi4 还构想了两种情况 HT-mixed 和 HT-greenfield(仅 WiFi4 设备)，但显然不行，HT-mixed 成为实际意义标准</p>
+<p><img decoding="async" loading="lazy" alt="WiFi前导码" src="/assets/images/WiFi前导码-f2c965096f31ad181ea37a1478364efc.jpg" width="1447" height="601" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="管理帧">管理帧<a href="#管理帧" class="hash-link" aria-label="管理帧的直接链接" title="管理帧的直接链接">​</a></h3>
+<p>负责建立、维护和终止无线设备与接入点之间的连接</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="obss-pd">OBSS PD<a href="#obss-pd" class="hash-link" aria-label="OBSS PD的直接链接" title="OBSS PD的直接链接">​</a></h4>
+<p>重叠基本服务集前导码检测</p>
+<table><thead><tr><th>标准</th><th>文件索引</th></tr></thead><tbody><tr><td>802.11ax</td><td>27.9.2 OBSS PD-based spatial reuse operation</td></tr><tr><td>802.11be</td><td>26.10.2 OBSS PD-based spatial reuse operation</td></tr></tbody></table>
+<p><strong>这又涉及到一大坨概念，包括在OBSS之前对传输的可能，待补充</strong></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="beacon">Beacon<a href="#beacon" class="hash-link" aria-label="Beacon的直接链接" title="Beacon的直接链接">​</a></h4>
+<p>由接入点（路由器）定期发送的一种管理帧</p>
+<table><thead><tr><th>标准</th><th>文件索引</th></tr></thead><tbody><tr><td>802.11n</td><td>7.2.3.1 Beacon frame format</td></tr></tbody></table>
+<p>包含了 SSID（网络标识）和 BSSID（接入点 MAC 地址），支持标准等信息</p>
+<p>Beacon 帧之间的时间叫 Beacon 周期，通常为 100 TU（1TU = 1024μs）</p>
+<p><strong>TIM 通信指示图</strong></p>
+<p>用于 AP 向 Sta 指示缓存是否有需要接受的数据</p>
+<table><thead><tr><th>标准</th><th>文件索引</th></tr></thead><tbody><tr><td>802.11n</td><td>11.2.1.2 AP TIM transmissions</td></tr></tbody></table>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="控制帧">控制帧<a href="#控制帧" class="hash-link" aria-label="控制帧的直接链接" title="控制帧的直接链接">​</a></h3>
+<p>pass</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="协调">协调<a href="#协调" class="hash-link" aria-label="协调的直接链接" title="协调的直接链接">​</a></h2>
+<p>多个设备间的协作</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="sifs">SIFS<a href="#sifs" class="hash-link" aria-label="SIFS的直接链接" title="SIFS的直接链接">​</a></h3>
+<p>短帧间间隔</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="dcf">DCF<a href="#dcf" class="hash-link" aria-label="DCF的直接链接" title="DCF的直接链接">​</a></h3>
+<p>分布式协调功能</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="edca">EDCA<a href="#edca" class="hash-link" aria-label="EDCA的直接链接" title="EDCA的直接链接">​</a></h3>
+<p>增强型分布式信道接入</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="twt">TWT<a href="#twt" class="hash-link" aria-label="TWT的直接链接" title="TWT的直接链接">​</a></h3>
+<p>目标唤醒时间，于 WiFi6 引入完美符合 High Efficiency 的主题。在 WiFi6 之前，设备休眠后还是需要起来监听信标来获得 TIM（业务指示映射）</p>
+<p>但对于长期休眠的设备，这一套能耗还是太高了，现在能商量一下服务时间，只有特定服务时间才工作，其他时间处于休眠时间</p>
+<table><thead><tr><th>标准</th><th>文件索引</th></tr></thead><tbody><tr><td>802.11ax</td><td>9.4.1.60 TWT Information field</td></tr></tbody></table>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="多-ap-协同">多 AP 协同<a href="#多-ap-协同" class="hash-link" aria-label="多 AP 协同的直接链接" title="多 AP 协同的直接链接">​</a></h3>
+<p><strong>注意</strong>，多 AP 协同和 wifi mesh 不是同一个东西。wifi mesh 是网络架构方案，由多个节点（主路由器和卫星节点）组成，设备移动时自动连接到最好的节点。多 AP 协同是数据链路层和物理层协调技术，在密集 AP 部署时可以协调相邻 AP，甚至实现多个 AP 同时向同一个终端传输相同数据</p>
+<p>当然这仅在 wifi mesh 下才能实现，多个 ssid</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="信道">信道<a href="#信道" class="hash-link" aria-label="信道的直接链接" title="信道的直接链接">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="基本概念">基本概念<a href="#基本概念" class="hash-link" aria-label="基本概念的直接链接" title="基本概念的直接链接">​</a></h3>
+<p>基本知识</p>
+<ul>
+<li>频段：分配给特定用途的频带，WiFi 主要使用的频段有 2.4G 5G 6G。区别，第一在于物理特性比如传播范围和穿透能力，第二在于频段分配资源 5G 6G 频段分配的资源都多于 2.4G</li>
+<li>信道/频道：一段连续的、指定宽度的频率范围</li>
+<li>带宽：信道的宽度</li>
+<li>信道宽度：20MHz 为基础单位，非重叠信道的标准宽度，20MHz 兼容性最好干扰最小但速度最慢</li>
+<li>空间流：表现为发射天线数 T 与接收天线数 R 的乘积 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>∗</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">T*R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em"></span><span class="mord mathnormal" style="margin-right:0.13889em">T</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.6833em"></span><span class="mord mathnormal" style="margin-right:0.00773em">R</span></span></span></span></li>
+</ul>
+<p>2.4G 频段分配如下图，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">F_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em"><span></span></span></span></span></span></span></span></span></span> 为信道基频，条带上的编号表示相应信道影响范围</p>
+<img src="/assets/images/24g-fbb015fdbfdcb1163c25da8318af1a45.jpg" style="width:80%;height:auto">
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="信道聚合">信道聚合<a href="#信道聚合" class="hash-link" aria-label="信道聚合的直接链接" title="信道聚合的直接链接">​</a></h3>
+<p>WiFi4 新技术，把多个连续的信道合起来一起用</p>
+<table><thead><tr><th>标准</th><th>文件索引</th><th>最大宽度</th></tr></thead><tbody><tr><td>802.11n</td><td>20. High Throughput (HT) PHY specification</td><td>40MHz</td></tr><tr><td>802.11ac</td><td>22. Very High Throughput (VHT) PHY specification</td><td>160MHz</td></tr><tr><td>802.11ax</td><td>28. High Efficiency (HE) PHY specification</td><td>160MHz</td></tr><tr><td>802.11be</td><td>36. Extremely high throughput (EHT) PHY specification</td><td>320MHz</td></tr></tbody></table>
+<p>聚合之后把信道分为主信道（20MHz）和次信道，主信道主要用于控制指令和基本指令。这样既能支持旧设备，也能在受到干扰时快速回退到主信道</p>
+<p>在 2.4G 频段，由于频段过窄，基本无法实现信道聚合。信道宽度主要是：40、80、160，wifi7 加入 240、320</p>
+<p>WiFi6 中随着 OFDMA 的引入，新增了非连续信道聚合，即聚合的信道不再需要连续。但是有条件的，<a href="https://www.baidu.com" target="_blank" rel="noopener noreferrer">待补充</a>。这种绑定需要单个聚合信道至少有 80MHz，即 80+80、80+160、160+160</p>
+<p><strong>Multi-RU、Non-Contiguous Channel Bonding / Aggregation</strong></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="信道穿刺">信道穿刺<a href="#信道穿刺" class="hash-link" aria-label="信道穿刺的直接链接" title="信道穿刺的直接链接">​</a></h3>
+<p>随着信道聚合的最大宽度不断增加，很难在整个频段中找到连续干净的信道，WiFi7 甚至将信道聚合最大宽度继续增大到了 320MHz。WiFi6 其实已提出了初步概念，但使用比较受限，WiFi7 才推出了实用的信道穿刺技术解决问题，使得在信道聚合的情况下可以绕过某些被占用信道继续聚合，穿刺单位是 20MHz</p>
+<table><thead><tr><th>标准</th><th>文件索引</th></tr></thead><tbody><tr><td>802.11ax</td><td></td></tr><tr><td>802.11be</td><td>35.15.2 Preamble puncturing operation</td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="传输">传输<a href="#传输" class="hash-link" aria-label="传输的直接链接" title="传输的直接链接">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="传输框架">传输框架<a href="#传输框架" class="hash-link" aria-label="传输框架的直接链接" title="传输框架的直接链接">​</a></h3>
+<p>空间这么大，既有时域也有频域</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="txop">TXOP<a href="#txop" class="hash-link" aria-label="TXOP的直接链接" title="TXOP的直接链接">​</a></h4>
+<p>传输机会，QoS 的基石，保证了可以在一段时间内发送报文不需要再次竞争。连续帧间仅需要用 SIFS 隔开</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="ofdm">OFDM<a href="#ofdm" class="hash-link" aria-label="OFDM的直接链接" title="OFDM的直接链接">​</a></h4>
+<p>正交频分复用</p>
+<p>通过把一个信道拆成不同频率的子载波，并且这些子载波相互正交互不干扰（FFT 分解保证）。每个子载波在相同的时间内只需要运输一部分数据，提高了可靠性（不需要占用所有子载波发送<a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">[来源请求]</a>）。OFDM 在早期 WiFi 中就已经使用，解决了多径干扰提高了抗频率衰落性</p>
+<table><thead><tr><th>标准</th><th>文件索引</th></tr></thead><tbody><tr><td>802.11ac</td><td>18. Orthogonal frequency division multiplexing (OFDM) PHY specification</td></tr><tr><td>802.11ax</td><td>17. Orthogonal frequency division multiplexing (OFDM) PHY specification</td></tr><tr><td>802.11be</td><td>17. Orthogonal frequency division multiplexing (OFDM) PHY specification</td></tr></tbody></table>
+<p>WiFi5 及之前把 20MHz 分成 64 个，间隔 312.5 KHz，其中只有 52 个用于传输数据。WiFi6 把子载波分为 256 个，间隔 78.125KHz，其中 242 个用于传输数据</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="ofdma">OFDMA<a href="#ofdma" class="hash-link" aria-label="OFDMA的直接链接" title="OFDMA的直接链接">​</a></h4>
+<p>正交频分多址，现已加入 WiFi6 豪华套餐</p>
+<table><thead><tr><th>标准</th><th>文件索引</th></tr></thead><tbody><tr><td>802.11ax</td><td>28.3.1.2 OFDMA</td></tr></tbody></table>
+<p>OFDMA 可以分为两部分 OFDM 正交频分复用和 MA 多址接入</p>
+<p>这里再引入资源单位 RU 的概念，WiFi6 之前需要使用全部的子载波进行通信。WiFi6 开始<strong>每个设备</strong>其实分配到的是 RU，而 RU 不一定占用了所有子载波，最少可以只有 26 个子载波最大也可以和之前一样占用整个信道</p>
+<p>WiFi7 有进一步进行了改进，将 RU 进一步减少到了至低 13 个子载波，并允许一个设备同时使用多个 RU</p>
+<p>既然 OFDMA 引入了单信道中多用户，那 TXOP 也为对应的单信道单 TXOP。对调度的用户表现为公共 TXOP，没调度的表现为占用</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="调制">调制<a href="#调制" class="hash-link" aria-label="调制的直接链接" title="调制的直接链接">​</a></h3>
+<p><strong>QAM</strong> 正交幅度调制</p>
+<p>带宽是有限的，在带宽不变的前提下提高速率就只能让每个符号携带更多信息</p>
+<p>QAM 通过改变载波的幅度和相位来编码信息，WiFi 一路有 BPSK、QPSK、16-QAM、...、4096-QAM。最开始的 BPSK 和 QPSK 只是 QAM 的特例，特定条件下的简化操作。QAM 只使用一个载波频率就能改变状态，高效利用信道</p>
+<p>物理实现方面，把信号分为同向载波 (I) cos 和正交载波 (Q) sin，这两个载波相互正交且能独立改变幅度，符和 QAM 的同时实现较为简单</p>
+<p>横轴是同向载波幅度、纵轴是正交载波幅度，比如 16-QAM 可以表示 16 种状态（4bit）</p>
+<img src="/assets/images/qam-9131c7bc186369159867848153bf3ca4.jpg" style="width:70%;height:auto">
+<table><thead><tr><th>标准</th><th>文件索引</th><th>最高支持</th></tr></thead><tbody><tr><td>802.11n</td><td>20. High Throughput (HT) PHY specification</td><td>64 QAM</td></tr><tr><td>802.11ac</td><td>22. Very High Throughput (VHT) PHY specification</td><td>256 QAM</td></tr><tr><td>802.11ax</td><td>28. High Efficiency (HE) PHY specification</td><td>1024 QAM</td></tr><tr><td>802.11be</td><td>36. Extremely high throughput (EHT) PHY specification</td><td>4096 QAM</td></tr></tbody></table>
+<p>WiFi6 引入了 DCM 操作</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="多路操作">多路操作<a href="#多路操作" class="hash-link" aria-label="多路操作的直接链接" title="多路操作的直接链接">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="mimo-多天线">MIMO 多天线<a href="#mimo-多天线" class="hash-link" aria-label="MIMO 多天线的直接链接" title="MIMO 多天线的直接链接">​</a></h3>
+<p>最开始由 WiFi4 引入，在 WiFi4 之前的多天线只是为了选择更好的信号（分集技术）或切换频段。在时分和频分的基础上又引入了空分</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="su-mimo">SU-MIMO<a href="#su-mimo" class="hash-link" aria-label="SU-MIMO的直接链接" title="SU-MIMO的直接链接">​</a></h4>
+<p>WiFi4 引入的东西，多天线输入和多天线输出，最常见的配置是 3x3:3 即 3 根天线发送 3 根天线接收 3 条独立数据流，但此时的多数据流只能服务于一个设备</p>
+<p>发射天线协同发射空间流，接收天线会接收到多路信号在空间中混合后的结果。空间流数量 &lt;= min(发射天线, 接收天线)</p>
+<p>主要利用空间复用技术提高速率。还有空间分集技术，即多天线利用空间上的不同路径来抵抗多径衰落，提高信号的可靠性。整个流程包括信道探测（每根发射天线与每根接收天线的信道特性）、预编码（计算空间流幅度相位）、形成波束（大自然的工作）</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="mu-mimo">MU-MIMO<a href="#mu-mimo" class="hash-link" aria-label="MU-MIMO的直接链接" title="MU-MIMO的直接链接">​</a></h4>
+<p>WiFi5 引入的东西，一般是 4x4:4，支持多用户的下行流量。这里的空间流也是在<strong>同一个信道</strong>上的，只是从一个用户解码变成了多个用户一起解码空间流。因为包括信道探测，多个用户挤在一起的时候可能不太好用</p>
+<p>WiFi6 进行了一些改进，一般是 4x4:4，支持双向的多用户传输，但一坨的终端设备之间需要同步，所以直到 wifi6 才引入。AP 会向终端设备发送一个触发帧包含资源单元、信号参数信息，终端设备不需要知道其他用户存在，只要库库发就行，预编码仅限优化信道质量而不像 AP 需要计算幅度相位</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="波束成形">波束成形<a href="#波束成形" class="hash-link" aria-label="波束成形的直接链接" title="波束成形的直接链接">​</a></h4>
+<p>集中信号，指向特定位置。在 WiFi6 中才为强制标准（但 WiFi5 普遍实现），和 MIMO 相辅相成（多天线才能进行干涉，即信号的增强与减弱）</p>
+<p>基础 MIMO 只是利用多径效应，但加上波束成形能实现更精准的能量传递</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="mlo-多链路">MLO 多链路<a href="#mlo-多链路" class="hash-link" aria-label="MLO 多链路的直接链接" title="MLO 多链路的直接链接">​</a></h3>
+<p>MLO 在 WiFi7 引入，通过多个链路增强速度和稳定性（可以在多个频段同时传输）。而且对于 WiFi7 之前的设备，每个频段都具有一个 mac 地址，WiFi7 引入了 MLD 多链路设备在 mac 层抽象为一个 mac 地址</p>
+<table><thead><tr><th>标准</th><th>文件</th></tr></thead><tbody><tr><td>802.11be</td><td>4.9.6 Reference model for multi-link operation (MLO)</td></tr></tbody></table>
+<p>有两种主要的工作模式：</p>
+<ul>
+<li>交替连接：多个链路间的交替传输（在调度层面来说是同步，传统的是链路上单独调度）</li>
+<li>同步连接：真正在多个链路上发送和接收数据</li>
+</ul></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="文件选项卡"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/网络/计算机网络"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">计算机网络</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/category/飞行程序设计"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">飞行程序设计</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#名称" class="table-of-contents__link toc-highlight">名称</a></li><li><a href="#标准演进" class="table-of-contents__link toc-highlight">标准演进</a><ul><li><a href="#80211" class="table-of-contents__link toc-highlight">802.11</a></li><li><a href="#80211-a" class="table-of-contents__link toc-highlight">802.11 a</a></li><li><a href="#80211-b" class="table-of-contents__link toc-highlight">802.11 b</a></li><li><a href="#80211-g" class="table-of-contents__link toc-highlight">802.11 g</a></li><li><a href="#80211-n-wifi-4" class="table-of-contents__link toc-highlight">802.11 n (WiFi 4)</a></li><li><a href="#80211-ac-wifi-5" class="table-of-contents__link toc-highlight">802.11 ac (WiFi 5)</a></li><li><a href="#80211-ax-wifi-6" class="table-of-contents__link toc-highlight">802.11 ax (WiFi 6)</a></li><li><a href="#80211-be-wifi-7" class="table-of-contents__link toc-highlight">802.11 be (WiFi 7)</a></li></ul></li><li><a href="#帧" class="table-of-contents__link toc-highlight">帧</a><ul><li><a href="#数据帧" class="table-of-contents__link toc-highlight">数据帧</a></li><li><a href="#管理帧" class="table-of-contents__link toc-highlight">管理帧</a></li><li><a href="#控制帧" class="table-of-contents__link toc-highlight">控制帧</a></li></ul></li><li><a href="#协调" class="table-of-contents__link toc-highlight">协调</a><ul><li><a href="#sifs" class="table-of-contents__link toc-highlight">SIFS</a></li><li><a href="#dcf" class="table-of-contents__link toc-highlight">DCF</a></li><li><a href="#edca" class="table-of-contents__link toc-highlight">EDCA</a></li><li><a href="#twt" class="table-of-contents__link toc-highlight">TWT</a></li><li><a href="#多-ap-协同" class="table-of-contents__link toc-highlight">多 AP 协同</a></li></ul></li><li><a href="#信道" class="table-of-contents__link toc-highlight">信道</a><ul><li><a href="#基本概念" class="table-of-contents__link toc-highlight">基本概念</a></li><li><a href="#信道聚合" class="table-of-contents__link toc-highlight">信道聚合</a></li><li><a href="#信道穿刺" class="table-of-contents__link toc-highlight">信道穿刺</a></li></ul></li><li><a href="#传输" class="table-of-contents__link toc-highlight">传输</a><ul><li><a href="#传输框架" class="table-of-contents__link toc-highlight">传输框架</a></li><li><a href="#调制" class="table-of-contents__link toc-highlight">调制</a></li></ul></li><li><a href="#多路操作" class="table-of-contents__link toc-highlight">多路操作</a><ul><li><a href="#mimo-多天线" class="table-of-contents__link toc-highlight">MIMO 多天线</a></li><li><a href="#mlo-多链路" class="table-of-contents__link toc-highlight">MLO 多链路</a></li></ul></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>

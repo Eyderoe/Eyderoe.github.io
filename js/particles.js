@@ -7,9 +7,14 @@
         return document.getElementsByTagName(tagName);
     }
 
-    function getThemeGreen() {
+    function getLineColor() {
         const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
         return isDark ? "52, 211, 153" : "255, 68, 77";
+    }
+
+    function getFillColor() {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        return isDark ? "rgb(212, 211, 209)" : "rgb(41, 39, 44)";
     }
 
     function getScriptConfig() {
@@ -21,7 +26,7 @@
             scriptCount: scriptCount,
             zIndex: getAttributeValue(currentScript, "zIndex", -1),
             opacity: getAttributeValue(currentScript, "opacity", .5),
-            color: getThemeGreen(),
+            color: getLineColor(),
             particleCount: getAttributeValue(currentScript, "count", 80)
         };
     }
@@ -33,7 +38,8 @@
 
     function drawParticles() {
         context.clearRect(0, 0, canvasWidth, canvasHeight);
-        const currentColor = getThemeGreen();
+        const lineColor = getLineColor();
+        const circleColor = getFillColor();
 
         var particleA, particleB, distance, dx, dy, maxDistance, alpha;
         particles.forEach(function (particleA, index) {
@@ -42,6 +48,7 @@
             particleA.xVelocity *= particleA.x > canvasWidth || particleA.x < 0 ? -1 : 1;
             particleA.yVelocity *= particleA.y > canvasHeight || particleA.y < 0 ? -1 : 1;
             context.fillRect(particleA.x - .5, particleA.y - .5, 1, 1);
+            context.fillStyle = circleColor;
 
             for (var j = index + 1; j < allParticles.length; j++) {
                 particleB = allParticles[j];
@@ -57,7 +64,7 @@
                         alpha = (particleB.maxDistance - distance) / particleB.maxDistance;
                         context.beginPath();
                         context.lineWidth = alpha / 2;
-                        context.strokeStyle = "rgba(" + currentColor + "," + (alpha + .2) + ")";
+                        context.strokeStyle = "rgba(" + lineColor + "," + (alpha + .2) + ")";
                         context.moveTo(particleA.x, particleA.y);
                         context.lineTo(particleB.x, particleB.y);
                         context.stroke();

@@ -4,10 +4,21 @@
         <title>Eyderoe Blog</title>
         <link>https://Eyderoe.github.io/blog</link>
         <description>Eyderoe Blog</description>
-        <lastBuildDate>Sun, 21 Sep 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 17 Oct 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh-Hans</language>
+        <item>
+            <title><![CDATA[悔不当初]]></title>
+            <link>https://Eyderoe.github.io/blog/20251017nothing</link>
+            <guid>https://Eyderoe.github.io/blog/20251017nothing</guid>
+            <pubDate>Fri, 17 Oct 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[才开学一个月，从早八学到晚十]]></description>
+            <content:encoded><![CDATA[<p>才开学一个月，从早八学到晚十</p>
+<!-- -->
+<p>要考研时也这样，至于考大专？脑瘫</p>]]></content:encoded>
+            <category>Study</category>
+        </item>
         <item>
             <title><![CDATA[研究生圣经]]></title>
             <link>https://Eyderoe.github.io/blog/20250921bible</link>
