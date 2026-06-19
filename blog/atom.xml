@@ -2,11 +2,78 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Eyderoe.github.io/blog</id>
     <title>Eyderoe Blog</title>
-    <updated>2025-10-17T00:00:00.000Z</updated>
+    <updated>2026-06-01T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Eyderoe.github.io/blog"/>
     <subtitle>Eyderoe Blog</subtitle>
     <icon>https://Eyderoe.github.io/index/vor.png</icon>
+    <entry>
+        <title type="html"><![CDATA[天府绿道]]></title>
+        <id>https://Eyderoe.github.io/blog/20260601cycle</id>
+        <link href="https://Eyderoe.github.io/blog/20260601cycle"/>
+        <updated>2026-06-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[经常刷到环城绿道的一些视频文章，羡慕啊，如此的平，真的好平啊。买自行车两个月了，是时候检验一下成果了。先预先规划下，并花时间来细化操作以保证不出较大差错]]></summary>
+        <content type="html"><![CDATA[<p>经常刷到环城绿道的一些视频文章，羡慕啊，如此的平，真的好平啊。买自行车两个月了，是时候检验一下成果了。先预先规划下，并花时间来细化操作以保证不出较大差错</p>
+<!-- -->
+<p>大概会花一天半的时间，但日期会横跨三天 D1 D2 D3，对于天气要求：</p>
+<ul>
+<li>D1 D3，重庆未下雨</li>
+<li>D2，成都未下雨且气温不高于 30℃</li>
+</ul>
+<p>整体规划：D2 凌晨火车前往成都，之后就近上绿道开始骑行，晚上火车返回重庆。在出发前一周需要保证充足的休息，午睡 1h 晚睡 8h 至少以避免猝死</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="d1">D1<a href="https://eyderoe.github.io/blog/20260601cycle#d1" class="hash-link" aria-label="D1的直接链接" title="D1的直接链接">​</a></h2>
+<p>注意检查！前后轮胎压、刹车至少保留一个、尾灯电量充足</p>
+<p>因为火车是凌晨，需要提前前往重庆北。晚饭<strong>吃饱</strong>后，睡觉，晚上九点半开始前往重庆北南广场，住宿在虎头电竞网吧，四点起床进站。停车点优先考虑附近：有地下车库的小区、北济医院</p>
+<p>对于前往火车站的路程，采取能缓尽缓的策略，不走陡坡</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="d2">D2<a href="https://eyderoe.github.io/blog/20260601cycle#d2" class="hash-link" aria-label="D2的直接链接" title="D2的直接链接">​</a></h2>
+<p>5:38 搭乘 Z333 从重庆北前往成都西，9:00 分到达，吃早饭补充能量。上绿道的时间最迟为 11:00，由于返程时间的限制，绿道骑行的最大时间为 8.5h 即 11.7km/h 的最低速度</p>
+<p>目标是 6h±20min，逆时针环绿道。1h 内换车时进行补给，补给主要为水和糖果，水分适量补充以防止半肚子水响叮当。骑完后多余时间可以去隔壁青羊万达吃点好吃的</p>
+<p>20:36 搭乘 Z588 从成都西返回重庆北</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="d3">D3<a href="https://eyderoe.github.io/blog/20260601cycle#d3" class="hash-link" aria-label="D3的直接链接" title="D3的直接链接">​</a></h2>
+<p>23:24 到达重庆北后，继续补充能量，骑单车返回公寓。同样采取能缓尽缓的策略，不走陡坡</p>
+<p>3:00 前应该能回到公寓</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="附录">附录<a href="https://eyderoe.github.io/blog/20260601cycle#%E9%99%84%E5%BD%95" class="hash-link" aria-label="附录的直接链接" title="附录的直接链接">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="出发火车班次">出发火车班次<a href="https://eyderoe.github.io/blog/20260601cycle#%E5%87%BA%E5%8F%91%E7%81%AB%E8%BD%A6%E7%8F%AD%E6%AC%A1" class="hash-link" aria-label="出发火车班次的直接链接" title="出发火车班次的直接链接">​</a></h3>
+<p>最优的选择是 D49 其次是 Z333 最次是 K1257，考虑到回程只有成都西的火车，若是 D49 需通过地铁前往成都西，保守估计 43 min，与绿皮预估时长保持一致</p>
+<ul>
+<li>K1257，重庆北-成都西，50.5，5:11-9:22</li>
+<li>D49，重庆北-成都东，60，5:25-7:55</li>
+<li>Z333，重庆北-成都西，50.5，5:38-9:00</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="共享单车选择">共享单车选择<a href="https://eyderoe.github.io/blog/20260601cycle#%E5%85%B1%E4%BA%AB%E5%8D%95%E8%BD%A6%E9%80%89%E6%8B%A9" class="hash-link" aria-label="共享单车选择的直接链接" title="共享单车选择的直接链接">​</a></h3>
+<p>主流的共享单车三家：美团、哈啰、青桔。最便宜的应该是哈啰的日卡或者是月卡，20 元能直接拿下整个绿道。结合整个网络</p>
+<ul>
+<li>美团应该是最好骑的，但因为定位，不能直接看到骑行卡价格。最新款的美团单车应该是带中置手机套的，而且对于 1m8 左右的人是最舒服的</li>
+<li>哈啰则是褒贬不一，可能对于长途哈啰的大坐垫还是不太行</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="赛后总结">赛后总结<a href="https://eyderoe.github.io/blog/20260601cycle#%E8%B5%9B%E5%90%8E%E6%80%BB%E7%BB%93" class="hash-link" aria-label="赛后总结的直接链接" title="赛后总结的直接链接">​</a></h2>
+<p>喜德盛的单侧碟刹有点小难受，明明还有 1-2mm，制动基本全丢了，网购的令片没到，在令片后面插了一根牙签凑合着还是成功干了 40km</p>
+<p>挺爽的，5:31 顺时针完成一圈。要是老大爷不问东西还能挤进 5:30，没意识到可以骑这么快，应该还可以挤挤的。大爷也是挺厉害的，多次以为甩开了结果一回头还在追</p>
+<p>不推荐任何身高超过 175 的去骑共享单车，简直是膝盖毁灭者，美团虽然标的 185 但实际完全不达标，不知道其他几家怎么样</p>]]></content>
+        <author>
+            <name>Eyderoe</name>
+            <uri>https://github.com/Eyderoe</uri>
+        </author>
+        <category label="Cycle" term="Cycle"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Vibe Coding]]></title>
+        <id>https://Eyderoe.github.io/blog/20260219coding</id>
+        <link href="https://Eyderoe.github.io/blog/20260219coding"/>
+        <updated>2026-02-19T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[2602 发布了，恰好有群友在讨论用 Ai 编码的事，有感而发牢骚]]></summary>
+        <content type="html"><![CDATA[<p>2602 发布了，恰好有群友在讨论用 Ai 编码的事，有感而发牢骚</p>
+<!-- -->
+<p>NAIP 大概是从 23 年开始往外漏，考虑到他们有一定圈子，那我应该算第一批用 PDF 数据来编码的人。但现在 26 年了，能批量自动化 NAIP 的估计还是一只手能数过来。另一边其他项目，PDF 显示并叠加其他元素，ai 还是老写不对，无论是免费的 Trae 还是付费的 CodeX，前前后后一星期什么进度一点也没有推进，也许是我提示词不对吧，笑</p>
+<p>在 PyCharm 里看了下，NAIP 代码加起来也就 1.5w 出头，算上旧的也才 4w 多；PDF 叠加元素虽然麻烦，但也是 100 行不到，攻坚了一下午就写出来了。可能是因为语料少吧，这些不是很难的任务，ai 老是不行，但另一边的世界到处飘扬着 openclaw 的旗帜</p>
+<p>每看几篇文章就能看见有人说纯 vibe coding 出了某些生产项目，某个 agent 又干了啥，仿佛程序员这个岗位明天就会像土木一样消失。这里来看，读研就是一个彻头彻尾的错误，出来既打不过 ai 也打不过老人。又引出了另一个问题，是提心吊胆的使用 ai 然后被代替还是放心大胆的使用 ai 然后被代替，最近用 CodeX 因为限额四个账户轮流换（1谷歌 1苹果 2微软），真 tm 操蛋</p>
+<p>虽然 ai 分不清有破坏性升级的库，也会出现幻觉，甚至不需要担心未来语料的来源，但，万一呢。可能是我古板吧，没登上新世纪的巨轮。时间会说明一切，虽然大概率我是错的，就等着一脚被 ai 踹进垃圾桶</p>]]></content>
+        <author>
+            <name>Eyderoe</name>
+            <uri>https://github.com/Eyderoe</uri>
+        </author>
+        <category label="Study" term="Study"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[悔不当初]]></title>
         <id>https://Eyderoe.github.io/blog/20251017nothing</id>
